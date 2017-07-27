@@ -1,0 +1,12 @@
+{
+  "header" : "@CescoHeader",
+  "body" : {
+    "GUBN" : "",
+    "MSG_ID" : "",
+    "reserGubn" : "",
+    "reserTime" : "",
+    "Contents" : "",
+    "STAFFID" : "",
+    "RegUserID" : ""
+  }
+}

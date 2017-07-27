@@ -1,0 +1,77 @@
+<!-- CM031.html에 삽입되는 Content 입니다. css및 js는 그곳에 넣어주세요. -->
+                        <table class="tview01 st02">
+                            <colgroup>
+                                <col style="width:25%;" />
+                                <col />
+                            </colgroup>
+                            <tbody>
+                            <tr style="display:none;">
+                                <td>
+	                                <!-- 재활영 영역 -->
+	                                <select id="selRegPestList">
+	                                    <option value="" class="selectItem"></option>
+	                                </select>
+	                                <select id="selReason1">
+	                                    <option value="" class="selectItem"></option>
+	                                </select>
+	                                <select id="selReason2">
+                                        <option value="" class="selectItem"></option>
+                                    </select>
+                                    <select id="selSolution1">
+                                        <option value="" class="selectItem"></option>
+                                    </select>
+                                    <select id="selSolution2">
+                                        <option value="" class="selectItem"></option>
+                                    </select>
+                                    <select id="selSolution3">
+                                        <option value="" class="selectItem"></option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">대표해충</th>
+                                <td>
+                                    <select id="selRegPestListNew"></select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">원인1</th>
+                                <td>
+                                    <select id="selReason1New"></select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">원인2</th>
+                                <td>
+                                    <select id="selReason2New"></select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">솔루션1</th>
+                                <td>
+                                    <select id="selSolution1New"></select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">솔루션2</th>
+                                <td>
+                                    <select id="selSolution2New"></select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">솔루션3</th>
+                                <td>
+                                    <select id="selSolution3New"></select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">시설점검</th>
+                                <td>
+                                    <select id="selCheckProcYN">
+                                        <option value="N" class="selectItem" selected>미진행</option>
+                                        <option value="Y" class="selectItem" selected>진행</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>

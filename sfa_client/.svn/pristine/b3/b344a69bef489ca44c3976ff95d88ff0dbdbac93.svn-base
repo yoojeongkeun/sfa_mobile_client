@@ -1,0 +1,23 @@
+{
+  "header" : {
+    "error_code" : "",
+    "error_text" : "",
+    "info_text" : "",
+    "login_session_id" : "",
+    "message_version" : "",
+    "result" : false,
+    "trcode" : ""
+  },
+  "body" : {
+    "P10" : "",
+    "P01" : "",
+    "P06" : "",
+    "P02" : "",
+    "P03" : "",
+    "P07" : "",
+    "P04" : "",
+    "P08" : "",
+    "P09" : "",
+    "P05" : ""
+  }
+}

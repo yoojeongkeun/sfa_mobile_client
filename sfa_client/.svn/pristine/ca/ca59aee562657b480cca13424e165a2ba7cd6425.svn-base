@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../css/sales.css" />
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+	<script src="../../sales/js/SD014.js"></script>
+	<title>CESCO 세스코</title>
+</head>
+<style type="text/css">
+	body{background: #bcc4d0}
+</style>
+
+<body>
+<div>
+	<header class="hide">
+		<h1>업무일지 등록</h1>
+	</header>
+	
+	<section class="contentsWrap">
+		<div class="topfix_area">
+			<div class="tab02 item4">
+				<ul>
+					<li><label>년목표금액</label></li>
+					<li><input type="text" value="" id="yyyyGoalAmt" disabled></li>
+					<li><label>월목표금액</label></li>
+					<li><input type="text" value="" id="mmGoalAmt" disabled></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="subWrap01">			
+		<table class="tlist00">
+			<colgroup>
+				<col style="width:30%;">
+				<col style="width:30%;">
+				<col style="width:30%;">
+			</colgroup>
+			<tbody>
+
+			<tr>
+				<td>
+					<select id="selHQ">
+						<option value="0">지역본부</option>
+					</select>
+				</td>
+				<td>
+					<select id="selBR">
+						<option value="">담당부서</option>
+					</select>	
+				</td>
+				<td>
+					<select id="selUserID">
+						<option value="">담당자</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<select id="selYYYY">
+						<option value="0">년</option>
+						<option value="2005">2005</option>
+						<option value="2006">2006</option>
+						<option value="2007">2007</option>
+						<option value="2008">2008</option>
+						<option value="2009">2009</option>
+						<option value="2010">2010</option>
+						<option value="2011">2011</option>
+						<option value="2012">2012</option>
+						<option value="2013">2013</option>
+						<option value="2014">2014</option>
+						<option value="2015">2015</option>
+						<option value="2016">2016</option>
+						<option value="2017">2017</option>
+						<option value="2018">2018</option>
+						<option value="2019">2019</option>
+						<option value="2020">2020</option>
+					</select>
+				</td>
+				<td>
+					<select id="selMM">
+						<option value="">월</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+					</select>	
+				</td>
+			
+				<!-- <td colspan="2">
+					<dl class="dlist02">
+						<dd>
+							<div class="rbtnWrap" style="padding-right: 0px;">
+								<div>
+									<select id="selBR">
+										<option value="">년</option>
+									</select>
+									<p class="inp_cal"><input type="text" id="calFrom" value="2015" readonly/><button type="button" id="btnCalFrom" class="btn_cal" >달력</button>	</p>
+								</div>
+							</div>													  
+						</dd>
+						<dd>
+							<span style="font-weight: bold; font-size: 12px; padding:2px;">~</span>
+						</dd>
+						<dd>
+							<div class="rbtnWrap" style="padding-right: 0px;">
+								<div>
+									<select id="selBR">
+										<option value="">월</option>
+									</select>
+									<p class="inp_cal"><input type="text" id="calTo" readonly value="06"><button type="button" id="btnCalTo" class="btn_cal" >달력</button></p>
+								</div>									  				  			
+							</div>
+						</dd>
+					</dl>
+				</td> -->
+				<td>
+					<button type="button" class="btn_search01" style="padding-left: 0px; width:100%;">조회</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" placeholder="고객코드" id="txtCustCode" class="clearInput">
+				</td>
+				<td colspan="2">
+					<input type="text" placeholder="고객명" style="width:87%;" id="txtCustName"  class="t02_clearInput">
+					<button class="btn_search" id="btnSearch"></button>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<ul class="sumWrap">
+						<li class="label01">승인요청</li>
+						<li><label>월영업계획(총 매출합계)</label></li>
+						<li><input type="text" value="" id="totalAmt" disabled></li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+
+
+		<ul>
+			<li>
+			<table class="tlist01" id="listNew">
+			</table>
+			
+			<table class="tlist01" style="display:none;" id="list">
+			<colgroup>
+				<col width="8%"></col>
+				<col width="20%"></col>
+				<col width="*"></col>
+				<col width="20%"></col>
+				<col width="20%"></col>
+			</colgroup>
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>고객코드</th>
+                  <th>고객명</th>
+                  <th>고객유형</th>
+                  <th>합계</th>
+                </tr>
+              </thead>
+              <tbody id="custbody">
+                <tr class="trMast">
+                  <td class="seq">1</td>
+                  <td class="custCode">CD0079</td>
+                  <td class="custNm">나박실</td>
+                  <td class="custType"></td>
+                  <td class="sumAmt">72,400</td>
+                </tr>
+                
+                <tr class="trDetail" style="display:none;" clickOn="off" setting="n"><!--삽입되는 row-->
+                  <td></td>
+                  <td colspan="5">
+                  <div class="Tdep01">
+	                  <table>
+	                  	<tr>
+	                  		<td class="Ttit">[영업전략]</td>
+	                  	</tr>
+	                  	<tr>
+	                  		<td style="background: none;"><textarea class="textStr"></textarea></td>
+	                  	</tr>
+	                  </table>
+	                    <table class="tbDetail">
+		                  	<colgroup>
+		                  		<col width="30%"></col>
+		                  		<col width="25%"></col>
+		                  		<col width="30%"></col>
+		                  	</colgroup>
+		                  	<thead>
+		                      <tr>
+		                        <th>서비스명</th>
+		                        <th>면적(평)/수량</th>
+		                        <th>금액</th>
+		                      </tr>
+		                    </thead>
+		                      <tr id="detailbody">
+		                        <td class="servNm">일반방제</td>
+		                        <td><input type="number" class="cnt"/></td>
+		                        <td><input type="number" class="deAmt"/></td>
+		                      </tr>
+	                    </table>
+	                    <div class="sumCel">
+	                    	<label>합계</label>
+		                    <input type="text" disabled class="sumAmtDe">
+		                </div>
+	                </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table></li>
+		</ul>
+		</div>
+		<!--//subWrap01-->
+		<footer class="bot_btn item2">
+			<button type="button" class="btn_02">등록</button>
+			<button type="button" class="btn01">확정취소</button>
+		</footer>
+
+
+
+
+	</section>
+</div>
+	
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "header" : "@CescoHeader",
+  "body" : {
+    "custClass" : "",
+    "custName" : "",
+    "address" : "",
+    "facilitiesName" : "",
+    "typeB" : "",
+    "zipCode" : "",
+    "bizType" : "",
+    "typeM" : "",
+    "sizeYN" : "",
+    "contObject" : "",
+    "toSize" : "",
+    "fromSize" : "",
+    "deptCode" : "",
+    "custCode" : ""
+  }
+}

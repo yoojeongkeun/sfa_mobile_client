@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../custmaster/css/custmaster.css" />
+	<link type="text/css" rel="stylesheet" href="../../root/css/root.css" />
+	<link type="text/css" rel="stylesheet" href="../css/collection.css" />
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+	<script src="../js/CM081.js"></script>
+	<title>CESCO 세스코</title>
+</head>
+<body>
+<div class="subWrap01">
+	<header class="hide">
+		<h1>카드승인취소</h1>
+	</header>
+	
+	<section class="contentsWrap">
+		<!-- 카드승인 취소 리스트 -->
+		<div>			
+			<table class="tlist01" id="cancelationListNew"></table>
+			<table class="tlist01" id="cancelationList" style="display: none;">
+				<colgroup>
+	                  	<col style="width: 13%;" />
+	                  	<col>
+	                  	<col style="width: 42%;" />
+	                  	<col style="width: 20%"/>
+	            </colgroup>
+				<thead>
+					<tr>
+						<th>구분</th>
+						<th>고객코드</th>
+						<th>고객명</th>
+						<th>승인금액</th>
+					</tr>
+				</thead>
+				<tbody class="approvalCancelList">
+					<tr class="listHeader">
+						<td class="approvalType">승인</td>
+						<td class="custCode">AN92311234</td>
+						<td class="custName">남제주군보건소</td>
+						<td class="approvalCharge">50,000</td>
+					</tr>
+					<tr class="cardInfomation" style="display: none; background: #fefef1;">
+						<td colspan="4" style="border-bottom: 0px; padding-top: 10px; padding-bottom: 10px;">
+							<div class="detailInfoWrap">
+								<table class="tlist01 st02 detailInfo" style="border: 1px solid #ccc; background: #fff;">
+									<tr>
+										<th>카드종류</th>
+										<td><span class="cardSort"></span></td>
+									</tr>
+									<tr>
+										<th>카드번호</th>
+										<td><span class="cardNumber"></span></td>
+									</tr>
+									<tr>
+										<th>유효기간</th>
+										<td><span class="cardExpiryDate"></span></td>
+									</tr>
+									<tr>
+										<th>할부개월</th>
+										<td><span class="cardInstallment"></span> 개월</td>
+									</tr>									
+								</table>
+							</div>
+						</td>
+					</tr>
+					<!-- <tr class="listDetailBody"> 계약대상 상세정보 현재 사용X
+						<td colspan="4" style="border-top: 0px; padding-bottom: 10px;">
+							<div class="listDetail">
+								<table class="tlist01 st02 contractTargetList" style="border: 1px solid #ccc;">
+									<colgroup>
+						                  	<col style="width:20%;" />
+						                  	<col style="width:60%;" />
+						                  	<col>
+						              	</colgroup>
+									<thead>
+										<tr class="subj">
+											<td>매출년월</td>
+											<td>계약대상</td>
+											<td>청구금액</td>
+										</tr>
+									</thead>								
+									<tbody>
+										<tr class="dList">
+											<td class="saleYM">2014-08</td>
+											<td class="contractTarget">일반방제</td>
+											<td class="charge">32,000</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+					</tr>  -->
+				</tbody>
+			</table>
+		</div>
+		<!-- //top fix -->
+	</section>
+	
+	<footer class="bot_btn item2">
+		<button type="button" class="btn01" id="btnCancel">취소</button>
+		<button type="button" class="btn01" id="btnCancelRequest">취소승인요청</button>
+	</footer>
+
+</div>
+<div id="bottomCommonMenu"></div>
+</body>
+</html>

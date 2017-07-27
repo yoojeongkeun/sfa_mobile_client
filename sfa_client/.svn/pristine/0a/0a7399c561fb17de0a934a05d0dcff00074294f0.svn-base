@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../css/custmaster.css" />
+	<link type="text/css" rel="stylesheet" href="../../root/css/root.css" />
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+    <script src="../js/CM005.js"></script>
+	<title>CESCO 세스코</title>
+</head>
+<body>
+<div class="subWrap01 top_fix02">	<!-- fix: search + tab01 -->
+	<header class="hide">
+		<h1>고객정보열람</h1>
+		<h2>고객검색</h2>
+	</header>
+	
+	<section class="contentsWrap">
+		<div class="topfix_area">
+		
+			<!-- search -->
+			<div class="searchWrap">
+				<div class="inp_srch">
+					<input type="text" id="inpSearchText" placeholder="고객코드/고객명/전화번호를 입력하세요" />
+					<button type="button" class="btn_search">검색</button>
+				</div>
+			</div>
+			<!-- //search -->
+			
+			<!-- tab -->
+			<div class="tab01 top_click">
+				<ul>
+					<li id="scheduleSoon" class="click_up on"><button type="button" id="a">가까운 일정순</button></li>
+					<li id="areaSoon" class="click_up"><button type="button">가까운 지역순</button></li>
+				</ul>
+			</div>
+			<!-- //tab -->
+		</div>
+		
+		<!-- list -->
+		<ul class="list01 cust_list" id="custlistnew" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></ul>
+		<ul class="list01 cust_list" id="custlist" style="display:none">
+			<li class="cust_list_detail" orderno1="" orderno2="">
+				<span class="cust_stat">계약</span>
+				<p class="tit"><span class="custName" custcode="" ></span></p>
+				<p class="addr txtc01"><span class="custAddress"></span></p>
+				<p class="addr txtc01"><span class="oldCustAddress"></span></p>
+				<div class="btn_group" phonenumber="">
+					<button type="button" class="btn_call">전화걸기</button>
+					<button type="button" class="btn_sms">문자 보내기</button>
+					<button type="button" class="btn_map">지도보기</button>
+				</div>
+			</li>
+			
+			<!--  숨김
+			<li class="cur">
+				<span class="cust_stat">계약</span>
+				<p class="tit"><span>협중앙회남제주지점</span></p>
+				<p class="addr txtc01"><span>서귀포시 남원읍 남원리 115-1</span></p>
+				<div class="btn_group">
+					<button type="button" class="btn_call">전화걸기</button>
+					<button type="button" class="btn_sms">문자 보내기</button>
+					<button type="button" class="btn_map">지도보기</button>
+				</div>
+			</li>
+			<li>
+				<span class="cust_stat cancel">해약</span>
+				<p class="tit"><span>협중앙회남제주지점</span></p>
+				<p class="addr txtc01"><span>서귀포시 남원읍 남원리 115-1</span></p>
+				<div class="btn_group">
+					<button type="button" class="btn_call">전화걸기</button>
+					<button type="button" class="btn_sms">문자 보내기</button>
+					<button type="button" class="btn_map">지도보기</button>
+				</div>
+			</li>
+			<li>
+				<span class="cust_stat poss">유망</span>
+				<p class="tit"><span>협중앙회남제주지점</span></p>
+				<p class="addr txtc01"><span>서귀포시 남원읍 남원리 115-1</span></p>
+				<div class="btn_group">
+					<button type="button" class="btn_call">전화걸기</button>
+					<button type="button" class="btn_sms">문자 보내기</button>
+					<button type="button" class="btn_map">지도보기</button>
+				</div>
+			</li>
+			 -->
+		</ul>
+		<!-- //list -->
+	</section>
+
+</div>
+<div class="topfix_area">
+   <div id="bottomCommonMenu"></div>
+</div>
+
+</body>
+</html>

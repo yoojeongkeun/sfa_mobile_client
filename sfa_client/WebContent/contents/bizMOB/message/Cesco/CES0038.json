@@ -1,0 +1,8 @@
+{
+  "header" : "@CescoHeader",
+  "body" : {
+    "zipcode" : "",
+    "doroAddr" : "",
+    "commonAddr" : ""
+  }
+}

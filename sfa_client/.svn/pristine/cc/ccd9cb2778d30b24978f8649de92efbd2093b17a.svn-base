@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!-- <script src="../js/SD013_tab03.js"></script> -->
+</head>
+<body>
+<!--3.업무내역-->
+		<div style="position: relative; top: 48px; padding-bottom:50px;" id="tab03">			
+		<table class="tlist00">
+			<colgroup>
+				<col style="width:25%;">
+				<col style="width:*;">
+				<col style="width:20%;">
+				<col style="width:20%;">
+			</colgroup>
+			<tbody>
+
+			<tr>
+				<th>
+					일지유형
+				</th>
+				<td colspan="3">
+					<select class="reportType"></select>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					업무일자
+				</th>
+				<td>
+					<div class="rbtnWrap" style="padding-right: 0px;">
+						<div>
+							<p class="inp_cal"><input type="text" id="t03_calDay" readonly/><button type="button" id="t03_btnCal" class="btn_cal" >달력</button>	</p>
+						</div>									  				  			
+					</div>
+				</td>
+				<td>
+					<input type="number" placeholder="시간" id="t03_timeHour">
+				</td>
+				<td><input type="number" placeholder="분" id="t03_timeMin"></td>
+			</tr>
+			<tr>
+				<td>&nbsp</td>
+				<td><input type="time" style="width: 140px;" id="t03_fromTime"></td>
+				<td colspan="2"><input type="time" style="width: 138px;" id="t03_toTime"></td>
+				
+			</tr>
+			<tr>
+				<th>
+					대담자
+				</th>
+				<td colspan="3">
+					<input type="text" placeholder="대담자" id="t03_colorcutor">
+				</td>
+			</tr>
+			<tr>
+				<th>접촉방법</th>
+				<td>
+					<span class="radio_m" style="padding: 10px;"><input type="radio" name="rdConType" id="rdConType1"><label>외근</label></span>
+					<span class="radio_m" style="padding: 10px;"><input type="radio" name="rdConType" id="rdConType2"><label>내근</label></span>
+				</td>
+				<th style="padding-left: 0px;"><span>면적</span><input type="number" style="width:60%; margin-left: 5px;" id="t03_Area"></th>
+				<td>
+					<input type="number" style="width:100%;" id="t03_Area2" disabled>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					업무구분
+				</th>
+				<td colspan="3">
+					<select id="t03_selWorkType"><option>업무구분</option></select>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					세부구분
+				</th>
+				<td colspan="3">
+					<select id="t03_selDeType"><option>세부구분</option></select>
+				</td>
+			</tr>
+			<tr class = "t03_SDview">
+				<th>
+					활동사유
+				</th>
+				<td colspan="3">
+					<select id="t03_selActReason"><option>활동사유</option></select>
+				</td>
+			</tr>
+			<tr class = "t03_SDview">
+				<th>
+					상담결과
+				</th>
+				<td colspan="3">
+					<select id="t03_selCounResult"><option>상담결과</option></select>
+				</td>
+			</tr>
+			<tr class = "t03_SDview">
+				<th>
+					향후계획
+				</th>
+				<td colspan="3">
+					<select id="t03_selFutPlan"><option>향후계획</option></select>
+				</td>
+			</tr>
+			<tr class="t03_FSDview">
+				<th>
+					분류
+				</th>
+				<td>
+					<select><option>분류</option></select>
+				</td>
+				<th>
+					수행차수
+				</th>
+				<td><input type="number"></td>
+			</tr>
+			<tr class="t03_FSDview">
+				<th>
+					시료발송일시
+				</th>
+				<td>
+					<div class="rbtnWrap" style="padding-right: 0px;">
+						<div>
+							<p class="inp_cal"><input type="text" id="calTo" readonly/><button type="button" id="btnCalTo" class="btn_cal" >달력</button>	</p>
+						</div>									  				  			
+					</div>
+				</td>
+				<td>
+					<input type="number">
+				</td>
+				<td><input type="number"></td>
+			</tr>
+			<tr class = "t03_FSDview">
+				<th>다음일정</th>
+				<td>
+					<div class="rbtnWrap" style="padding-right: 0px;">
+						<div>
+							<p class="inp_cal"><input type="text" id="calTo" readonly/><button type="button" id="btnCalTo" class="btn_cal" >달력</button>	</p>
+						</div>									  				  			
+					</div>
+				</td>
+				<td  colspan="2">
+				</td>
+			</tr>
+
+		</tbody>
+		</table>
+		<div class="openBar">
+			<button type="button" class="btn_open"></button>
+		</div>
+		<div style="text-align:right;padding-right: 10px;">
+	        <button class="btn00">영업이관</button>
+	        <!-- <button type="button" class="btn_camera t3_btnCamera">사진찍기</button>
+			<button type="button" class="btn_gallery t3_btnGallery">사진보기</button> -->
+        </div>
+        
+		<div id="css_tabs">
+				 <div id="navcontainer">
+                        <ul id="navlist">
+                                <!-- CSS Tabs -->
+							<li class="t03_liTab" tabindex="1"><button id="current">수행내용</button></li>
+							<li class="t03_liTab" tabindex="2"><button>동행자</button></li>
+							<li class="t03_liTab" tabindex="3"><button>금일산출물</button></li>
+
+                        </ul>
+                        <!-- 수행내용 첫번째 tab-->
+                        <div class="tab1_content" id="t03_divTab1">
+                        	<textarea id="textCont"></textarea>
+                        </div> <!--//수행내용 첫번째 Tab-->
+
+                         <!-- <ul id="navlist">
+                                CSS Tabs
+							<li><a>수행내용</a></li>
+							<li><a id="current">동행자</a></li>
+							<li><a>금일산출물</a></li>
+
+                        </ul> -->
+                         <!-- 동행자 첫번째 tab-->
+                        <div class="tab1_content" id="t03_divTab2" style="display: none;">
+                        	<table class="tlist01" id="t03_tAccompanion">
+								<colgroup>
+									<col width="10%"></col>
+									<col width="10%"></col>
+									<col width="50%" style="text-alingn:left;"></col>
+									<col width="*"></col>
+								</colgroup>
+								<thead>
+	                        		<tr>
+	                        			<th>No.</th>
+	                        			<th>확인</th>
+	                        			<th>부서명</th>
+	                        			<th>FSC</th>
+	                        		</tr>
+	                        	</thead>
+	                        	<tbody id="t03_AccompListNew"></tbody>
+	                        	<tbody id="t03_AccompList" style="display: none;">
+	                        		<tr class="t03_Accomp">
+	                        			<td class="t03_compSeq"></td>
+	                        			<td><input type="checkbox"></td>
+	                        			<td class="t03_compDept"></td>
+	                        			<td class="t03_compUser"></td>
+	                        		</tr>
+                        		</tbody>
+                        	</table>
+                        	<table class="tlist01">
+                        	<colgroup>
+                        		<col width="*;"></col>
+                        		<col width="30%"></col>
+                        		<col width="10%"></col>
+                        		<col width="10%"></col>
+                        	</colgroup>
+                        		<tr>
+                        			<td>
+                        				<select id="t03_Dept"><option>담당부서</option></select>                        			
+                        			</td>
+                        			<td>
+                        				<select id="t03_User"><option>담당자</option></select>
+                        			</td>
+                        			<td><button class="btn00" style="margin:0;" id="t03_btnAdd">추가</button></td>
+                        			<td><button class="btn00" style="margin:0;" id="t03_btnDel">삭제</button></td>
+                        		</tr>
+                        	</table>
+                        </div> <!--//동행자 첫번째 Tab-->
+                        
+                        <!-- 금일산출물 첫번째 tab-->
+                        <div class="tab1_content" id="t03_divTab3" style="display: none;">
+                        	<textarea></textarea>
+                        </div> <!--//금일산출물 첫번째 Tab-->
+                </div>
+		</div>
+		
+	</div><!--3.업무내역-->
+
+</body>
+</html>

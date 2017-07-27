@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no"/>
+<title>::환경모니터링 시료채취 및 수거::</title>
+<link href="../css/common.css" rel="stylesheet" type="text/css" />
+<link href="../css/sub.css" rel="stylesheet" type="text/css" />
+<link href="../css/FSM0023.css" rel="stylesheet" type="text/css" />
+<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+<script src="../js/FSM0028.js"></script>
+</head>
+<body>
+
+<!----------container-------------->
+<div id="container"> 
+   <!-- <div class="tit_page">
+    <div class="page_path">
+      <ul>
+        <li>서비스<br />
+          제공</li>
+        <span><img src="../../common/images/bg_path_r.jpg" height="50"></span>
+        <li id="CustName"></li>
+        <span><img src="../../common/images/bg_path_r.jpg" height="50"></span>
+        <li>환경<br />
+          모니터링</li>
+        <span><img src="../../common/images/bg_path_r.jpg" height="50"></span>
+        <li>시료채취<br />
+          및 수거</li>
+      </ul>
+    </div>
+  </div> -->
+ 	<div class="chec_desc checkDesc" >
+	  	<div class="check_content" id="checkDesc4">
+	    	<div class="tit_chec_content">
+	      		<h4>
+	 	        	<span><img src="../images/bul_chec_it.png" width="7"></span>
+	       		 	<span id="listTitle" style="display: inline;"></span>
+	      		</h4>
+	    	</div>
+	  	</div>
+	</div>
+	<table class="tlist01" id="tableSurfaceFoulingListNew"></table>
+	<table class="tlist01" id="tableSurfaceFoulingList" style="display: none;">
+       	<thead>
+           	<tr>
+               	<th>No.</th>
+                   <th>시료명</th>
+                   <th colspan="2" style="text-align: center;">성적서 용도</th>
+               </tr>
+           </thead>
+           <tbody class="tbodyList">                
+               <tr class="trMasterRow">
+               	<td><span class="spanRowNumber"></span></td>
+                   <td style="text-align: left;"><span class="spanSampleName"></span></td>
+                   <td><span class="spanPurpose"></span></td>
+                   <td class="accordion-open btnOpenClose"></td><!--accordion-open  -->
+               </tr>
+               <tr class="trDetailRow" style="display: none;"><!--삽입되는 row-->
+                   <td colspan="4">
+                    <table class="tlist02 tableUnitListNew"></table>
+                    <table class="tlist02 tableUnitList" style="display: none;">
+                    <thead>
+                      <tr>
+                        <th>균종류</th>
+                        <th>수량</th>
+                      </tr>
+                    </thead>
+                      <tr class="trUnitList">
+                        <td><span class="spanUnitName"></span></td>
+                        <td><span class="spanUnitCnt"></span></td>
+                      </tr>
+                    </table>
+                   </td>
+               </tr>                
+           </tbody>             
+	</table>
+	
+	<!--<div class="chec_desc checkDesc" >
+	  	<div class="check_content" id="checkDesc4">
+	    	<div class="tit_chec_content">
+	      		<h4>
+	 	        	<span><img src="../images/bul_chec_it.png" width="7"></span>
+	       		 물검사
+	      		</h4>
+	    	</div>
+	  	</div>
+	</div>
+	<table class="tlist01" id="tableWaterTestListNew"></table>
+	<table class="tlist01" id="tableWaterTestList" style="display: none;">
+       	<thead>
+           	<tr>
+               	<th>No.</th>
+                   <th>물검사</th>
+                   <th colspan="2" style="text-align: center;">성적서 용도</th>
+               </tr>
+           </thead>
+           <tbody class="tbodyList">                
+               <tr class="trMasterRow">
+               	<td><span class="spanRowNumber"></span></td>
+                   <td style="text-align: left;"><span class="spanSampleName"></span></td>
+                   <td><span class="spanPurpose"></span></td>
+                   <td class="accordion-open btnOpenClose"></td>accordion-open 
+               </tr>
+               <tr class="trDetailRow" style="display: none;">삽입되는 row
+                   <td colspan="4">
+                    <table class="tlist02 tableUnitListNew"></table>
+                    <table class="tlist02 tableUnitList" style="display: none;">
+                    <thead>
+                      <tr>
+                        <th>균종류</th>
+                        <th>수량</th>
+                      </tr>
+                    </thead>
+                      <tr class="trUnitList">
+                        <td><span class="spanUnitName"></span></td>
+                        <td><span class="spanUnitCnt"></span></td>
+                      </tr>
+                    </table>
+                   </td>
+               </tr>                
+           </tbody>             
+	</table> -->
+</div>	
+<div style="height: 46px;"></div>				
+  <!--------//container--------------> 
+  
+<!----------footer-------------->
+<div id="footer04">
+<div class="bottom_all03">
+    <ul>
+        
+        <li id="btnDown"><a id="btnInput">채취</a></li>
+    </ul>
+</div>
+</div>
+<!--------//footer--------------> 
+
+</html>

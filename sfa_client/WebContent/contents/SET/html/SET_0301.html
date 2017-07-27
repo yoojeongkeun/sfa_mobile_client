@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />  
+	<meta name="format-detection" content="telephone=no" />
+	<title>CESCO</title>
+	<link type="text/css" rel="stylesheet" href="../../common/css/common_iot.css" />
+	<link type="text/css" rel="stylesheet" href="../css/set.css" />
+	<link type="text/css" rel="stylesheet" href="../../root/css/root.css" />
+	<script type="text/javascript" src="../../bizMOB/bizMOB3.js"></script>
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+	<script src="../../common/js/cescoUtil.js"></script>
+	<script src="../../common/js/lib/swipe.js"></script>
+	<script type="text/javascript" src="../js/SET_0301.js"></script>
+</head>
+<body>
+	<div class="wrap hNo2">
+		<header>
+			<div class="headerWrap">
+				<h1 class="hide">wifi 연결</h1>
+			</div>
+		</header>
+		<section>
+			<div class="content">
+				<div class="topNumBox">
+					<ol class="topNumList">
+						<li>
+							<span class="num on">1</span>
+							<span class="title"><em>제품<br />등록</em></span>
+						</li>
+						<li>
+							<span class="num on">2</span>
+							<span class="title"><em>제품<br />연결</em></span>
+						</li>
+						<li>
+							<span class="num off">3</span>
+							<span class="title choice"><em>Wi-Fi<br />연결</em></span>
+						</li>
+						<li>
+							<span class="num">4</span>
+							<span class="title"><em>데이터<br />수신확인</em></span>
+						</li>
+						<li>
+							<span class="num">5</span>
+							<span class="title"><em>정보<br />입력</em></span>
+						</li>
+						<li>
+							<span class="num">6</span>
+							<span class="title"><em>인증번호<br />생성</em></span>
+						</li>
+						<li>
+							<span class="num">7</span>
+							<span class="title"><em>설치<br />완료</em></span>
+						</li>
+					</ol>
+				</div>
+				
+				<div class="scroll-area">
+					<div class="conArea">
+						<div class="setCon">
+							<div class="setTopText">세스코 IOT<span class="point">연결방법 안내</span></div>
+						</div>
+						
+						<div class="slideWrap">
+							<div class="swipe wifi" id="swipe">
+								<div class="swipe-wrap">
+									<div class="swImg01"><span>세스코IOT연결방법1</span></div>
+									<div class="swImg02"><span>세스코IOT연결방법2</span></div>
+									<div class="swImg03"><span>세스코IOT연결방법3</span></div>
+								</div>
+							</div>
+							<div class="sideBtn" id="pageNavi">
+								<span class="on"></span>
+								<span></span>
+								<span></span>
+							</div>
+						</div>
+						
+						<ol class="wifiTextList">
+							<li><span class="num">1.</span> <span class="textArea">홈 화면에서 ‘설정’ &gt; <span class="fontB">‘Wi-Fi’로 이동</span>합니다.</span></li>
+							<li><span class="num">2.</span><span class="textArea fontB">Wi-Fi를 켭니다.</span></li>
+							<li><span class="num">3.</span><span class="textArea"><span class="fontB">‘<span class="cesco_iot red"></span>’를 선택</span>합니다.</span></li>
+							<li><span class="num">4.</span><span class="textArea"><span class="fontB">‘<span class="cesco_iot"></span>’의 암호 <span class= "red">12345678 을 입력</span></span>한 다음  ‘연결’을 탭합니다. 입력한 암호가 올바르지 않으면 연결을 탭할 수 없습니다.</span></li>
+							<li><span class="num">5.</span><span class="textArea">네트워크에 연결되면 네트워크 옆에<span class="iconCheck">체크</span>가 표시되고, 디스플레이의 왼쪽상단 모서리에 <span class="iconWifi">와이파이</span>표시가 나타납니다.</span></li>
+							<li><span class="num">6.</span><span class="textArea">연결을 확인한 뒤, 좌측 상단의 <span class="blue2">‘◀ 세스코에어시스템으로 돌아가기’</span>를 누르시면 앱으로 복귀합니다.</span></li>
+							<li><span class="num">7.</span><span class="textArea"><span class="fontB">확인 버튼</span>을 눌러 다음 설치단계를 진행합니다.</span></li>
+						</ol>
+						
+						<div class="btnAreaB">
+							<button class="btn_blue btnType01" type="button" id="btnConnetToDevice"><em>확  인</em></button>
+							<button class="btn_blue btnType01" type="button" id="btnNext" style="display: none;"><em>제품이 연결 되었습니다　|　다 음</em></button>
+						</div>
+						
+						
+						
+					</div>
+					<div class="grayBg layerNoti" style="display: none;"></div>
+					<div class="writing layerNoti" style="display: none;">제품을 연결하고 있습니다.</div>
+				</div>
+			</div>
+		</section>
+		
+	</div>
+<div class="topfix_area">
+   <div id="bottomCommonMenu"></div>
+</div>	
+</body>
+</html>
+  

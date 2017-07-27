@@ -1,0 +1,16 @@
+{
+  "header" : {
+    "error_code" : "",
+    "error_text" : "",
+    "info_text" : "",
+    "login_session_id" : "",
+    "message_version" : "",
+    "result" : false,
+    "trcode" : ""
+  },
+  "body" : {
+    "P01" : "",
+    "P03" : "",
+    "P02" : ""
+  }
+}

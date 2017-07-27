@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="../css/monitoring.css" />
+    <script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+    <script src="../js/CM031.js"></script>
+    <script src="../js/CM031_001.js"></script>
+    <script src="../js/CM031_002.js"></script>
+    <script src="../js/CM031_003.js"></script>
+    <script src="../js/CM031_004.js"></script>
+    <script src="../js/CM031_005.js"></script>
+    <script src="../../common/js/ImgUtil.js"></script>
+    <script src="../../common/js/cescommutil.js"></script>
+    <script src="../../common/js/jquery-ui-1.10.3.custom.js"></script>
+    <link href="../../common/css/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css" />
+    <title>CESCO 세스코</title>
+</head>
+<body>
+    
+	<div class="topfix_area">
+        <div class="rbtnWrap tit01">
+            <h2>일반모니터링 등록</h2>
+            <button type="button" class="btn02 rcen_btn" id="btnComplete">닫기</button>
+        </div>
+    </div> 
+    <section class="contentsWrap">
+        <table class="tview01" id="custDivInfo">
+            <colgroup>
+                <col style="width:20%" />
+                <col style="width:30%" />
+                <col style="width:20%" />
+                <col style="width:30%" />
+            </colgroup>
+            <tbody>
+	            <tr>
+	                <th scope="row">구획번호</th>
+	                <td><span class="divSeNum"></span></td>
+	                <th scope="row">대분류</th>
+	                <td><span class="divLarge"></span></td>
+	            </tr>
+	            <tr>
+	                <th scope="row">층</th>
+	                <td><span class="floor"></span></td>
+	                <th scope="row">중분류</th>
+	                <td><span class="divMiddle"></span></td>
+	            </tr>
+	            <tr>
+	                <th scope="row">세분류</th>
+	                <td colspan="3"><span class="divDetail"></span></td>
+	            </tr>
+            </tbody>
+        </table>
+        
+        <ul class="acclist">
+            <li class="accodion">
+                <div class="acc_head" name="monitoring">
+                    <p class="tit">일반모니터링</p>
+                </div>
+                <div class="acc_body">
+                    <!-- 모니터링 등록 리스트  -->
+                    <table class="tlist01">
+                        <colgroup>
+                            <col style="width:5%;" />
+                            <col />
+                        </colgroup>
+                        <thead>
+	                        <tr>
+	                            <th></th>
+	                            <th>세부발생위치</th>
+	                        </tr>
+	                        </thead>
+	                        
+	                        <tbody id="tbDetailAreaListNew"></tbody>
+	                        
+	                        <tbody id="tbDetailAreaList" style="display:none;">
+	                        <tr class="detailList" seqn="">
+	                            <th scope="row"></th>
+	                            <td>
+	                                <span class="areaName" unitseq="">화장실 입구</span>
+	                            </td>
+	                        </tr>
+                        </tbody>
+                    </table>
+                    <!-- 모니터링 등록 리스트 끝  -->
+                    
+                    <div class="tab02 item4" id="topButtonList">
+                        <ul>
+                            <li class="topButton"><button type="button" name="name">1. 발생위치명</button></li>
+                            <li class="topButton"><button type="button" name="pest">2. 해충</button></li>
+                            <li class="topButton"><button type="button" name="morn">3. 서비스내용</button></li>
+                            <li class="topButton"><button type="button" name="eqip">4. 시설점검</button></li>
+                        </ul>
+                    </div>
+                    <table class="tlist01" id="detailInfoContent">
+                        <colgroup>
+                            <col style="width:25%;" />
+                            <col style="width:75%;" />
+                        </colgroup>
+                        <tr>
+                            <th><span class="unitseq"></span></th>
+                            <th><span class="areaName"></span></th>
+                        </tr>
+                        </tbody>
+                    </table>
+                    
+                    <!-- 세부발생위치 -->
+                    <div id="moniAreaContent" class="deAreaListConts"></div>
+                    <!-- 세부발생위치 끝 -->
+                    
+                    <!-- 해충 -->
+                    <div id="pestContent" class="deAreaListConts"></div>
+                    <!-- 해충 끝 -->
+                    
+                    <!-- 모니터링 -->
+                    <div id="moniContent" class="deAreaListConts"></div>
+                    <!-- 모니터링 끝 -->
+                    
+                    <!-- 세부발생 위치에 따른 일반 시설점검 -->
+                    <div id="facilCheckContent_monitoring" class="deAreaListConts"></div>
+                    <div id="facilCheckContent"></div>
+                    <!-- 세부발생 위치에 따른 일반 시설점검 끝 -->
+                </div>
+            </li>
+            <li class="accodion">
+                <div class="acc_head" name="checkFacility">
+                    <p class="tit">시설점검</p>
+                </div>
+                <div class="acc_body">
+                    <table class="tlist01">
+                        <colgroup>
+                            <col style="width:5%;" />
+                            <col />
+                        </colgroup>
+                        <thead>
+	                        <tr>
+	                            <th></th>
+	                            <th>시설명</th>
+	                        </tr>
+                        </thead>
+                        <tbody id="eqipListNew"></tbody>
+                        <tbody id="eqipList">
+	                        <tr class="detailList">
+	                            <th scope="row"></th>
+	                            <td>
+	                                <span class="name" recnum="" qltype="" qmtype="" qstype="" qcontent="" qicontent="" img1="" img2=""></span>
+	                            </td>
+	                        </tr>
+                        </tbody>
+                    </table>
+                    <!-- 시설점검 -->
+                    <div id="facilCheckContent_checkFacility">
+                    </div>
+                    <!-- 시설점검 끝 -->
+                </div>
+            </li>
+            <li class="accodion">
+                <div class="acc_head" name="improvement">
+                    <p class="tit">개선사항</p>
+                </div>
+                <div class="acc_body">
+                    <table class="tlist01" id="evalList">
+                        <colgroup>
+                            <col style="width:30%;" />
+                            <col style="width:20%;" />
+                            <col style="width:20%;" />
+                            <col style="width:30%;" />
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th scope="col">개선요청일자</th>
+                            <th scope="col">수용여부</th>
+                            <th scope="col">시행여부</th>
+                            <th scope="col">개선예정일자</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbProvListNew"></tbody>
+                        <tbody id="tbProvList">
+	                        <tr class="detailList">
+	                            <td><span class="provReqDate" recnum="" ymd="" chkimg1="" chkimg2="" prvimg1="" prvimg2="" impcontent=""></span></td>
+	                            <td><span class="suyongyn" code=""></span></td>
+	                            <td><span class="sihangyn" code=""></span></td>
+	                            <td><span class="provPreDate" ymd=""></span></td>
+	                        </tr>
+                        </tbody>
+                    </table>
+                    <!-- 개선사항 등록 -->
+                    <div id="improvementContent" recnum="" workymd="">
+                    </div>
+                    <!-- 개선사항 등록 끝 -->
+                    <div style=>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <!-- //accordion list --> 
+        <footer class="bot_btn item3" id="ftButtonBar">
+            <button type="button" class="btn01" name="btnNew">신규</button>
+            <button type="button" class="btn01" name="btnDelete">삭제</button>
+            <button type="button" class="btn01" name="btnConfirm">등록</button>
+        </footer>
+    </section>
+</body>
+</html>

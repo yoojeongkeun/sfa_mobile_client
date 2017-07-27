@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<link type="text/css" rel="stylesheet" href="../css/common02.css" />
+<link type="text/css" rel="stylesheet" href="../css/style02.css" />
+<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+<script src="../../common/js/jquery-ui.min.js"></script>
+<script src="../js/IS002.js"></script>
+<title>구획화</title>
+</head>
+
+<style>
+.inner_table_body  {max-height: 338px;}
+
+
+</style>
+
+<body>
+	<!-- 레이어 클릭방지 배경처리
+	<div id="blocker" style="display:none;"></div>
+	-->
+	<!-- <div class="topWrap" style="padding-top: 174px;"> -->
+	<div class="topWrap" style="padding-top: 139px;">
+		<section class="contentsWrap">
+			<div class="topfix_area">
+				<!-- <div class="topfix_header">
+					<button type="button" class="btn_end">이전</button>
+					<h1>구획화 등록</h1>
+					<button type="button" class="btn_allmenu">전체메뉴</button>
+				</div> -->
+				<div class="search_input">
+					<div class="input_container">
+						<input type="text" id="custNm" disabled />
+					</div>
+					<div class="user_img"></div>
+					<button type="button" class="remove_btn" style="right: 15px;"></button>
+				</div>
+				<div class="tit_tab">
+					<button class="tab_btn on">구획 변경이력 조회</button>
+					<button class="tab_btn has_open" id="btnTabDiv">고객 구획 등록</button>
+					<!-- <div class="tab_open">
+						<button class="open_btn"></button>
+					</div> -->
+				</div>
+				<div class="Tit_dep01">
+					<table class="list01">
+						<colgroup>
+							<col width="100px">
+							<col width="*">
+							<col width="122px">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>버전</th>
+								<th>시작일자</th>
+								<th>종료일자</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+			<table id="list01New" class="list01 largeNameContents"></table>
+			<div class="contList_top125 depth_01" style="border: initial;">
+				<table id="list01" class="list01 largeNameContents"  style="display:none;">
+					<colgroup>
+						<col width="100px">
+						<col width="*">
+						<col width="122px">
+					</colgroup>
+					<tbody class="dList">
+						<tr class="dTr">
+							<td class="depLine_01 DivVer">8</td>
+							<td class="depLine_01 FrYMD">2014-11-04</td>
+							<td class="depLine_01 ToYMD">2014-11-10</td>
+						</tr>
+						<!-- 삽입되는 Row-->
+						<tr id="inserted_row" class="inserted_row divRow largeTableContents" style="display:none;" load>
+							<td colspan="3" id="append">
+								<table class="inner_table tal">
+									<thead>
+										<tr>
+											<th class="Tit_dep02 tac">구획 위치설명</th>
+										</tr>
+									</thead>
+								</table>
+								<div class="depth_02" id="appendArea">
+									<div class="inner_table_body">
+										<!-- id="appendArea" -->
+										<table class="inner_table tal middleGroup" id="list02">
+											<tbody class="divList middleTbody">
+												<tr class="divTr middleNameContents">
+													<td colspan="3" class="depLine_02 p20">1003 / 레스토랑 / 01 / 창고 / 창고 / 창고</td>
+												</tr>
+												<!-- 삽입되는 Row2-->
+												<tr id="inserted_row" class="inserted_row hisRow middleTableContents" style="display:none;" load>
+													<td colspan="3" class="padd_0">
+														<table class="inner_table">
+															<thead>
+																<tr>
+																	<th class="Tit_dep03 tac p30">변경일자 / 변경사유 / 변경상세내용</th>
+																</tr>
+															</thead>
+														</table>														
+														<div class="depth_03" id="append2"></div> <!-- 구획리스트 아코디언 삽입영역 -->
+														<div class="inner_table_body2" id="appendArea2">
+															<table class="inner_table tal lowGroup" id="list03">
+																<tbody class="hisList lowTbody">
+																	<tr class="hisTr lowNameContents">
+																		<td class="depLine_03 p30"></td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+													</td>
+												</tr>
+												<tr>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+	</div>
+</body>
+</html>

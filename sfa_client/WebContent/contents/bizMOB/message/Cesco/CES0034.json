@@ -1,0 +1,16 @@
+{
+  "header" : "@CescoHeader",
+  "body" : {
+    "insSpaceCD" : "",
+    "insAddr1" : "",
+    "objtNo" : "",
+    "custNo" : "",
+    "buildNo" : "",
+    "insArea" : "",
+    "insAddr2" : "",
+    "envFeatureCD" : "",
+    "authNo" : "",
+    "barcode" : "",
+    "regionID" : ""
+  }
+}

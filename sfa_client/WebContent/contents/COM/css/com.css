@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+
+
+
+@media (max-width: 320px) {
+	.conArea { padding:0 20px;}
+	.con_bracket {  padding:26px 10px 18px 10px;}
+	.setBox .setArea { padding:26px 10px;}
+	.switch { width:40px;}
+	.switch-input:checked + .switch-ani .switch-handle { left:15px; }
+}

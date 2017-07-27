@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../css/root.css" />
+	<title>CESCO 세스코</title>
+</head>
+<body>
+<div class="menuWrap">
+	<header class="hide">
+		<h1>CESCO 세스코</h1>
+	</header>
+	
+	<section>
+		<div class="tit">
+			<h3 class="welcome"><span>변영석</span>님 환영합니다.</h3>
+			<button type="button" class="btn_logout">로그아웃</button>
+		</div>
+		<nav>
+			<ul>
+				<li><button type="button"><span>고객정보 열람</span></button></li>
+				<li><button type="button"><span>구획화 등록</span></button></li>
+				<li><button type="button"><span>카드 승인</span></button></li>
+				<li><button type="button"><span>수금 등록</span></button></li>
+				<li><button type="button"><span>서비스 일정</span></button></li>
+				<li><button type="button"><span>시작 Km 등록</span></button></li>
+				<li><button type="button"><span>지사출발 등록</span></button></li>
+				<li><button type="button"><span>지사도착 등록</span></button></li>
+			</ul>
+		</nav>
+		<button type="button" class="btn_close">닫기</button>
+	</section>
+	
+</div>
+</body>
+</html>

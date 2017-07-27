@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../css/monitoring.css" />
+	<title>CESCO 세스코</title>
+</head>
+<body>
+<div class="subWrap01 bot_fix02">
+	<header class="hide">
+		<h1>모니터링</h1>
+	</header>
+	
+	<section class="contentsWrap">
+		
+		<div class="rbtnWrap tit01">
+			<h2>포충등모니터링 대상</h2>
+			<button type="button" class="btn02 rcen_btn">건 삭제</button>
+		</div>
+		
+		<!-- accordion list -->
+		<ul class="list01 acclist">
+			<li class="on">	<!-- 내용 펼치기 : on 클래스 추가 -->
+				<!-- accordion head -->
+				<div class="acc_head tit02">
+					<p class="tit">범위조정</p>
+				</div>
+				<!-- //accordion head -->
+				
+				<!-- accordion body -->
+				<div class="acc_body">
+				
+					<div class="dlist02">
+						<dl>
+							<dt>설치구획</dt>
+							<dd>
+								<select>
+									<option value=""></option>
+									<option value=""></option>
+								</select>
+							</dd>
+						</dl>
+						<dl>
+							<dt>설치장비</dt>
+							<dd>
+								<select>
+									<option value=""></option>
+									<option value=""></option>
+								</select>
+							</dd>
+						</dl>
+					</div>
+					
+					<div class="c_btn">
+						<button type="button" class="btn01">조회</button>
+					</div>
+					
+				</div>
+				<!-- //accordion body -->
+			</li>
+		</ul>
+		<!-- //accordion list -->
+		
+		<table class="tlist01 group">
+			<colgroup>
+				<col style="width:25%;" />
+				<col style="width:20%;" />
+				<col style="width:20%;" />
+				<col style="width:12%;" />
+				<col />
+			</colgroup>
+			<thead>
+			<tr>
+				<th scope="col">관리번호</th>
+				<th scope="col">번호</th>
+				<th scope="col">대분류</th>
+				<th scope="col">층</th>
+				<th scope="col">세분류</th>
+			</tr>
+			<tr>
+				<th scope="col" colspan="5" class="subj">위치설명</th>
+			</tr>
+			</thead>
+			<tbody class="bg02">
+			<tr>
+				<th scope="row" class="subj"><span></span></th>
+				<td><span></span></td>
+				<td><span></span></td>
+				<td><span></span></td>
+				<td><span></span></td>
+			</tr>
+			<tr>
+				<td colspan="5" class="subj"><span></span></td>
+			</tr>
+			</tbody>
+			<tbody>
+			<tr>
+				<th scope="row" class="subj"><span></span></th>
+				<td><span></span></td>
+				<td><span></span></td>
+				<td><span></span></td>
+				<td><span></span></td>
+			</tr>
+			<tr>
+				<td colspan="5" class="subj"><span></span></td>
+			</tr>
+			</tbody>
+		</table>
+		
+	</section>
+	
+	<!-- bottom fix area -->
+	<div class="botfix_area">
+		<!-- tab -->
+		<ul class="tab03">
+			<li><button type="button"><span>기본해충</span></button></li>
+			<li><button type="button"><span>추가해충</span></button></li>
+			<li class="on"><button type="button"><span>장비점검</span></button></li>
+			<li><button type="button"><span>소모품</span></button></li>
+		</ul>
+		<!-- //tab -->
+		
+		<div class="cont">
+			<div class="dlist02 item2">
+				<dl>
+					<dt><span>전원ON</span></dt>
+					<dd><input type="checkbox" id="" /></dd>
+					<dt><span>청소실시</span></dt>
+					<dd><input type="checkbox" id="" /></dd>
+				</dl>
+				<dl>
+					<dt><span>측정온도<br />(좌)</span></dt>
+					<dd><input type="number" id="" class="txtc_r01" /></dd>
+					<dt><span>측정온도<br />(우)</span></dt>
+					<dd><input type="number" id="" class="txtc_r01" /></dd>
+				</dl>
+			</div>
+		</div>
+		<div class="c_btn"><button type="button" class="btn01">등록</button></div>
+	</div>
+	<!-- //bottom fix area -->
+</div>
+</body>
+</html>

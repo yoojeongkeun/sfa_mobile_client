@@ -1,0 +1,239 @@
+@charset "UTF-8";
+.input_container .inpLocation {
+	width: 100%;
+	height: 37px;
+	background: url(../images/common/bg_btn_map.png) no-repeat;
+	background-size: 2.5em;
+	background-position: left;
+	padding: 5px 5px 5px 48px;
+}
+.search_location .input_container {
+	height: 37px;
+	border: 4px solid #beccd5;
+}
+.list01 tbody .pad0 .inner_table_body .inner_table.tal tbody tr td,
+.list01 tr td {
+	text-align: left;
+	padding: 5px 0 5px 5px;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	border-bottom: #a7b6be 1px solid;
+	line-height: 2em;
+}
+.list01 tbody .color02 td {
+	height: 35px;
+	background-color: #e7e7e7;
+	color: #666;
+	font-size: 1em;
+	line-height: 35px;
+}
+.btmButton {
+	background-color: #fff;
+	bottom: 0;
+	height: 70px;
+	position: fixed;
+	width: 100%;
+	left: 0;
+}
+button {
+	width: 23%;
+	height: 3em;
+	margin-left: 3px;
+	position: relative;
+}
+button.btn_grey {
+	background-color: #7d888b;
+	color: #fff;
+	font-size: 1em;
+}
+button.btn_blue {
+	background-color: #3498db;
+	color: #fff;
+	font-size: 1em;
+}
+button.btn_red {
+	background-color: #c0392b;
+	color: #fff;
+	font-size: 1em;
+}
+button.btn_green {
+	background-color: #17a085;
+	color: #fff;
+	font-size: 1em;
+}
+.div_blue{
+	background-color: #3498db;
+	color: #fff;
+	font-size: 1em;
+	text-align: center;
+	padding: 1px 1px;
+	width: 100%;
+}
+.div_img{
+	background: url(../images/common/img_check_d.png) no-repeat;
+	width:1.9em;
+	background-size: 1.5em;
+	margin-left: 6px;
+	height: 1.6em;
+	text-indent:-999em;
+}
+.btn_Q{
+	background: url(../images/common/img_tips.png) no-repeat;
+	width:2.9em;
+	background-size: 1.6em;
+	height: 1.6em;
+	position: relative;
+	margin-right: -3px;
+}
+
+.topWrap .contentsWrap div .list01 tbody tr td .openBtn {
+	background: url(../images/common/tab_btn_open_n.png) #a5b2b5 no-repeat;
+	background-size: 1.5em;
+	background-position: center;
+	width: 2.5em;
+	height: 2.5em;
+	position: relative;
+	margin-right: 6px;
+}
+
+
+
+
+td.tar {
+	text-align: right;
+}
+td.tac {
+	text-align: center;
+}
+.inpLocation {
+	width: 100%;
+	height: 37px;
+	background: url(../images/common/bg_btn_map.png) no-repeat;
+	background-size: 2.5em;
+	background-position: left;
+	padding: 5px 5px 5px 48px;
+}
+.inner_table .tal tbody tr td {
+	padding: 3px 5px 5px 3px;
+}
+hr {
+	margin: 0.1em 0.01em 0.5em;
+	background: none;
+	border: none;
+	border-bottom: 1px dashed #a4acae;
+}
+.title01 .backBtn {
+	background: url(../images/common/icon_tit_back.png) #336699 no-repeat;
+	background-size: 1.2em;
+	background-position: center;
+	width: 2.2em;
+	height: 2.2em;
+	position: absolute;
+	top: 48px;
+	left: 4px;
+}
+.title02 .num_lists {
+	font-size: 1em;
+	color: #fff9d4;
+	position: absolute;
+	top: 146px;
+	right: 16px;
+	width: 40px;
+}
+.title02 .num_lists01 {
+	font-size: 1em;
+	color: #fff9d4;
+	position: absolute;
+	top: 104px;
+	right: 16px;
+	width: 40px;
+}
+.topWrap .contentsWrap div .list01 tbody tr td .openBtn {
+	background: url(../images/common/tab_btn_open_n.png) #a5b2b5 no-repeat;
+	background-size: 1.5em;
+	background-position: center;
+	width: 2.5em;
+	height: 2.5em;
+	position: relative;
+	margin-right: 6px;
+}
+.topWrap .contentsWrap div .list01 tbody .color02.on td .closeBtn {
+	background: url(../images/common/tab_btn_close.png) #e5e7e8 no-repeat;
+	background-size: 1.5em;
+	background-position: center;
+	width: 2.5em;
+	height: 2.5em;
+	position: relative;
+	margin-right: 6px;
+}
+.topWrap .contentsWrap .contList {
+	position: relative;
+}
+.inner_table_body .inner_table.tal tbody {
+	background-color: #e5e7e8;
+}
+.inner_table_body .inner_table.tal tbody tr .selectBG {
+	border-bottom: #a7b6be 0px solid !important;
+	background-color: #638383;
+	color: #fff;
+	line-height:1.5em;
+	width:100%;
+	min-width: 320px;
+	padding: 0;
+}
+button.btn_green2 {
+	background-color: #17a085;
+	color: #fff;
+	font-size: 1em;
+	border: #e1e1e1 solid 1px;
+	width:98%;
+	margin:0;
+}
+.topfix_area div table .div_mov td{ padding:5px 5px;
+}
+.img_arrow { background:url(../images/common/img_arrow.png) no-repeat; background-position:center; background-size:1em; width:30px; height:30px;}
+/*-----------------Padding & Margin 007,009.html------------*/
+.pad_T135 {
+	padding-top:135px;
+}
+h3.pad_L48 {
+	padding-left:48px;
+}
+.h30em {
+	height:30em;
+}
+.list01 tbody #inserted_row .pad0 {
+	padding:0;margin:0;
+}
+.Wp48 {
+	width:48%;
+}
+.Wp98 {
+	width:98%;
+}
+.pad_T140 {
+	padding-top:140px;
+}
+.pad_T180 {
+	padding-top:180px;
+}
+.inner_table.tal thead tr .Tit_dep01 th {
+	border-bottom: #a7b6be 0px solid;
+	color: #2c3e50;
+	line-height: 3em;
+}
+
+.inner_table tbody .pad_L50 td {
+	padding-left:50px; font-size:1em;
+}
+
+#layerPopup .contList_top250 .list01 tbody .color02 td {height:35px; background-color:#e7e7e7;color:#666;text-align:left;line-height:2em;}
+#layerPopup .contList_top260 .list01 tbody #inserted_row .pad0 .inner_table.tal thead .bdrLine td .btn_plusRow {
+	background:url(../images/common/btn_plus.png) no-repeat #f8f8f8; background-size:1.7em; background-position:center;float:right; width:6%; height:2em;position: static;width: 2.5em;
+	height: 2.5em;margin-right: 6px;
+}
+#layerPopup .contList_top260 .list01 tbody #inserted_row .pad0 .inner_table_body .inner_table.tal tbody tr td .btn_minusRow {
+	background:url(../images/common/btn_minus.png) no-repeat #fff; background-size:1.7em; background-position:center;float:right; width:15%;position: static;width: 2.5em;
+	height: 2.5em;margin-right: 6px;
+}

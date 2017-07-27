@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../root/css/root.css" /> 
+	<link type="text/css" rel="stylesheet" href="../css/service.css" />	
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>    
+	<script src="../js/SD011.js"></script>
+    <script src="../../common/js/cescommutil.js"></script>    
+    <script src="../../common/js/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="../../common/js/jquery.ui.touch-punch.js"></script>
+
+</head>
+
+<body>
+
+<!-- wrap -->
+<div id="wrap" data-role="page">
+
+  <!-- header 영역 -->
+  <div id="header" style="font-family: 맑은 고딕; text-align: right; position: relative;">
+    <div><img id="btnCal" src="../images/btn_calendar.png" id="btnPrev" style="position: absolute; top: 5px; left: 15px; width: 40px; z-index: 5;"/></div>
+  	<div><img src="../images/arrow-left.png" id="btnPrev" style="position: absolute; right: 120px;" /></div>
+  	<div><img src="../images/arrow-right.png" id="btnNext" style="position: absolute; right: 60px;" /></div>
+  	<div><span id="headerYear" style="padding-right: 10px;"></span></div>
+  	<div><span id="headerMonth" style="font-size: 1.9em; font-weight: bold; padding-right: 10px;"></span></div>  
+  </div>
+  <!--// header 영역 -->
+  
+  <!-- contents 영역 -->
+  <div id="content">
+    <!-- 달력 -->
+    <div class="calendar_box" id="calendar">
+  
+    </div>
+    <!--// 달력 -->     
+    <div id="contlistNew" style="margin-bottom: 50px;"></div>
+    <div id="contlist" style="display: none; margin-bottom: 50px;">  
+    	<div style="position: relative; height: 55px;"><span id="detailDate" style="position: absolute; right: 13px; top: 12px; font-size: 2em; font-family: 맑은 고딕;">10월 2일</span></div>
+		<table class="tlist01 group">			
+			<colgroup>
+				<col style="width:15%;" />
+				<col style="width:15%;" />
+				<col style="width:35%;" />
+				<col style="width:15%;" />
+			</colgroup>
+			<thead>
+			<tr>
+				<th scope="col">업종</th>
+				<th scope="col">영업구분</th>
+				<th scope="col">고객명</th>
+				<th scope="col">영업단계</th>
+			</tr>
+			<tbody class="conBody">  <!-- style="display:none;" -->
+				<tr style="height: 50px;" class="trTitle">
+					<td class="custType" style="font-size: 0.8em;"></td>
+					<td class=salesType style="font-size: 0.8em;"></td>
+					<td style="font-size: 0.8em;"><span class="salesCustName"></span></td>
+					<td class="salesStep" style="font-size: 0.8em;"></td>
+				</tr>	
+				
+				<tr style="display: none;" class="trList">
+					<td colspan="4" style="padding: 0 0 0 0;">
+	 					<div class="detailWrap" style="padding: 7px; background: rgb(255, 249, 238); border-top: 1px solid #d9d9d9;">
+							<table class="tlist01" style="font-size: 0.8em; border-left: 1px solid #d9d9d9; border-right: 1px solid #d9d9d9; background: #fff;">
+								<colgroup>
+									<col style="width:15%;" />
+									<col style="width:35%;" />
+									<col style="width:15%;" />
+									<col />
+								</colgroup>
+								<tbody>
+								<tr class="trTodoDate">
+									<th scope="row" style="text-align: center;">고객명</th>									
+									<td colspan="3">
+										<div>
+											<span class="custName"></span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row" style="text-align: center;">담당부서</th>
+									<td>
+										<div style="text-align: left;">
+											<span class="responseDept"></span>
+										</div>
+									</td>
+									<th scope="row" style="text-align: center;">담당자</th>
+									<td>
+										<div>
+											<span class="responseUser"></span>
+										</div>
+									</td>
+								</tr>								
+								<tr class="trTodoDate">
+									<th scope="row" style="text-align: center;">접촉사유</th>									
+									<td colspan="3">
+										<div style="text-align: left;">
+											<span class="contactReason"></span>
+										</div>
+									</td>									
+								</tr>
+								<tr class="trTodoDate">
+									<th scope="row" style="text-align: center;">주소</th>									
+									<td colspan="3">
+										<div>
+											<span class="address"></span>
+										</div>
+									</td>
+								</tr>
+								<tr class="trTodoDate">
+									<th scope="row" style="text-align: center;">시작시간</th>									
+									<td>
+										<div style="text-align: left;">
+											<span class="startDate"></span>
+										</div>
+									</td>
+									<th scope="row" style="text-align: center;">종료시간</th>									
+									<td>
+										<div>
+											<span class="endDate"></span>
+										</div>
+									</td>
+								</tr>								
+								<tr class="trTodoDate">
+									<th scope="row" style="text-align: center;">내용</th>									
+									<td colspan="3">
+										<div>
+											<textarea rows="5" cols="50" class="contents" readonly></textarea>
+										</div>
+									</td>
+								</tr>			
+							</table>	
+							<div class="item4" style="padding-top: 5px;">
+								<button type="button" class="btn04 btnDetail">상세정보</button>
+								<button type="button" class="btn04 btnContract">계약정보</button>
+								<button type="button" class="btn04 btnVBC">VBC계약</button>
+								<button type="button" class="btn04 btnContactHistory">접촉이력</button>
+								<button type="button" class="btn04 btnModify">일정수정</button>
+							</div>				
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+     </div>
+     <div style="height:3px;"></div>
+    
+  </div>
+  <!--// contents 영역 -->
+  
+  <!-- footer 영역 -->
+  <footer class="bot_btn">		
+		<button type="button" class="btn01 btnRegist">영업일정 등록</button>
+	</footer>
+  <!--// footer 영역 -->  
+  
+</div>
+<!--// wrap -->
+
+</body>
+</html>

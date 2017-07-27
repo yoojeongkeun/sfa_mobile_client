@@ -1,0 +1,14 @@
+{
+  "header" : "@CescoHeader",
+  "body" : {
+    "DIVSENUM" : "",
+    "CUSTCODE" : "",
+    "DEOCK" : "",
+    "DIVVER" : "",
+    "OBJTTYPE" : "",
+    "OBJTK" : "",
+    "EDITBASE" : "",
+    "EDITDESC" : "",
+    "USERID" : ""
+  }
+}

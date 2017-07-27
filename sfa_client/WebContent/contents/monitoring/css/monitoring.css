@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+.top_fix01.cm030 {padding-top:133px;}
+.bot_fix02 {height:100%; padding-bottom:260px;}
+.bot_fix02 .contentsWrap {height:100%; padding-bottom:0; overflow:auto;}
+.bot_fix02 .pageTypeA {bottom:0; height:292px;}
+.bot_fix02 .pageTypeB {bottom:0; height:259px;}
+.bot_fix02 .botfix_area .cont {height:156px; padding:0 10px; overflow:auto;}
+.bot_fix02 .botfix_area .dlist02 dt {width:15%; color:#747474; text-align:right;}
+.bot_fix02 .botfix_area .dlist02 dt:first-child {width:12%;}
+.bot_fix02 .botfix_area .dlist02.item2 dt {width:25%;}
+.bot_fix02 .botfix_area input[type=number], .bot_fix02 .botfix_area .dlist02 input[type=text] {width:3em; text-align:center;}
+.bot_fix02 .botfix_area .list02 {padding:10px;}
+.bot_fix02 .botfix_area .list02 li {text-align:center;}
+.bot_fix02 .botfix_area .list02 select {width:60%;}
+
+/*** 바코드 촬영 ***/
+.scan {position:relative; height:80%; margin-bottom:10px; overflow:hidden;}
+.scan:before {content:""; position:absolute; left:-25px; top:0; right:-25px; height:50px;
+	background:url("../images/bg_scan.png") no-repeat 0 -25px, url("../images/bg_scan.png") no-repeat right -25px; background-size:50px auto, 50px auto;
+	z-index:100;
+}
+.scan:after {content:""; position:absolute; left:-25px; right:-25px; bottom:-25px; height:50px;
+	background:url("../images/bg_scan.png") no-repeat 0 0, url("../images/bg_scan.png") no-repeat right 0; background-size:50px auto, 50px auto;
+	z-index:100;
+}
+.mntType1, .mntType2, .mntType4, .mntType7 { display:none; }
+
+
+.pageTypeA.expand {height: 571px;}
+.bot_fix02 .pageTypeA .cont.expand {height: 389px;}
+
+.pageTypeB.expand {height: 571px;}
+.bot_fix02 .pageTypeB .cont.expand {height: 422px;}
+
+#hideList {height: 25px; padding-top: 11px; padding-left: 8px; background: #fff3dd; overflow-y: hidden; margin-top: 8px; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;}

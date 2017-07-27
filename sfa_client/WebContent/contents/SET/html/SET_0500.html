@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />  
+	<meta name="format-detection" content="telephone=no" />
+	<title>CESCO</title>
+	<link type="text/css" rel="stylesheet" href="../../common/css/common_iot.css" />
+	<link type="text/css" rel="stylesheet" href="../css/set.css" />
+	<link type="text/css" rel="stylesheet" href="../../root/css/root.css" />
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+	<script src="../../common/js/cescoUtil.js"></script>
+	<script type="text/javascript" src="../js/SET_0500.js"></script>
+</head>
+<body>
+	<div class="wrap hNo2">
+		<header>
+			<div class="headerWrap">
+				<h1 class="hide">IP등록</h1>
+			</div>
+		</header>
+		<section>
+			<div class="content">
+				<div class="topNumBox">
+					<ol class="topNumList">
+						<li>
+							<span class="num on">1</span>
+							<span class="title"><em>제품<br />등록</em></span>
+						</li>
+						<li>
+							<span class="num on">2</span>
+							<span class="title"><em>제품<br />연결</em></span>
+						</li>
+						<li>
+							<span class="num off">3</span>
+							<span class="title choice"><em>Wi-Fi<br />연결</em></span>
+						</li>
+						<li>
+							<span class="num">4</span>
+							<span class="title"><em>데이터<br />수신확인</em></span>
+						</li>
+						<li>
+							<span class="num">5</span>
+							<span class="title"><em>정보<br />입력</em></span>
+						</li>
+						<li>
+							<span class="num">6</span>
+							<span class="title"><em>인증번호<br />생성</em></span>
+						</li>
+						<li>
+							<span class="num">7</span>
+							<span class="title"><em>설치<br />완료</em></span>
+						</li>
+					</ol>
+				</div>
+				
+				<div class="scroll-area">
+					<div class="conArea" id="contentsWrap">
+						<div class="set05">
+							<div class="setCon">
+								<div class="setTopText"><span class="point">IP주소를 입력</span>해주세요.</div>
+							</div>
+							
+							<ul class="radioBox">
+								<li><input type="radio" name="cngType"  id="r1"value="dynamic" checked="checked" /><label for="r1">자동으로 IP 주소 받기</label></li>
+								<li><input type="radio" name="cngType" id="r2" value="static"/><label for="r2">직접 입력</label></li>
+							</ul>
+							
+							<div class="selListBox">
+								<ul class="conInput"> <!-- 입력중 : on클래스 추가,  에러일경우 errorInput 클래스 추가 -->
+									<li><input type="tel" class="inp"  placeholder="IP주소" disabled="disabled" id="ipAddress"/></li>
+									<li><button type="button" class="btn_clear btnTxtClear" style="display: none;"><em>clear</em></button></li>
+								</ul>
+							</div>
+							<div class="selListBox">
+								<ul class="conInput"> <!-- 입력중 : on클래스 추가,  에러일경우 errorInput 클래스 추가 -->
+									<li><input type="tel" class="inp" placeholder="서브넷 마스크" disabled="disabled" id="subnetMask"/></li>
+									<li><button type="button" class="btn_clear btnTxtClear" style="display: none;"><em>clear</em></button></li>
+								</ul>
+							</div>
+							<div class="selListBox">
+								<ul class="conInput"> <!-- 입력중 : on클래스 추가,  에러일경우 errorInput 클래스 추가 -->
+									<li><input type="tel" class="inp"  placeholder="기본 게이트웨이" disabled="disabled"id="basicGateway" /></li>
+									<li><button type="button" class="btn_clear btnTxtClear" style="display: none;"><em>clear</em></button></li>
+								</ul>
+							</div>
+							<div class="selListBox selLast">
+								<ul class="conInput"> <!-- 입력중 : on클래스 추가,  에러일경우 errorInput 클래스 추가 disabled빼면 입력활성화 -->
+									<li><input type="tel" class="inp" placeholder="기본 설정 DNS서버" disabled="disabled" id="basicDNS" /></li>
+									<li><button type="button" class="btn_clear btnTxtClear" style="display: none;"><em>clear</em></button></li>
+								</ul>
+							</div>
+							<!-- 
+							<div class="grayText">확인 버튼을 누르면, 자동으로 IP 주소를 연결합니다.</div> -->
+							
+							<div class="btnAreaB">
+								<button class="btn_blue btnType01" type="button" id="btnNext"><em>다 음</em></button>
+							</div>
+						</div>
+					</div>
+					<div class="grayBg layerNoti" style="display: none;"></div>
+					<div class="writing layerNoti" style="display: none;">기기 설정중...</div>
+				</div>
+			</div>
+		</section>
+		
+	</div>
+<div class="topfix_area">
+   <div id="bottomCommonMenu"></div>
+</div>	
+</body>
+</html>
+  

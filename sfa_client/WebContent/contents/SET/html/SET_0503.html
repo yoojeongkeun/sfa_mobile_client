@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />  
+	<meta name="format-detection" content="telephone=no" />
+	<title>CESCO</title>
+	<link type="text/css" rel="stylesheet" href="../../common/css/common_iot.css" />
+	<link type="text/css" rel="stylesheet" href="../css/set.css" />
+	<link type="text/css" rel="stylesheet" href="../../root/css/root.css" />
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+	<script src="../../common/js/cescoUtil.js"></script>
+	<script type="text/javascript" src="../js/SET_0503.js"></script>
+</head>
+<body>
+	<div class="wrap hNo2">
+		<header>
+			<div class="headerWrap">
+				<h1 class="hide">데이터 수신확인</h1>
+			</div>
+		</header>
+		<section>
+			<div class="content">
+				<div class="topNumBox">
+					<ol class="topNumList">
+						<li>
+							<span class="num on">1</span>
+							<span class="title"><em>제품<br />등록</em></span>
+						</li>
+						<li>
+							<span class="num on">2</span>
+							<span class="title"><em>제품<br />연결</em></span>
+						</li>
+						<li>
+							<span class="num on">3</span>
+							<span class="title"><em>Wi-Fi<br />연결</em></span>
+						</li>
+						<li>
+							<span class="num off">4</span>
+							<span class="title choice"><em>데이터<br />수신확인</em></span>
+						</li>
+						<li>
+							<span class="num">5</span>
+							<span class="title"><em>정보<br />입력</em></span>
+						</li>
+						<li>
+							<span class="num">6</span>
+							<span class="title"><em>인증번호<br />생성</em></span>
+						</li>
+						<li>
+							<span class="num">7</span>
+							<span class="title"><em>설치<br />완료</em></span>
+						</li>
+					</ol>
+				</div>
+				
+				<div class="scroll-area">
+					<div class="conArea" id="contentsWrap">
+						<div class="set08">
+						<div class="setCon" id="resultI">
+								<div class="setTopText pds">데이터를 수신중 입니다.</div> 
+								<div class="setTopText02">정상적으로 설치되었을 경우,<br />공기청정기에서 측정된 공기질 데이터가 보여집니다</div>
+							</div>
+							
+							<div class="setCon" id="resultS" style="display: none;">
+								<div class="setTopText pds">데이터 <span class="point">수신 성공</span></div> 
+								<div class="setTopText02">지금부터 공기청정기 IOT 서비스를 이용하실 수 있습니다.<br />확인을 누르시면 홈 화면으로 이동합니다.</div>
+							</div>
+							
+							<div class="setCon" id="resultF" style="display: none;">
+								<div class="setTopText pds">데이터 <span class="point red">수신 실패</span></div> 
+								<div class="setTopText02 red">센서 데이터를 확인할 수 없습니다.<br />1분 후에 다시 시도해 주세요.</div> 
+							</div>
+							
+							<div class="setCon" id="resultR" style="display: none;">
+								<div class="setTopText pds">제품 설치 실패<span class="point red"></span></div> 
+								<div class="setTopText02 red">설치하기를 2단계 (제품 AP모드 변경) <br/>부터 다시 시작합니다. </div> 
+							</div>
+							
+							<div class="table_type03">
+								<table summary="">
+								<caption></caption>
+									<colgroup>
+										<col width="83px" />
+										<col  />
+									</colgroup>
+									<tbody id="listTemplate" style="display: none;">
+										<tr class="record">
+											<th><span class="indexName"></span><br />(<span class="indexMeasure"></span>)</th>
+											<td><span class="isSuccess"></span></td>
+										</tr>
+									</tbody>
+									<tbody id="nodata" style="display: none;">
+										<tr>
+												<th>라돈<br />(pCi/L)</th>
+												<td><span class="imposIcon">수신 불가</span></td>
+											</tr>
+											<tr>
+												<th>극초미세먼지<br />(ug/㎥)</th>
+												<td><span class="imposIcon">수신 불가</span></td>
+											</tr>
+											<tr>
+												<th>초미세먼지<br />(ug/㎥)</th>
+												<td><span class="imposIcon">수신 불가</span></td>
+											</tr>
+											<tr>
+												<th>미세먼지<br />(ug/㎥)</th>
+												<td><span class="imposIcon">수신 불가</span></td>
+											</tr>
+											<tr>
+												<th>이산화탄소<br />(ppb)</th>
+												<td><span class="imposIcon">수신 불가</span></td>
+											</tr>
+											<tr>
+												<th>유기화합물<br />(ppm)</th>
+												<td><span class="imposIcon">수신 불가</span></td>
+											</tr>
+									</tbody>
+								</table>
+							</div>
+														
+							<div class="btnAreaB type01">
+								<button class="btn_blue btnType01" type="button" id="btnNext"  style="display: none;"><em>확 인</em></button>
+								<button class="btn_blue btnType01" type="button" id="btnReflash" style="display: none;"><em>다시 시도</em></button>
+								<button class="btn_blue btnType01" type="button" id="btnBack" style="display: none;"><em>확 인</em></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+	</div>
+<div class="topfix_area">
+   <div id="bottomCommonMenu"></div>
+</div>	
+</body>
+</html>
+  

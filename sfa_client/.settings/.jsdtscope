@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="contents/bizMOB/bizMOB-converter.js|contents/bizMOB/bizMOB-core.js|contents/bizMOB/bizMOB-jsloader-1.0.js|contents/bizMOB/bizMOB-multilayout3.js|contents/bizMOB/bizMOB-util3.js|contents/bizMOB/bizMOB-xross3.js|contents/bizMOB/bizMOB3.js|contents/bizMOB/jquery-1.11.1.js|contents/bizMOB/jscore/jquery-1.7.2.min.js|contents/common/js/jquery-ui.min.js|contents/common/js/jquery.event.move.js" kind="src" path="WebContent"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.WebProject">
+		<attributes>
+			<attribute name="hide" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.baseBrowserLibrary"/>
+	<classpathentry kind="output" path=""/>
+</classpath>

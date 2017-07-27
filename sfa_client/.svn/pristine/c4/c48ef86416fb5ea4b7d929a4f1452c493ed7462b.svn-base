@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../css/sales.css" />
+	<link href="../../common/css/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css">
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+	<script src="../../common/js/jquery-ui-1.10.3.custom.js"></script>
+	<script src="../../common/js/cescommutil.js"></script>
+    <script src="../js/SD011_pop.js"></script>	
+    <script src="../../common/js/useBackButton.js"></script>
+	<title>CESCO 세스코</title>
+</head>
+<body>
+<div class="popWrap01 P5" style=" border: none;">
+	<header>
+		<h1>영업계획 등록</h1>
+		<input type="button" class="btn_close">
+	</header>
+	
+	<section class="contentsWrap">
+		<table class="tlist00">
+			<colgroup>
+				<col style="width:30%;">
+				<col style="width:*;">
+				<col style="width:30%;">
+			</colgroup>
+			<tbody>
+
+			<tr>
+				<td>
+					<input type="text" placeholder="고객코드" id="txtCustCode">
+				</td>
+				<td colspan="2">
+					<input type="text" placeholder="고객명" style="width:75%;" id="txtCustName">
+					<button class="btn_search"></button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" placeholder="영업담당부서" disabled id="txtDeptName">
+				</td>
+				<td>
+				<input type="text" placeholder="영업담당자" disabled id="txtUserName">
+				</td>
+				<td>
+				<input type="text" placeholder="고객구분" disabled id="txtCustType">
+				</td>
+			</tr>			
+			<tr>
+				<th style="padding-left:10px;">
+					주소
+				</th>
+				<td colspan="2">
+					<input type="text" id="txtAddress" disabled>
+				</td>
+			</tr>
+			<tr>
+				<th style="padding-left:10px;">
+					제목
+				</th>
+				<td colspan="2">
+					<input type="text" id="txtTitle" disabled>
+				</td>
+			</tr>
+			<tr>
+				<th style="padding-left:10px;">
+					방문/접촉사유
+				</th>
+				<td colspan="2">
+					<select id="selReason">
+						
+					</select>
+				</td>
+			</tr>
+		</table>
+		<table class="tlist00">
+			<colgroup>
+				<col style="width:12%;">
+				<col style="width:*;">
+				<col style="width:30%;">
+			</colgroup>
+			<tbody>			
+			
+			<tr>
+				<th>
+					시작시간
+				</th>
+				<td>
+					<div class="rbtnWrap" style="padding-right: 0px;">
+						<div>
+							<p class="inp_cal"><input type="text" id=calFrom readonly /><button type="button" id="btnCalFrom" class="btn_cal" >달력</button>	</p>
+						</div>
+					</div>
+				</td>
+				<td>
+					<input type="time" style="width: 140px;" value="09:00" id="dteFromTime">
+				</td>
+			</tr>
+			<tr>
+				<th>
+					종료시간
+				</th>
+				<td>
+					<div class="rbtnWrap" style="padding-right: 0px;">
+						<div>
+							<p class="inp_cal"><input type="text" id="calTo" readonly disabled/><button type="button" id="btnCalTo" class="btn_cal" disabled >달력</button>	</p>
+						</div>
+					</div>
+				</td>
+				<td>
+					<input type="time" style="width: 140px;" value="10:00" id="dteToTime">
+				</td>
+			</tr>
+		</tbody>
+		</table>
+		<div style="text-align; float: left; font-weight: bold; font-size: 12px; margin-left: 10px;">내용</div>
+		<div style="float: left; margin-left: 8px; width: 86.7%;">
+			<textarea id="txtContents" style="height: 150px;"></textarea>
+		</div>		
+	</section>
+	<div style="height: 150px;"></div>
+	
+	<footer class="popbot_btn">
+		<button type="button" class="btn_02 btnRegist">등록</button>
+		<button type="button" class="btn01 btnCancel">취소</button>
+	</footer>
+
+</div>
+</body>
+</html>

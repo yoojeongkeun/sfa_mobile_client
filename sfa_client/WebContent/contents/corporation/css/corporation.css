@@ -1,0 +1,262 @@
+@charset "UTF-8";
+
+
+/***********CM01***********/
+
+input[type=checkbox]{
+  width: 15px;
+  height: 15px;
+}
+
+
+
+
+.dlist02 {display:table; width:100%; margin:0px 0; border-collapse:collapse;}
+.dlist02 dt, .dlist02 dd {display:table-cell; padding:0px 0px; vertical-align:middle;}
+.dlist02 dt {width:20%; height:30px; color:#76b4d3; white-space:nowrap;}
+
+.radio_m {vertical-align: middle; padding: 20px;}
+
+.tlist00{background: #fff;}
+.tlist00 tbody th{padding-left: 10px; text-align: left;}
+.tlist00 tr, .tlist00 td{border-top: none;border-bottom: 1px solid #c3d5df;}
+
+.tlist01 thead th{  height: 20px;}
+.tlist01 thead th {font-size: 11px; height:25px; padding:0 2px; color:#575757; background:#bcc4d0; border:none;}
+.tlist01 thead tr:first-child th {background:#efefef;
+  border-left:1px solid #fff;border-bottom: none; border-top: none;
+}
+.tlist01 thead tr:last-child th{background:#efefef;  border-left:1px solid #fff;border-bottom: 1px solid #D9DEE5; border-top:1px #fff solid;     line-height: 15px;
+}
+
+.tlist01 th, .tlist01 td
+{
+  border-top: 1px solid #D9DEE5;
+  border-bottom: 1px solid #D9DEE5;
+  padding: 3px 3px;
+  font-size: 12px;
+  height: 25px;
+  line-height: 20px;
+}
+.tlist01 tbody th{
+	padding:0px;
+}
+
+
+.tlist01 td:first-child{  padding-left: 0px;}
+.tlist01 td:last-child {  padding-right: 0px; }
+
+
+.t_dep02{  
+	border-style: dashed;
+  	border-width: 1px 0 0 0;
+  	border-collapse: collapse;
+  	background: #f6f6f6;
+  	  margin-top: 5px;
+  }
+.t_dep02 tbody th{color:#575757; font-size: 12px; padding-left: 10px;}
+.t_dep02 tbody td{font-size: 11px;text-align: left;}
+
+
+.addfile li {background:#F7F7F7 url(../../common/images/img_file.png) 2% 50%; padding:5px 5px 5px 30px; text-align: left;background-repeat: no-repeat;
+	font-size: 12px;
+  background-size: 13px;
+  border-bottom: 1px solid #eaeaea;}
+
+
+
+
+.btn_search{
+	width: 30px; 
+	height: 30px;
+	background-size: 20px;
+	background-repeat: no-repeat;
+}
+
+.btn_search01{
+  background:#4b8dcd url("../images/btn_search01.png") no-repeat 40px 7px;
+  border-radius:3px;
+  width: 128px; 
+  height: 32px;
+  background-size: 15px;
+  color:#fff;
+  padding-left: 14px;
+  background-repeat: no-repeat;
+  font-size: 13px;
+}
+
+
+
+
+.dep02{
+  background: #fff;
+  text-align: right;
+  border-radius:3px;
+  padding: 10px;
+  border:1px solid #989898;  
+  margin:10px;
+}
+.c_btn {margin:0; padding:0px; background:#fff; overflow:hidden;border-bottom:0px solid #c3d5df}
+
+.btn_result, .btn_result_check{
+  display:inline-block; 
+  min-width:4em; 
+  height:32px; 
+  padding:0 5px; 
+  color:#fff; 
+  font-weight:bold; 
+  font-size:0.9em;
+  background:#878787 url("../images/img_result.png") no-repeat 15px center;
+  background-size: 18px;
+  border-radius:4px;
+  width: 80px;
+  padding-left: 23px;
+}
+.btn_result_check{
+  background:#878787 url("../images/img_result01.png") no-repeat 15px center;
+  background-size: 18px;
+}
+.btn_result01, .btn_result01_check{
+  display:inline-block; 
+  min-width:4em; 
+  height:32px; 
+  padding:0 5px; 
+  color:#fff; 
+  font-weight:bold; 
+  font-size:0.9em;
+  background:#878787 url("../images/img_result.png") no-repeat 15px center;
+  background-size: 18px;
+  border-radius:4px;
+  width: 100px;
+  padding-left: 30px;
+}
+.btn_result01_check{
+  background:#878787 url("../images/img_result01.png") no-repeat 15px center;
+  background-size: 18px;
+}
+.btn01 {display:inline-block; min-width:4em; height:35px; padding:0 5px; color:#5f6060; font-weight:bold; font-size:0.9em;
+  background:#e8edf6; border-radius:4px;border:1px solid #B3BFD2;
+}
+.btn_02{display:inline-block; min-width:4em; height:35px; padding:0 5px; color:#fff; font-weight:bold; font-size:0.9em;
+  border-radius:4px;border:1px solid #2268ac;background:#4b8dcd}
+
+.btn03 {display:inline-block; min-width:4em; height:32px; padding:0 5px; color:#fff; font-weight:bold; font-size:0.9em;
+  background:#4b8dcd; border-radius:4px;
+}
+
+
+.talP10{
+  text-align: left;
+  padding-left: 10px;
+}
+
+.sumWrap{
+  background:#F1F3F7;
+  border-radius: 3px;
+  padding:5px; 
+  margin: 56px 10px 0 10px;
+  text-align: right;
+
+}
+.sumWrap li label{
+  height: 20px;
+  line-height: 22px;
+  font-size: 11px;
+  font-weight: normal;
+  color: #2A6399;
+}
+.sumWrap li input{width: 90px !important;
+  height: 32px;  margin-left: 10px;text-align: right;color: #dd7800;font-size: 15px;
+}
+
+.label01{
+  float: left;
+  background: #ff7300;
+  width: 60px;
+  height: 17px;
+  line-height: 18px;
+  border-radius: 30px;
+  padding: 3px;
+  text-align: center;
+  font-size: 11px;
+  color: #fff;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.subWrap01{
+    margin: 8px;
+    background:#fff;
+    padding:10px;
+    border-radius: 5px;
+    border:1px solid #989898;
+    overflow: auto;
+}
+.subWrap02{
+    margin:0px 8px 53px 8px;
+    background:#fff;
+    padding:10px;
+    border-radius: 5px;
+    border:1px solid #989898;
+}
+.Tdep01{
+  background:#f6f6f6;
+  padding:0px 10px 10px 10px;
+  border-style: dashed;
+  border-width: 1px 0 0 0;
+}
+
+
+.tlist01 .Tdep01 table thead th{background: #bcc4d0; color: #fff;text-align: center; border-left: 1px solid #f6f6f6;}
+
+.tlist01 .Tdep01 table thead th, .tlist01 .Tdep01 table tbody td
+{
+  border-top: 0 solid #D9DEE5;
+  padding: 3px 3px;
+  font-size: 11px;
+  height: 20px;
+  line-height: 20px;
+  border-width: 0px 0px;
+}
+.tlist01 .Tdep01 table thead th{
+    border-width: 0px 1px;
+}
+.tlist01 .Tdep01 table tbody td{
+  background: #fff;
+  font-size: 11px;
+}
+
+.sumCel{
+  text-align: right;
+  padding-top: 10px;
+  font-weight: bold;
+  color: #061f37;
+}
+.sumCel input{text-align: right; width: 120px;}
+.Ttit{
+  text-align: left !important;
+  background: none !important;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+
+textarea{height: 100px;}
+
+.nvi_title{height: 33px;line-height: 33px;width: 100%; background:#737373 url("../../common/images/img_home.png") no-repeat 15px center;
+  background-size: 10px; font-size: 11px; color: #fff;padding-left: 30px;}
+.nvi_title dl dd:first-child {float: left;}
+.nvi_title dl dd:nth-child(2)
+{ position: relative;  text-align: right;  right: 38px;bottom: 3px;}
+
+
+.tar{text-align: right !important;}
+
+.subtit {
+    background: url("../images/bul_tit02.png") no-repeat 9px 8px;
+    background-size: 11px;
+    font-size: 12px;
+    padding-left: 22px;
+    /* padding: 5px 10px 5px 30px; */
+    height: 26px;
+    line-height: 26px;}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />  
+	<meta name="format-detection" content="telephone=no" />
+	<title>CESCO</title>
+	<link type="text/css" rel="stylesheet" href="../../common/css/common_iot.css" />
+	<link type="text/css" rel="stylesheet" href="../css/set.css" />
+	<link type="text/css" rel="stylesheet" href="../../root/css/root.css" />
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+	<script src="../../common/js/cescoUtil.js"></script>
+	<script type="text/javascript" src="../js/SET_0900.js"></script>
+</head>
+<body>
+	<div class="wrap hNo2">
+		<header>
+			<div class="headerWrap">
+				<h1 class="hide">인증번호 입력 (부사용자)</h1>
+			</div>
+		</header>
+		<section>
+			<div class="content">
+				<div class="topNumBox">
+					<ol class="topNumList">
+						<li>
+							<span class="num on">1</span>
+							<span class="title"><em>제품<br />등록</em></span>
+						</li>
+						<li>
+							<span class="num off">2</span>
+							<span class="title choice"><em>인증번호<br />입력</em></span>
+						</li>
+						<li>
+							<span class="num">3</span>
+							<span class="title"><em>설치<br />완료</em></span>
+						</li>
+					</ol>
+				</div>
+				
+				<div class="scroll-area">
+					<div class="conArea" id="contentsWrap">
+						<div class="set09">
+							
+							<div class="setCon">
+								<div class="setTopText pds"><span class="point">인증번호</span>입력</div>
+								<div class="setTopText02">
+									주사용자에게 공유 받은 인증번호를 입력해주세요.
+								</div>
+							</div>
+							
+							<div class="selListBox mt20">
+								<ul class="conInput"> <!-- 입력중 : on클래스 추가,  에러일경우 errorInput 클래스 추가 -->
+									<li><input type="number" pattern="[0-9]*" inputmode="numeric" placeholder="인증번호를 입력하세요" oninput="cescoUtil.inpNumMaxLengChk(this)" value="" maxlength="4"  class="inp" id="inpAuthNo" ></li>									
+									<li><button type="button" class="btn_clear btnTxtClear" style="display: none;"><em>clear</em></button></li>
+								</ul>
+							</div>
+							
+							<div class="errorText" id="errorTextWrap" style="display: none;"><span id="errorText"></span></div>
+							
+							<div class="btnAreaB type01">
+								<button class="btn_blue btnType01" type="button" id="btnNext"><em>확 인</em></button>
+							</div>
+							
+						</div>
+					</div>
+					
+			<!-- 		<div class="grayBg hide"></div>
+					<div class="writing hide">인증 중입니다.</div> -->
+				</div>
+			</div>
+		</section>
+		
+	</div>
+<div class="topfix_area">
+   <div id="bottomCommonMenu"></div>
+</div>	
+</body>
+</html>
+  

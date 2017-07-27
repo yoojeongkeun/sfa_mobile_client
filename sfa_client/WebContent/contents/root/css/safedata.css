@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+
+.list002 li {line-height:30px;height:30px;position:relative; padding:5px; border-bottom:1px solid #9cacc3;}
+.list002 li:nth-child(even) {background:#ecf4f8;}
+.list002 li:last-child{border-bottom: 1px solid #9cacc3;}

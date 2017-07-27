@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../css/corporation.css" />
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+	<script src="../../common/js/jquery-ui-1.10.3.custom.js"></script>
+	<script src="../../common/js/cescommutil.js"></script>  
+	<script src="../js/SD019.js"></script>	
+	<title>CESCO 세스코</title>
+</head>
+<style type="text/css">
+	body{background: #bcc4d0}
+</style>
+<body>
+
+		
+	<section class="contentsWrap">
+		<div class="topfix_area">
+			<div class="nvi_title">법인계약고객 단가조회</div>
+			<table class="tlist00">
+			<colgroup>
+				<col style="width:20%;">
+				<col style="width:*;">
+				<col style="width:22%;">
+				<col style="width:22%;">
+			</colgroup>
+			<tbody>
+
+			<tr>
+				<th>
+					브랜드명
+				</th>
+				<td colspan="3">
+					<input type="text" id="txtBrandName">
+				</td>
+			</tr>
+			<tr>
+				<th>
+					법인고객명
+				</th>
+				<td colspan="3">
+					<input type="text" id="txtCustName">
+				</td>
+			</tr>
+			<!-- <tr>
+				<th>
+					본사코드
+				</th>
+				<td colspan="2">
+					<input type="text">
+				</td> 
+			</tr> -->
+			<tr>
+				<th>
+					계약이력
+				</th>
+				<td>
+					<select id="selContractHistory">
+						<option></option>
+					</select>
+				</td>
+				<td>
+					<div class="c_btn item1">
+						<button type="button" class="btn03" id="btnReset">초기화</button>
+					</div>
+				</td>
+				<td>					
+					<div class="c_btn item1">
+						<button type="button" class="btn03" id="btnSearch">조회</button>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+		</div>
+
+	    <div style="position: absolute; top: 148px; width:360px; height: 250px; overflow: scroll;">	
+
+		<ul class="subWrap01" style="border-radius: 0px; margin-bottom: 0px; margin-top: 0px;">
+			<li>
+			<table class="tlist01" style="width:800px">
+			<colgroup>
+				<col width="8%"></col>
+				<col width="12%"></col>
+				<col width="10%"></col>
+				<col width="10%"></col>
+				<col width="10%"></col>
+				<col width="10%"></col>
+				<col width="10%"></col>
+				<col width="10%"></col>
+				<col width="10%"></col>
+				<col width="10%"></col>
+			</colgroup>
+              <thead>
+                <tr>
+                  <th>계약대상</th>
+                  <th>면적</th>
+                  <th>금액</th>
+                  <th>청구서</th>
+                  <th>서비스<br>완료일자</th>
+                  <th>직가맹점구분</th>
+                  <th>SD실적<br>배분율</th>
+                  <th>SC이관<br>가능여부</th>
+                  <th>계약일자</th>
+                  <th>담당자</th>
+                </tr>
+              </thead>
+              <tbody id="tbodyListNew"></tbody>
+              <tbody id="tbodyList" style="display: none;">
+              	 <tr class="trList">
+                  <td><span class="txtContractObject R11">일반방제</span></td>
+                  <td><span class="txtArea R08">1~30</span></td>
+                  <td class="tar"><span class="txtCharge R21">40,000</span></td>
+                  <td><span class="txtR15 R15">지사</span></td>
+                  <td><span class="txtServiceDate">30</span></td>
+                  <td><span class="txtChainType">전체</span></td>
+                  <td><span class="txtSDRate">100.00</span></td>
+                  <td><span class="txtSCTransYN">Y</span></td>
+                  <td><span class="txtContractDate">20150501</span></td>
+                  <td><span class="txtResponser">최성준</span></td>
+                </tr>                 
+              </tbody>
+            </table>
+            </li>
+		</ul>
+</div> 
+		<div class="subWrap01" style="top: 406px; border-radius: 0px; margin-bottom: 0px; margin-top: 0px;">
+			<table>
+				<tr>
+					<td class="subtit">비고</td>
+				</tr>
+				<tr>
+					<td>
+						<textarea id="txtContents" readonly></textarea>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+
+	</section>
+
+	
+
+</body>
+</html>

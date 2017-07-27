@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+	<script src="../js/CommonCustSearchPop.js"></script>
+	<title>CESCO 세스코</title>
+</head>
+<style>.table_fix .table_body{top:30px;}</style>
+<style>.popWrap01 .table_fix{top:55px;}</style>
+<style>.table_fix .table_body{overflow:visible;}</style>
+<body>
+<div class="popWrap01">
+	
+	
+	<section class="contentsWrap">
+		<!-- search -->
+		<div class="searchWrap topfix_area">
+		<header>
+			<h1>고객검색</h1>
+		</header>
+			<div style="margin-top: 40px;">
+				<select style="width: 30%;" id="selCustSearchType">
+					<option value="CS001">고객명</option>
+					<option value="CS002">고객코드</option>
+					<option value="CS003">전화번호</option>
+				</select>
+				<div class="inp_srch" style="width: 50%; float: right; margin-right: 20px;">				
+					<input type="text" id="txtCustSearchText" placeholder="" style="height: 30px;" />
+					<button type="button" id = "btnSearch" class="btn_search">검색</button>
+				</div>
+			
+				<!-- table head fix -->
+				<div class="table_fix" style="margin-top: 30px;">
+					<!-- head -->
+					<div class="table_head">
+						<table class="tlist01 head_fix" id = tlist01>
+							<colgroup>
+								<col style="width:35%" />
+								<col />
+								<col style="width:30%" />
+							</colgroup>
+							<thead>
+							<tr>
+								<th scope="col">고객코드</th>
+								<th scope="col">고객명</th>
+								<th scope="col">고객구분</th>
+							</tr>
+							</thead>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //search -->
+		
+		<!-- table head fix -->
+		<div class="table_fix">
+			<!-- head -->
+			
+			<!-- head -->
+			
+			<!-- scroll -->
+			<div class="table_body" style="top: 64px;">
+				<table class="tlist01 head_fix" id = "tlist02new" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></table>
+				<table class="tlist01 head_fix" id = "tlist02" style="display:none">
+					<colgroup>
+						<col style="width:35%" />
+						<col />
+						<col style="width:30%" />
+					</colgroup>
+					<tbody id="fieldInfo">
+					<tr class = "fieldInfo">
+						<td class="custCode" id = "custCode"><span></span></td>
+						<td class="custName" id = "custName" style="text-align:left"><span></span></td>
+						<td class="contType" id = "contType"><span></span></td>
+					</tr>
+					</tbody>
+				</table>
+				<div style="height:60px;"></div>
+			</div>
+			<!-- //scroll -->
+		</div>
+		
+		<!-- //table head fix -->
+	</section>
+	
+	<footer class="bot_btn">
+		<button type="button" class="btn01" id="btnCancel">취소</button>
+		<button type="button" class="btn01" id="btnConfirm" custcode="" custname = "">확인</button>
+	</footer>
+
+</div>
+</body>
+</html>

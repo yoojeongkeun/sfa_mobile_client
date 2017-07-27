@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+<link type="text/css" rel="stylesheet" href="../../collection/css/collection.css" />
+<link href="../../common/css/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css" />
+<link type="text/css" rel="stylesheet" href="../../root/css/root.css" />
+<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+<script src="../js/AddrTest.js"></script>
+<script src="../../common/js/jquery-ui-1.10.3.custom.js"></script>
+<script src="../../common/js/useBackButton.js"></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<title>CESCO 세스코</title>
+</head>
+<body>
+	<div class="subWrap01 top_fix01 bot_fix01">
+		<!-- fix: search -->
+		<header class="hide">
+			<h1>주소검색 테스트화면</h1>
+		</header>
+
+		<section class="contentsWrap">
+			<table class="tlist01">
+				<colgroup>
+					<col style="width: 10%;" />
+					<col style="width: 20%;" />
+					<col style="width:*;" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">주소검색</th>
+						<td colspan="3"><input type="button" id="btnSearch" value="검색팝업오픈" /></td>
+					</tr>
+					<tr>
+						<th rowspan="4">지번</th>
+						<td >지번주소1</td>
+						<td colspan="2">
+							<input type="text" id="txtLT_ADDR1" />
+						</td>
+					</tr>
+					<tr>
+						<td >지번주소2</td>
+						<td colspan="2">
+							<input type="text" id="txtLT_ADDR2" />
+						</td>
+					</tr>
+					<tr>
+						<td >우편번호</td>
+						<td colspan="2">
+							<input type="text" id="txtZIPCODE5" />
+						</td>
+					</tr>
+					<tr>
+						<td >우편번호seq</td>
+						<td colspan="2">
+							<input type="text" id="txtLT_ZIPSEQ" />
+						</td>
+					</tr>
+					
+					<tr>
+						<th rowspan="5">도로명</th>
+						<td >도로명주소1</td>
+						<td colspan="2">
+							<input type="text" id="txtST_ADDR1" />
+						</td>
+					</tr>
+					<tr>
+						<td >도로명주소2</td>
+						<td colspan="2">
+							<input type="text" id="txtST_ADDR2" />
+						</td>
+					</tr>
+					<tr>
+						<td >우편번호</td>
+						<td colspan="2">
+							<input type="text" id="txtST_ZIPCODE" />
+						</td>
+					</tr>
+					<tr>
+						<td >빌딩번호</td>
+						<td colspan="2">
+							<input type="text" id="txtST_BLD" />
+						</td>
+					</tr>
+					<tr>
+						<td >법정동코드</td>
+						<td colspan="2">
+							<input type="text" id="txtUNQ_LAW" />
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">주소검색</th>
+						<td colspan="3"><input type="button" id="btnSearchDaum" value="다음주소검색" /></td>
+					</tr>
+				</tbody>
+			</table>
+			
+			
+		</section>
+		<div>
+		<div id="divlayer" style="display:none; border:1px solid; width:100px; height:100px; margin:5px 0;">
+            <img src="//i1.daumcdn.net/localimg/localimages/07/postcode/320/close.png" id="btnFoldWrap" style="cursor:pointer;right:0px;top:-1px;z-index:1" alt="접기 버튼" />
+        </div>
+        </div>
+		<footer class="bot_btn item3">
+		
+		</footer>
+
+	</div>
+
+	<div id="bottomCommonMenu"></div>
+</body>
+</html>

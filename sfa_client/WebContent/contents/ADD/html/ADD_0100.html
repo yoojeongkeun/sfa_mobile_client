@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />  
+	<meta name="format-detection" content="telephone=no" />
+	<title>CESCO</title>
+	<link type="text/css" rel="stylesheet" href="../../common/css/common_iot.css" />
+	<link type="text/css" rel="stylesheet" href="../css/add.css" />
+	<script type="text/javascript" src="../../bizMOB/bizMOB3.js"></script>
+	<script type="text/javascript" src="../../common/js/jsLoader.js"></script>
+	<script type="text/javascript" src="../js/ADD_0100.js"></script>
+	
+</head>
+<body>
+	<div class="wrap add hNo">
+		<header>
+			<div class="headerWrap">
+				<h1 class="hide">주소검색</h1>
+			</div>
+		</header>
+		<section>
+			<div class="content">
+				<ul class="menu02">
+					<li class="on" id="btnDoroAddr"><button type="button">도로명 주소</button></li>
+					<li id="btnJibunAddr"><button type="button">지번 주소</button></li>
+				</ul>
+				
+				<div class="scroll-area gray" id="scrollArea">
+					<div class="conArea">
+						<div class="con_bracket" id="txtRoadname">
+							도로명과 건물번호를 입력해 주세요.(예: 상일로 10)<br />
+							내 도로명 주소 확인하기 <button type="button" class="btn_link" id="btnJusoLink">www.juso.go.kr</button>
+						</div>
+						
+						<div class="con_bracket braketT" id="txtJibunAddr" style="display: none;">동(읍/면/리/가)을 입력해주세요. (예:상일동)</div>
+						
+						
+						<div class="btn_list">
+							<div class="inputBox"> <!-- 디자인에 없었지만 on클래스 추가시 보더 컬러 변경 추가해놨습니다. -->
+								<input type="text" class="inputType01" id="inpSearch" placeholder="도로명 + 건물번호" />
+								<button type="button" class="btn_clear" id="btnTxtClear" style="display: none;"><em>clear</em></button>
+							</div>
+							<div class="blueBtnBox"><button class="btn_blue btnType01" id="btnSearch"><em>검 색</em></button></div>
+						</div>
+					</div>
+					<div class="resultList">
+						<div class="title">‘<span id="searchTxt"></span>’ 검색결과는 <span class="blue"><span id="searchCnt">0</span>건</span>입니다.</div>
+						
+						<ul class="resultWrap" id="listTemplate" style="display: none;" >
+							<li class="record">
+								<button type="button" class="r_listBox btnRecord">
+									<dl class="r_list">
+										<dt>도로명</dt>
+										<dd><span class="commonAddr"></span> <span class="doroAddr"></span></dd>
+									</dl>
+									<dl class="r_list last">
+										<dt>지번</dt>
+										<dd><span class="commonAddr"></span> <span class="jibunAddr"></span></dd>
+									</dl>
+								</button>
+							</li>
+						</ul> 
+						
+						<div class="resultNone" id="noData" style="display: none;"><span>검색 결과가 없습니다.</span></div>
+						
+					</div>
+				</div>
+			</div>
+		</section>
+		
+	</div>
+</body>
+</html>
+  

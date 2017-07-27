@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../css/order.css" />
+	<link href="../../common/css/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css">
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+	<script src="../../common/js/cescommutil.js"></script>
+	<script src="../../common/js/jquery-ui-1.10.3.custom.js"></script>
+	<script src="../js/SD015.js"></script>
+	<title>CESCO 세스코</title>
+</head>
+<style type="text/css">
+	body{background: #bcc4d0}
+	.on {background: rgb(255, 240, 207);}
+</style>
+<body>
+<div class="">
+	<header class="hide">
+		<h1>업무일지 열람</h1>
+	</header>
+
+	
+	<section class="contentsWrap">
+		<div class="topfix_area">
+			<div class="nvi_title">주문서 목록</div>
+			<table class="tlist00 searchDiv">
+			<colgroup>
+				<col width="20%"></col>
+				<col width="39%"></col>
+				<col width="*"></col>
+			</colgroup>
+			<tbody>
+
+			<tr>
+				<th>
+					주문번호
+				</th>
+				<td colspan="2">
+					<input type="text" id="orderNo">
+				</td>
+			</tr>
+			<tr>
+				<th>
+					고객
+				</th>
+				<td>
+					<input type="text" placeholder="고객코드" id="custCode">
+				</td>
+				<td>
+					<input type="text" placeholder="고객명" id="custNm">
+				</td>
+			</tr>
+			<!-- <tr>
+				<td>
+					<input type="text" placeholder="고객코드" id="custCode">
+				</td>
+				<td>
+					<input type="text" placeholder="고객명" id="custNm">
+				</td>
+				<td>
+					<button class="btn_search" id="btnSearch"></button>
+					<input type="text" id="custInfo" style="width:87%; float:right">
+					<input type="text" id="custInfo">
+				</td>
+			</tr> -->
+			<tr>
+				<th>
+					주문일자
+				</th>
+				<td colspan="2">
+					<dl class="dlist02">
+						<dd>
+							<p class="inp_cal"><input type="text" id="calFromtDay" readonly/><button type="button" id="btnFromCal" class="btn_cal" >달력</button></p>	  
+						</dd>
+						<dd>
+							<span style="font-weight: bold; font-size: 12px; padding:2px;">~</span>
+						</dd>
+						<dd>
+							<p class="inp_cal"><input type="text" id="calToDay" readonly/><button type="button" id="btnToCal" class="btn_cal" >달력</button></p>
+						</dd>
+					</dl>
+				</td>
+				
+			</tr>
+		</tbody>
+		</table>
+		<table class="tlist00 searchDiv">
+		<colgroup>
+			<col width="20%"></col>
+			<col width="39%"></col>
+			<col width=""></col>
+			<col width="*"></col>
+		</colgroup>
+		<tbody>
+			<tr>
+				<th>
+					매출부서					
+				</th>
+				<td>
+					<select class="selDept" id="saleDept">
+						<option>
+							정보전략실
+						</option>
+					</select>
+				</td>
+				<th>
+					매출사원				
+				</th>
+				<td>
+					<select class="selUser" id="saleUser">
+						<option>
+							장우제
+						</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					계약부서					
+				</th>
+				<td>
+					<select class="selDept" id="contDept">
+						<option>
+							정보전략실
+						</option>
+					</select>
+				</td>
+				<th>
+					계약사원				
+				</th>
+				<td>
+					<select class="selUser" id="contUser">
+						<option>
+							장우제
+						</option>
+					</select>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+		
+		<div class="c_btn item2 searchDiv">
+					<button type="button" class="btn01" id="btnClear">Clear</button>
+					<button type="button" class="btn03" id="btnSelect">조회</button>
+		</div>
+		<div class="openBar">
+			<button type="button" class="btn_close" id="btnOpen"></button>
+		</div>
+		</div>
+
+		<div style="position: absolute; top: 220px; width:800px;" id="belowArea">	
+		<ul class="subWrap01">
+			<li>
+			<table class="tlist01" id="orderListNew"></table>
+			<table class="tlist01" id="orderList" style="display:none;">
+			<colgroup>
+				<col width="8%"></col>
+				<col width="11%"></col>
+				<col width="11%"></col>
+				<col width="25%"></col>
+				<col width="*"></col>
+				<col width="11%"></col>
+				<col width="11%"></col>
+				<col width="11%"></col>
+			</colgroup>
+              <thead>
+              	<!-- 유망코드발번 오픈전 display:none-->
+                <tr>
+                  <th rowspan="2" style="border-bottom: 1px solid #D9DEE5;">No.</th>
+                  <th>주문번호</th>
+                  <th>고객코드</th>
+                  <th>고객명</th>
+                  <th>업종</th>
+                  <th>접수일자</th>
+                  <th>결제수단</th>
+                  <th>단가유형</th>
+                </tr>
+                <tr>
+                  <th>발송일</th>
+                  <th>발송완료일</th>
+                  <th>금액</th>
+                  <th>세액</th>
+                  <th>총금액</th>
+                  <th>접수자</th>
+                  <th></th>
+                </tr>
+
+              </thead>
+              <tbody class="orderDetail">
+               <tr>
+                  <td rowspan="2" class="seq">1</td>
+                  <td class="orderNo">OR2G000284</td>
+                  <td class="custCode">AJ2555</td>
+                  <td class="custNm">세스코</td>
+                  <td class="custType">산업체</td>
+                  <td class="rcptYmd">20150701</td>
+                  <td class="payType">카드결제</td>
+                  <td class="unitType">멤버스가</td>
+                </tr>
+                 <tr>
+                  <td class="rlesYmd">20150702</td>
+                  <td class="dlvyYmd">20150703</td>
+                  <td class="notTax">8501</td>
+                  <td class="tax">849</td>
+                  <td class="amt">9000</td>
+                  <td class="rcptUser"></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            </li>
+		</ul>
+		</div>
+
+		<footer class="bot_btn item1">
+			<button type="button" class="btn_02" id="regOrder">주문서 등록</button>
+		</footer><!-- //bottom fix area -->
+
+
+	</section>
+</div>
+	
+
+</body>
+</html>

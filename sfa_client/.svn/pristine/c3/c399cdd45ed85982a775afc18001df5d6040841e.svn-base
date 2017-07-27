@@ -1,0 +1,210 @@
+tab04 = 
+{	 
+	userID: "",
+    init:function(json)
+	{
+    	tab04.userID = bizMOB.Storage.get("UserID");
+    	tab04.initInterface();
+    	tab04.initData(json);
+    	tab04.initLayout();
+	},
+	initInterface:function()
+	{
+		$(".acc_head").click(function(){
+			$(this).parent().toggleClass("on");
+		});
+		
+		$(".btn_result").click(function(){
+			$(this).toggleClass("btn_on");
+		});
+		
+		$(".t04_btnRegist").click(function(){
+			if(page.mode =="I"){
+				
+			}else if(page.mode == "M"){
+				var btnOK = bizMOB.Ui.createTextButton("네", function(){
+					tab04.checkDate();
+				});
+				var btnCancel = bizMOB.Ui.createTextButton("아니오", function(){
+					return;
+				});
+				bizMOB.Ui.confirm("알림", "영업일지를 등록하시겠습니까?", btnOK, btnCancel);	
+			}
+		});
+		
+	},	 
+	initData:function(json)
+	{
+		tab04.getDetailData();
+	},	 
+	initLayout:function()
+	{	
+		
+	},
+	checkDate: function(){
+		var tr = bizMOB.Util.Resource.getTr("Cesco", "SD01311");
+		tr.body.P01 = "2015-06-26"; // TEST
+		tr.body.P02 = "3";
+		
+		bizMOB.Web.post({
+			message: tr,
+			success: function(json){
+				if(!json.header.result || json.body.LIST01.length == 0){
+					bizMOB.Ui.alert("안내", "날짜 유효성 체크에 실패하였습니다.");
+					return;
+				}
+				
+				if(json.body.LIST01[0].R01 == "N" && !tab04.checkID()){
+					bizMOB.Ui.alert("안내", "영업일 기준 3일을 초과한 영업일지는 작성하실 수 없습니다.");
+					return;
+				}else{
+					if(!$("#t02_txtCustCode").val().trim() == ""){ //고객코드가 비어있지 않을 경우만 저장
+						
+					}
+				}
+			}
+		});
+	},
+	checkID: function(){
+		var id = tab04.userID;
+		var result = false;
+		var checkIDs = ["09112", "06389", "11027", "12157", "10860"]; //예외 아이디
+		for(var i=0; i<checkIDs.length; i++){
+			if(checkIDs[i] == id){
+				result = true;
+				break;
+			}
+		}
+		return result;		
+	},
+	getDetailData: function(){
+		var tr = bizMOB.Util.Resource.getTr("Cesco", "SD01308");
+		tr.body.P01 = ""; // 사번
+		tr.body.P02 = "Y"; // 가정집YN 구현해야 함!
+		
+		bizMOB.Web.post({
+			message: tr,
+			success: function(json){
+				if(!json.header.result){
+					bizMOB.Ui.alert("안내", "세부업무내역 리스트를 가져오는데 실패하였습니다.");
+					return;
+				}
+				tab04.setDetailData(json, "LIST01");
+				
+				
+				
+			}
+		});
+	},
+	setDetailData: function(json, listName){
+		var list = tab04.divideList(json.body[listName]);
+		
+		for(var i=0; i<list.length; i++){
+			if(list[i].length != 0 && list[i][0].R07 == "N00002"){
+				json.body[listName] = list[i];
+				var rList = tab04.divideDetailList(json, listName, listName);
+				for(var j=0; j<rList.length; j++){
+					if(rList[j].length != 0 && rList[j][0].R12 == "000007"){ // 대수, 총액
+						json.body[listName] = rList[j];
+						tab04.renderList(json, ".trList2", "N2G07", listName);
+					}else if(rList[j].length != 0 && rList[j][0].R12 == "000008"){ // 총액만
+						json.body[listName] = rList[j];
+						tab04.renderList(json, ".trList3", "N2G08", listName);
+					}else if(rList[j].length != 0 && rList[j][0].R12 == "000004"){ // 총액 aasdfasds,
+						json.body[listName] = rList[j];
+						tab04.renderList(json, ".trList1", "N2G04", listName);
+					}
+				}
+			}else if(list[i].length != 0 && list[i][0].R07 == "N00001"){ // 사전홍보
+				tab04.setResultDatas(list[i], ".N00001");
+			}else if(list[i].length != 0 && list[i][0].R07 == "N00003"){ // 제안/견적서제출
+				tab04.setResultDatas(list[i], ".N00003");
+			}else if(list[i].length != 0 && list[i][0].R07 == "N00004"){ // 계약
+				tab04.setResultDatas(list[i], ".N00004");
+			}else if(list[i].length != 0 && list[i][0].R07 == "N00005"){ // 제안여부확정
+				tab04.setResultDatas(list[i], ".N00005");
+			}else if(list[i].length != 0 && list[i][0].R07 == "N00006"){ // 사전계약
+				
+			}
+		}
+	},
+	divideList: function(listName){
+		var list = listName;
+		var str = listName[0].R07;
+		var tempList = [];
+		var resultList = [];
+		$(list).each(function(i, listElement){			
+			if(str == listElement.R07){
+				tempList.push(listElement);
+			}else{
+				resultList.push(tempList);
+				tempList = [];
+				tempList.push(listElement);
+				str = listElement.R07;
+			}
+		});
+		resultList.push(tempList);
+		return resultList;
+	},
+	divideDetailList: function(json, listName){
+		var list = json.body[listName].bMSort({"keys":[{"orderby":"asc","field":"R12"}]});
+		var str = json.body[listName][0].R12;
+		var tempList = [];
+		var resultList = [];
+		$(list).each(function(i, listElement){			
+			if(str == listElement.R12){
+				tempList.push(listElement);
+			}else{
+				resultList.push(tempList);
+				tempList = [];
+				tempList.push(listElement);
+				str = listElement.R12;
+			}
+		});
+		resultList.push(tempList);
+		return resultList;
+	},
+	renderList: function(json, target, id, listName){	
+		var dir = 
+        [
+            {
+                type:"loop",
+                target: target,
+                value:listName,
+                detail: [
+                     		{type:"single", target:".spanContObj", value:"R04"},
+                     		{type:"single", target:".t04_txtVal1@value", value:function(json){
+                     			return json.item.R13 == "" ? "0" : json.item.R13;
+                     		}},
+                     		{type:"single", target:".t04_txtVal2@value", value:function(json){
+                     			return json.item.R16 == "" ? "0" : json.item.R16;
+                     		}},
+                     		{type:"single", target:".t04_txtVal3@value", value:function(json){
+                     			return json.item.R19 == "" ? "0" : json.item.R19;
+                     		}},
+                     		
+                        ]
+            }
+        ];
+        var options = { clone:true, newId: id + "New", replace:true };
+        $("#" + id).bMRender(json.body, dir, options);
+	},
+	// row에 값 세팅
+	setResultDatas: function(list, className){
+		if(list.length == 0){
+			return;
+		}
+		for(var i=0; i<Object.keys(list[0]).length + 1; i++){
+			$(className).attr("R" + (i.toString().length == 1 ? "0" + i : i), list[0]["R" + (i.toString().length == 1 ? "0" + i : i)]);
+			if(list[0].R13 == "True"){
+				$(className).parent().find(".btnOK").addClass("btn_on");
+			}
+			if(list[0].R16 == "True"){
+				$(className).parent().find(".btnOK2").addClass("btn_on");
+			}
+		}
+		
+	}
+};
+
+

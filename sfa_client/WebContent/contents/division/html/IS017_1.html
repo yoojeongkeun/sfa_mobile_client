@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../css/division.css" />
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+    <script src="../js/IS017_1.js"></script>
+	<title>CESCO 세스코</title>
+</head>
+<body>
+<div class="popWrap01">
+	<header>
+		<h1>구획추가 설정</h1>
+	</header>
+	
+	<section class="contentsWrap st02">
+		<p class="info01">구획정보 추가를 위한 설정을 진행하십시오.</p>
+		
+		<dl class="dlist02" style="margin-top:30px">
+			<dt>구획분류</dt>
+			<dd>
+				<select id="comDivisionType">
+					<option value="DI01">대분류</option>
+					<option value="DI02">층분류</option>
+					<option value="DI03">중분류</option>
+					<option value="DI04">세분류</option>
+				</select>
+			</dd>
+		</dl>
+		
+		<div style="padding-top:30px">
+			<p>동일 명칭 신규 구획을 생성시 구획복사 기능을 사용하십시오.</p>
+		</div>
+	</section>
+	
+	<footer class="bot_btn">
+		<button type="button" class="btn01" id=btnCancel>취소</button>
+		<button type="button" class="btn01" id="btnConfirm">설정</button>
+	</footer>
+
+</div>
+</body>
+</html>

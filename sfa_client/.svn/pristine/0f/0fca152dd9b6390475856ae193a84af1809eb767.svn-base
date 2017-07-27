@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../custmaster/css/custmaster.css" />
+	<link type="text/css" rel="stylesheet" href="../../root/css/root.css" />
+	<link type="text/css" rel="stylesheet" href="../css/collection.css" />
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+	<script src="../js/CM077.js"></script>
+	<!-- <script src="../../common/js/useBackButton.js"></script> --> <!-- 테스트동안 제거 -->
+	<title>CESCO 세스코</title>
+</head>
+<body>
+<div class="subWrap01 top_fix01">	<!-- fix: search -->
+	<header class="hide">
+		<h1>카드승인</h1>
+	</header>
+	
+	<section class="contentsWrap">
+		<!-- top fix -->
+		<div class="topfix_area">
+			<!-- search -->
+			<div class="searchWrap">
+				<div class="inp_srch">
+					<input type="text" id="txtSearchText" placeholder="고객코드/고객명/전화번호를 입력하세요" />
+					<button type="button" class="btn_search" id="btnSearch">검색</button>
+				</div>
+			</div>
+			<!-- //search -->
+		</div>
+		<!-- //top fix -->
+		
+		<table class="tlist01">
+			<colgroup>
+				<col style="width:18%;" />
+				<col style="width:30%;" />
+				<col style="width:18%;" />
+				<col />
+			</colgroup>
+			<tbody>
+			<tr>
+				<th scope="row">승인일자</th>
+				<td colspan="3"><span id="approvalDate"></span></td>
+			</tr>
+			<tr>
+				<th scope="row">담당부서</th>
+				<td colspan="3"><span id="DetpNm" DeptCode=""></span></td>
+			</tr>
+			<tr>
+				<th scope="row">고객명</th>
+				<td colspan="3"><span id="custName" CustCode=""></span></td>
+			</tr>
+			</tbody>
+			<tbody class="bg01">
+			<tr>
+				<th scope="row">카드종류</th>
+				<td>
+					<select id="selCardSort" disabled>
+					
+					</select>
+				</td>
+				<th scope="row">할부구분</th>
+				<td>
+					<select id="selInstallmentType">
+						<option value="AD01">일시불</option>
+						<option value="AD02">할부</option>
+						<option value="AD03">무이자할부</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row">카드번호</th>
+				<td colspan="3">
+					<div class="cardnum">
+						<input type="number" id="CardNum1" maxlength="4" max ="9999" oninput="maxLengthCheck(this)" disabled/>
+						<input type="number" id="CardNum2" maxlength="4" max ="9999" oninput="maxLengthCheck(this)" disabled/>
+						<input type="number" id="CardNum3" maxlength="4" max ="9999" oninput="maxLengthCheck(this)" disabled/>
+						<input type="password"  id="CardNum4" maxlength="4" size="4" disabled/>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row">유효기간</th>
+				<td colspan="3">
+					<!--  <input type="number" id="CardYear" class="year" /> 년 
+					<input type="number" id="CardMonth" class="month" /> 월-->
+					 <select name="" class="select_box011" id="CardYear" style="width:80px" disabled>
+					   <option>2013</option>
+			           <option>2014</option>
+			           <option>2015</option>
+			           <option>2016</option>
+			           <option>2017</option>
+			           <option>2018</option>
+			           <option>2019</option>
+			           <option>2020</option>
+			           <option>2021</option>
+			           <option>2022</option>
+			           <option>2023</option>
+			           <option>2024</option>
+			        </select> 년
+			        
+			         <select name="" class="select_box011"  id="CardMonth" style="width:80px" disabled>
+			           <option>01</option>
+			           <option>02</option>
+			           <option>03</option>
+			           <option>04</option>
+			           <option>05</option>
+			           <option>06</option>
+			           <option>07</option>
+			           <option>08</option>
+			           <option>09</option>
+			           <option>10</option>
+			           <option>11</option>
+			           <option>12</option>
+			        </select> 월
+					
+					
+					 
+				</td>
+			</tr>
+			
+			<tr style="display: none;">
+				<th scope="row">수수료율</th>
+				<td colspan="3">
+					<input scope="row" type="text" id="CardMAMT" style="width:70px;" disabled=false />  
+				</td>
+			</tr>
+			</tbody>
+			
+			<tbody id="chargeListNew"></tbody>
+			
+			<tbody id="chargeList" style="display:none;">
+			
+			<tr class="trCharge">
+				<td class="subj" style="text-align: center;">
+				    <span class="saleYM" style="font-size: 0.8em;"></span><br />
+				    <span class="chargeType" style="font-size: 0.9em;"></span>				
+				</td>
+				<td class="subj" colspan="3">
+					<div class="rbtnWrap">
+						<p class="txtc01"><strong>청구금액 <span class="amt"></span>원</strong></p>
+						<p class="subtxt01"><strong class="contractNm"></strong> | <span class="workNm"></span></p>
+						<button type="button" class="btn02 rcen_btn btnDelete">삭제</button>
+					</div>
+				</td>
+			</tr>
+			
+			</tbody>
+			<tbody class="bg02">
+			<tr>
+				<th scope="row" >청구금액</th>
+				<td><input type="tel" id="changeAmt" class="num txtc_r01" disabled /></td>
+				<th scope="row">할부개월수</th>
+				<td><input type="number" id="installment" class="num txtc_r01" /></td>
+				
+			</tr>
+			</tbody>
+		</table>
+		
+	</section>
+	
+	<footer class="bot_btn item3">
+		<button type="button" class="btn01" id="btnCancel">취소</button>
+		<button type="button" class="btn01" id="btnAdd">선청구</button>
+		<button type="button" class="btn01" id="btnRequest">승인요청</button>
+	</footer>
+
+</div>
+	<div id="bottomCommonMenu"></div>
+</body>
+</html>

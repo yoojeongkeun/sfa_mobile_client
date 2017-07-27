@@ -1,0 +1,34 @@
+tab03 = 
+{	 
+    init:function(json)
+	{
+    	tab03.initInterface();
+    	tab03.initData(json);
+    	tab03.initLayout();
+	},
+	initInterface:function()
+	{
+		$(".t3_btnGallery").click(function(){
+			bizMOB.Ui.alert("TAB3에서 갤러리버튼");
+		});
+		
+		var nowDate  = new Date();
+		$("#t03_calDay").val(nowDate.bMToFormatDate("yyyy-mm-dd"));
+ 		 
+ 		page.setDateTime("#t03_calDay", "#t03_btnCal");
+ 		
+ 		$("#t03_fromTime").val("00:00");
+ 		$("#t03_toTime").val("01:00");
+	},	 
+	initData:function(json)
+	{
+		
+	},	 
+	initLayout:function()
+	{	
+		if(bizMOB.Storage.get("dutyCode") == "C39")
+			$(".t03_SDview").remove();
+		else
+			$(".t03_FSDview").remove();
+	}
+};

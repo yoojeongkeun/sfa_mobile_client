@@ -1,0 +1,23 @@
+{
+  "header" : "@CescoHeader",
+  "body" : {
+    "CustCode" : "",
+    "DivSeNum" : "",
+    "LaClsCode" : "",
+    "LaClsNm" : "",
+    "FlooCode" : "",
+    "FlooNm" : "",
+    "MiClsCode" : "",
+    "MiClsNm" : "",
+    "DeClsCode" : "",
+    "DeClsNm" : "",
+    "PosiDesp" : "",
+    "DivCode" : "",
+    "InspDiv" : "",
+    "UserID" : "",
+    "DivVer" : "",
+    "FRYMD" : "",
+    "TOYMD" : "",
+    "UseDiv" : ""
+  }
+}

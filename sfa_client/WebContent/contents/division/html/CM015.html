@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../css/division.css" />
+	<link type="text/css" rel="stylesheet" href="../../root/css/root.css" />
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+    <script src="../js/CM015.js"></script>
+	<title>CESCO 세스코</title>
+</head>
+<body>
+<div class="subWrap01 top_fix01">	<!-- fix: search -->
+	<header class="hide">
+		<h1>구획화 등록</h1>
+	</header>
+
+	<section class="contentsWrap">
+	
+		<!-- top fix -->
+		<div class="topfix_area">
+		
+		
+		
+			<!-- search -->
+			<div class="searchWrap">
+				<div class="inp_srch">
+				
+	                <div id="bottomCommonMenu"></div>
+	                
+					<input type="text" id="txtCustText" placeholder="고객코드 또는 고객명을 입력하세요" />
+					<button type="button" class="btn_search" id="btnCustSearch">검색</button>
+				</div>
+			</div>
+			<!-- //search -->
+		</div>
+		<!-- //top fix -->
+		
+		<dl class="dlist01">
+			<dt>고객명</dt>
+			<dd>
+				<div class="rbtnWrap">
+					<span id="txtCustInfo"></span>
+					<button type="button" class="btn_refresh rcen_btn" id="btnRefresh"  style="top: 15px;">새로고침</button>
+				</div>
+			</dd>
+		</dl>
+		
+		<h3 class="tit01">구획정보</h3>
+		<table class="tlist01 group">
+		    <colgroup>
+                <col style="width:22%;" />
+                <col />
+                <col style="width:22%;" />
+                <col style="width:18%;" />
+            </colgroup>
+            <thead>
+            <tr>
+                <th scope="col">구획번호</th>
+                <th scope="col">대분류</th>
+                <th scope="col">층</th>
+                <th scope="col">중분류</th>
+            </tr>
+            <tr>
+                <th scope="col">세분류</th>
+                <th scope="col">위치설명</th>
+                <th scope="col">구획명</th>
+                <th scope="col">점검필</th>
+            </tr>
+            </thead>
+		</table>
+		<table class="tlist01 group" id="divListnew">
+		  <colgroup>
+                <col style="width:22%;" />
+                <col />
+                <col style="width:22%;" />
+                <col style="width:18%;" />
+            </colgroup>
+		</table>
+		<table class="tlist01 group" id="divList" style="display: none;">
+			<colgroup>
+				<col style="width:22%;" />
+				<col />
+				<col style="width:22%;" />
+				<col style="width:18%;" />
+			</colgroup>
+			<tbody class="divDetail" sequnce="">
+			<tr>
+				<td><span class="divSeNum"></span></td>
+				<td class="subj"><span class="laCls" code=""></span></td>
+				<td><span class="floor" code=""></span></td>
+				<td><span class="miCls" code=""></span></td>
+			</tr>
+			<tr>
+				<td><span class="deCls" code=""></span></td>
+				<td class="subj"><span class="posiinfo"></span></td>
+				<td><span class="divs" code=""></span></td>
+				<td><input type="checkbox" id="" name="" class="inspDiv" disabled="disabled" checked title="점검필여부" /></td>
+			</tr>
+			</tbody>
+		</table>
+		
+	</section>
+	
+	<footer class="bot_btn item3">
+		<button type="button" class="btn01" id="btnDelete">삭제</button>
+		<button type="button" class="btn01" id="btnModify">수정</button>
+		<button type="button" class="btn01" id="btnAdd">추가</button>
+	</footer>
+
+</div>
+
+</body>
+</html>

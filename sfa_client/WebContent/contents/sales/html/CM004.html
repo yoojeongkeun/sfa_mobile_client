@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../css/sales.css" />
+	<link href="../../common/css/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css">
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+	<script src="../../common/js/cescommutil.js"></script>
+	<script src="../../common/js/jquery.bxslider.min.js"></script>
+	<script src="../../common/js/jquery-ui-1.10.3.custom.js"></script>	
+	<!-- <script src="../js/CM030.js"></script>
+	<script src="../../service/js/CM020.js"></script> -->
+	<script src="../../sales/js/CM004.js"></script>
+	
+	
+	<title>CESCO 세스코</title>
+</head>
+<style type="text/css">
+	body {background: #bcc4d0}
+</style>
+<script>
+	$(function(){
+		$("#btnOpen").click(function(){
+   		 	$(".searchDiv").toggle();
+   		 	
+   		 	if($("#btnOpen").hasClass("btn_close"))
+   		 	{
+   		 		$("#btnOpen").removeClass("btn_close");
+   		 		$("#btnOpen").toggleClass("btn_open");
+   		 		$("#recovery").css("top", "57px");
+		 	}
+				
+			else
+			{
+				$("#btnOpen").removeClass("btn_open");
+				$("#btnOpen").toggleClass("btn_close");
+				$("#recovery").css("top", "250px");
+			}
+   	 	});
+	})
+</script>
+<body>
+	<div class="">
+		<header class="hide">
+			<h1>업무일지 열람</h1>
+		</header>
+
+		<section class="contentsWrap">
+			<div class="topfix_area">
+				<!-- <div class="nvi_title">
+					무료체험 장비 관리
+				</div> -->
+				<table class="tlist00 searchDiv">
+					<colgroup>
+						<col width="20%">
+						<col width="39%">
+						<col width="10px">
+						<col width="*">
+					</colgroup>
+					<tbody>
+						<tr class="trHomeCust">
+							<td colspan="4">
+								<input type="checkbox" id="chkHomeCust">
+								<label>가정집 고객</label>
+							</td>				
+						</tr>
+						<tr>
+							<th> 고객 </th>
+							<td><input type="text" placeholder="고객코드" id="custCode"></td>
+							<td colspan="2"><div style="position:relative;padding-right:30px;"><input type="text" placeholder="고객명" id="custNm" style="width:100%;"><button class="btn_search" id="t02_btnSearch" style="position:absolute;top:0;right:0;"></button></div></td>
+						</tr>
+						<tr>
+							<th> 진단일시 </th>
+							<td><p class="dateWrap"><input type="text" id="t03_calDay" style="width:100%;" readonly/><button type="button" id="t03_btnCal" class="not_vsb date" >달력</button></p></td>
+							<td><span style="font-weight: bold; font-size: 12px;text-align:center;">~</span></td>
+							<td><p class="dateWrap"><input type="text" id="t01_calDay" style="width:100%;" readonly/><button type="button" id="t01_btnCal" class="not_vsb date" >달력</button></p></td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="tlist00 searchDiv">
+					<colgroup>
+						<col width="20%">
+						<col width="39%">
+						<col width="">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th> 관리부서 </th>
+							<td>
+								<select class="selDept" id="t01_selBR">
+									<option>  </option>
+								</select>
+							</td>
+							<td>
+								<select class="selUser" id="t01_selUserID">
+									<option>  </option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th> 장비번호 </th>
+							<td colspan="2">
+								<select class="selDept" id="contDept">
+									<option>  </option>
+								</select>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<div class="c_btn item2 searchDiv">
+					<button type="button" class="btn01" id="btnClear">
+						Clear
+					</button>
+					<button type="button" class="btn03" id="btnSelect">
+						조회
+					</button>
+				</div>
+				<div class="openBar">
+					<button type="button" class="btn_close" id="btnOpen"></button>
+				</div>
+			</div>
+			
+			
+			<div style="position:absolute;top:250px;" id="recovery">	
+				<!--subWrap03-->
+				<ul class="subWrap03">
+					<li>
+						<table class="tlist03" id = "contlistnew">
+							<colgroup>
+								<col width="5%"></col>
+								<col width="*"></col>
+								<col width="*"></col>
+								<col width="*"></col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>
+									<input type="checkbox" id="allChk">
+									</th>
+									<th>설치일자</th>
+									<th>장비번호</th>
+									<th>설치구획</th>
+									<!-- <th type="hidden">수불번호</th> -->
+								</tr>
+							</thead>
+							<tbody id="t01_conBody">
+								<!-- <tr>
+									<td><input type="checkbox"></td>
+									<td id = "Date">2016-08-02</td>
+									<td id = "Device">A1718381611080030</td>
+									<td id = "Division">안방</td>
+								</tr>
+	
+								<tr class="on">
+									삽입되는 row
+									<td></td>
+									<td colspan="3">
+									<table class="t_dep04">
+										<colgroup>
+											<col width="25%"></col>
+											<col width="*"></col>
+											<col width="25%"></col>
+											<col width="*"></col>
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>고객코드</th>
+												<td>AJ2555</td>
+												<th>고객명</th>
+												<td>세스코</td>
+											</tr>
+											<tr>
+												<th class="tac">설치형태</th>
+												<td class="tarNum">30분 체험</td>
+												<th class="tac">설치담당</th>
+												<td class="Pl10">임태은</td>
+											</tr>
+											<tr>
+												<th class="tac">회수여부</th>
+												<td colspan="3" class="tarNum">회수완료</td>
+											</tr>
+											<tr>
+												<th class="tac">설치주소</th>
+												<td colspan="3" class="tarNum">서울시 강동구 상일로 10길 46</td>
+											</tr>
+											<tr>
+												<th class="tac">시작시간</th>
+												<td colspan="3" class="tarNum">2016-08-02 16:36:00</td>
+											</tr>
+											<tr>
+												<th class="tac">종료시간</th>
+												<td colspan="3" class="tarNum">2016-08-02 16:36:00</td>
+											</tr>
+										</tbody>
+									</table></td>
+								</tr>
+								<tr>
+									<td>
+									<input type="checkbox">
+									</td>
+									<td>2016-08-02</td>
+									<td>A1718381611080030</td>
+									<td>안방</td>
+								</tr>
+								<tr>
+									<td>
+									<input type="checkbox">
+									</td>
+									<td>2016-08-02</td>
+									<td>A1718381611080030</td>
+									<td>안방</td>
+								</tr> -->
+							</tbody>
+						</table>
+					</li>
+				</ul>
+				<!--//subWrap03-->
+			</div>
+			<footer class="bot_btn item1">
+				<button type="button" class="btn_02" id="regOrder">회수처리</button>
+			</footer>
+
+		</section>
+	</div>
+
+</body>
+</html>

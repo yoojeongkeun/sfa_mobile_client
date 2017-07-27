@@ -1,0 +1,12 @@
+{
+  "header" : "@CescoHeader",
+  "body" : {
+    "CD_COMPANY" : "",
+    "HNO_CLOSING" : "",
+    "P_PAGE" : "",
+    "CD_ITEM" : "",
+    "AMT" : "",
+    "NO_CLOSING" : "",
+    "NO_SR" : ""
+  }
+}

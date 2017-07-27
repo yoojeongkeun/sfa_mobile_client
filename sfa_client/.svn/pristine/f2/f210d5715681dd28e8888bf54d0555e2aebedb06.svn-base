@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, no" />
+    <meta name="format-detection" content="telephone=no" />
+    <link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="../css/monitoring.css" />
+    <script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+    <script src="../js/ImgOpen.js"></script>
+    <script src="../js/jquery-ui-1.10.4.custom.js"></script>
+    <title></title>
+</head>
+<body>
+	<div class="topfix_area">
+        <div class="rbtnWrap tit01">
+            <h2 class="imgSubject"></h2>
+            <button type="button" class="btn02 rcen_btn" id="btnComplete">닫기</button>
+        </div>
+    </div> 
+    <section class="contentsWrap">
+    	
+    		<img id="image" class="img02 imgDiv" src="" style="width: 95%; height: 95%; position: relative; left: 10px; top: 225px; -webkit-transform: scale(1.4) rotate(90deg)" />
+    	
+    </section>
+</body>
+</html>

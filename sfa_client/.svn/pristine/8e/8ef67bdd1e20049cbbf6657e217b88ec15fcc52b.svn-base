@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../root/css/root.css" /> 
+	<link type="text/css" rel="stylesheet" href="../css/monitoring.css" />
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+	<script src="../js/CM029.js"></script>
+	<script src="../../service/js/CM020.js"></script>
+	<title>CESCO 세스코</title>
+</head>
+<body>
+<div class="subWrap01">
+	<header class="hide">
+		<h1>모니터링</h1>
+		
+	</header>
+	
+	<section class="contentsWrap">
+		<!-- tab -->
+		<div class="tab02 item4">
+			<ul>
+				<li><button type="button" id="btnPreMeeting">1. 사전미팅</button></li>
+				<li  class="on"><button type="button" id="btnMonitoring">2. 모니터링</button></li>
+				<li ><button type="button" id="btnServiceRegist">3. 서비스등록</button></li>
+				<li><button type="button" id="btnAfterMeeting">4. 사후미팅</button></li>
+			</ul>
+		</div>
+		<!-- //tab -->
+		
+		<h2 class="tit01">모니터링</h2>
+		
+		<!-- list -->
+		<ul class="list01" style="display:none">
+			<li id="list01">
+				<span class="cust_stat" id="01">완료</span>
+				<span>일반 모니터링 &amp; 시설점검</span>
+			</li>
+			<li id="list02">
+				<span class="cust_stat" id="02">완료</span>
+				<span>포충등 모니터링</span>
+			</li>
+			<li id="list03">
+				<span class="cust_stat" id="03">완료</span>
+				<span>쥐 모니터링</span>
+			</li>
+			<li id="list04">
+				<span class="cust_stat" id="04">완료</span>
+				<span>트랩 모니터링</span>
+			</li>
+			<li id="list05">
+				<span class="cust_stat" id="05">완료</span>
+				<span>썬더블루 모니터링</span>
+			</li>
+		</ul>
+		<!-- //list -->
+		
+	</section>
+	
+	<footer class="bot_btn item2">
+		<button type="button" class="btn01" id="btnBarcodeInput">바코드 직접입력</button>
+		<button type="button" class="btn01" id="btnBarcode">바코드 모니터링</button>
+		
+	</footer>
+
+</div>
+<div id="bottomCommonMenu"></div>
+</body>
+</html>

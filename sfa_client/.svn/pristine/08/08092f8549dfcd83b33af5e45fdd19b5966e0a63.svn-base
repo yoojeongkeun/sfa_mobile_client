@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.chargeType.type1{
+	color: blue;
+}
+
+.chargeType.type2{
+	color: red;
+}
+
+.chargeType.type3{
+	color: green;
+}
+
+#cancelationListNew .approvalCancelList:last-child .cardInfomation{
+	border-bottom: 1px solid #d1d1d1;
+}

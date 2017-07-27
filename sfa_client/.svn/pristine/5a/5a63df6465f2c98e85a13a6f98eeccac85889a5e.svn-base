@@ -1,0 +1,45 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/time.css" />
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+	<script src="../../common/js/time.js"></script>
+</head>
+<body>
+<div class="popWrap01">
+	<header style="background: none; background-color: #00bcd4; box-shadow: 0 0 0 0; border: none;">
+		<h1 style="line-height: 30px;">시간 선택</h1>
+	</header>
+	<table id="tbTime">
+		<colgroup>
+			<col style="width:40%;" />
+			<col />
+			<col style="width:10%;" />
+		</colgroup>		
+		<tbody>
+			<tr>
+				<td rowspan="3"><span id="ampm">오전</span></td>
+				<td><span id="btnHourPlus">+</span></td>
+				<td><span id="btnMinutePlus">+</span></td>
+			</tr>
+			<tr>				
+				<td><input type="number" id="txtHour" maxlength="2" size="10" value="0" /></td>
+				<td><input type="number" id="txtMinute" maxlength="2" size="10" value="0" /></td>
+			</tr>
+			<tr>				
+				<td><span id="btnHourMinus">-</span></td>
+				<td><span id="btnMinuteMinus">-</span></td>
+			</tr>
+		</tbody>
+		
+	</table>
+	<ul id="btnWrap">
+		<li><span id="btnCancel">취소</span></li>
+		<li><span id="btnOk">확인</span></li>		
+	</ul>
+</div>
+</body>
+</html>

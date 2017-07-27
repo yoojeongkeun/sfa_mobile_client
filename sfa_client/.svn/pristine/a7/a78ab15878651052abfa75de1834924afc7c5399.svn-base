@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../css/division.css" />
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+    <script src="../js/CM031.js"></script>
+	<title>CESCO 세스코</title>
+</head>
+<body>
+<div class="popWrap01">
+	<header>
+		<h1>등록</h1>
+	</header>
+	
+	<section class="contentsWrap">
+		<table class="tview01">
+			<colgroup>
+				<col style="width:20%" />
+				<col style="width:30%" />
+				<col style="width:20%" />
+				<col style="width:30%" />
+			</colgroup>
+			<tbody>
+			<tr>
+				<th scope="row">구획번호</th>
+				<td><span></span></td>
+				<th scope="row">대분류</th>
+				<td><span></span></td>
+			</tr>
+			<tr>
+				<th scope="row">층</th>
+				<td><span></span></td>
+				<th scope="row">중분류</th>
+				<td><span></span></td>
+			</tr>
+			<tr>
+				<th scope="row">세분류</th>
+				<td colspan="3"><span></span></td>
+			</tr>
+			</tbody>
+		</table>
+		
+		<!-- accordion list -->
+        <ul class="list01 acclist on">
+            
+			<li class="on">	<!-- 내용 펼치기 : on 클래스 추가 -->
+				<!-- accordion head -->
+				<div class="acc_head">
+					<p class="tit">일반모니터링</p>
+				</div>
+				<!-- //accordion head -->
+				
+				<!-- accordion body -->
+				<div class="acc_body">
+					<h2 class="tit02">일반모니터링</h2>
+					<h2 class="tit02">해충명</h2>
+					<h3 class="tit03">1. 파리</h3>
+					
+					<table class="tview01 st02">
+						<colgroup>
+							<col style="width:25%;" />
+							<col />
+						</colgroup>
+						<tbody>
+						<tr>
+							<th scope="row">해충명</th>
+							<td>
+								<select>
+									<option value=""></option>
+									<option value=""></option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">상태</th>
+							<td>
+								<select>
+									<option value=""></option>
+									<option value=""></option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">마리수</th>
+							<td>
+								<input type="number" id="" />
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">세부문제<br />발생위치</th>
+							<td>
+								<textarea rows="3" cols="50"></textarea>
+							</td>
+						</tr>
+						</tbody>
+						<tbody>
+						<tr>
+							<th scope="row">원인1</th>
+							<td>
+								<select>
+									<option value=""></option>
+									<option value=""></option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">원인2</th>
+							<td>
+								<select>
+									<option value=""></option>
+									<option value=""></option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">솔루션1</th>
+							<td>
+								<select>
+									<option value=""></option>
+									<option value=""></option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">솔루션2</th>
+							<td>
+								<select>
+									<option value=""></option>
+									<option value=""></option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">솔루션3</th>
+							<td>
+								<select>
+									<option value=""></option>
+									<option value=""></option>
+								</select>
+							</td>
+						</tr>
+						</tbody>
+						<tbody>
+						<tr>
+							<th scope="row">시설항목</th>
+							<td>
+								<select>
+									<option value=""></option>
+									<option value=""></option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">상태</th>
+							<td>
+								<div>
+									<select>
+										<option value=""></option>
+										<option value=""></option>
+									</select>
+								</div>
+								<div class="btn">
+									<button type="button" class="btn_camera">사진찍기</button>
+									<button type="button" class="btn_gallery">사진보기</button>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">문제점</th>
+							<td>
+								<textarea rows="3" cols="50"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">개선사항</th>
+							<td>
+								<textarea rows="3" cols="50"></textarea>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+					<div class="c_btn item3">
+						<button type="button" class="btn01">초기화</button>
+						<button type="button" class="btn01">삭제</button>
+						<button type="button" class="btn01">등록</button>
+					</div>
+				</div>
+				<!-- //accordion body -->
+			</li>
+			<li class="on">
+				<!-- accordion head -->
+				<div class="acc_head">
+					<p class="tit">시설점검</p>
+				</div>
+				<!-- //accordion head -->
+				
+				<!-- accordion body -->
+				<div class="acc_body">
+					<h2 class="tit02">시설명</h2>
+					<h3 class="tit03">1. 출입문</h3>
+					
+					<table class="tview01 st02">
+						<colgroup>
+							<col style="width:25%;" />
+							<col />
+						</colgroup>
+						<tbody>
+						<tr>
+							<th scope="row">시설항목</th>
+							<td>
+								<select>
+									<option value=""></option>
+									<option value=""></option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">상태</th>
+							<td>
+								<div>
+									<select>
+										<option value=""></option>
+										<option value=""></option>
+									</select>
+								</div>
+								<div class="btn">
+									<button type="button" class="btn_camera">사진찍기</button>
+									<button type="button" class="btn_gallery">사진보기</button>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">문제점</th>
+							<td>
+								<textarea rows="3" cols="50"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">개선사항</th>
+							<td>
+								<textarea rows="3" cols="50"></textarea>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+					<div class="c_btn item3">
+						<button type="button" class="btn01">초기화</button>
+						<button type="button" class="btn01">삭제</button>
+						<button type="button" class="btn01">등록</button>
+					</div>
+				</div>
+				<!-- //accordion body -->
+			</li>
+			<li class="">
+				<!-- accordion head -->
+				<div class="acc_head">
+					<p class="tit">개선사항</p>
+				</div>
+				<!-- //accordion head -->
+				
+				<!-- accordion body -->
+				<div class="acc_body">
+					<table class="tlist01">
+						<colgroup>
+							<col style="width:30%;" />
+							<col style="width:20%;" />
+							<col style="width:20%;" />
+							<col style="width:30%;" />
+						</colgroup>
+						<thead>
+						<tr>
+							<th scope="col">개선요청일자</th>
+							<th scope="col">수용여부</th>
+							<th scope="col">시행여부</th>
+							<th scope="col">개선예정일자</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td><span></span></td>
+							<td><span></span></td>
+							<td><span></span></td>
+							<td><span></span></td>
+						</tr>
+						</tbody>
+					</table>
+					
+					<table class="tview01 st02">
+						<colgroup>
+							<col style="width:25%;" />
+							<col />
+						</colgroup>
+						<tbody>
+						<tr>
+							<th scope="row">개선수용</th>
+							<td>
+								<select>
+									<option value=""></option>
+									<option value=""></option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">개선시행</th>
+							<td>
+								<select>
+									<option value=""></option>
+									<option value=""></option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">개선<br />예정일자</th>
+							<td>
+								<p class="inp_cal"><input type="text" id="" /><button type="button" class="btn_cal">달력</button></p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<textarea rows="3" cols="50"></textarea>
+								<div class="btn">
+									<button type="button" class="btn_camera">사진찍기</button>
+									<button type="button" class="btn_gallery">사진보기</button>
+								</div>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+					<div class="c_btn item3">
+						<button type="button" class="btn01">초기화</button>
+						<button type="button" class="btn01">삭제</button>
+						<button type="button" class="btn01">등록</button>
+					</div>
+				</div>
+				<!-- //accordion body -->
+			</li>
+		</ul>
+		<!-- //accordion list -->
+		
+	</section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../css/custmaster.css" />
+	<link type="text/css" rel="stylesheet" href="../../root/css/root.css" />
+	<link href="../../common/css/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css" />
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+	<script src="../../common/js/cescommutil.js"></script>
+	<script src="../js/CM093.js"></script>
+	<title>CESCO 세스코</title>
+</head>
+
+<style type="text/css">
+	.list03 thead th{font-size: 11px; height: 22px; line-height: 22px;}
+	.list03 tbody td{height: 22px;}
+	.tar{text-align:right;}
+	.depth02{padding: 5px;}
+	.list06 thead th{line-height: 22px;height: 22px;}
+	.list06 tbody td{line-height: 22px;height: 22px;}
+	.c_btn{background:#f5f7f9 ;}
+</style>
+
+<body>
+<div class="subWrap01 top_fix_tab01">
+	<header class="hide">
+		<h1>고객정보열람</h1>
+		<h2>접촉이력</h2>
+	</header>
+	<section class="contentsWrap">	
+	<div class="topfix_area">	
+		<table class="tlist00 searchDiv">
+			<colgroup>
+				<col style="width:30%;" />
+				<col style="width:30%;" />
+				<col style="width:30%;" />
+			</colgroup>
+			<tr>
+				<td><select id="selHeadOffice"> <!--  disabled -->
+						<option value="">지역본부</option>
+					</select>
+				</td>
+				<td colspan="3">
+					<select id="selBranch">
+						<option value="">지사명</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<select id="selTypeLarge">
+						<option value="0">유형대</option>						
+					</select>
+				</td>
+				<td>
+					<div class="">
+						<select id="selTypeMedium">
+							<option value="">유형중</option>
+						</select>								  				  			
+					</div>	
+				</td>
+				<td>
+					<div class="">
+						<select id="selCustType">
+							<option value="">고객구분</option>
+							<option value="0"><전체></option>
+							<option value="2">계약고객</option>
+							<option value="3">해약고객</option>
+							<option value="5">유망고객</option>
+							<option value="6">보류고객</option>
+							<option value="7">취소고객</option>
+							<option value="9">기타고객</option>
+						</select>
+					
+					</div>
+				</td>
+				<td>
+					<button type="button" class="s_btn03" id="btnContractObject">계약<br>대상</button>								  				  			
+				</td>
+			</tr>
+			<tr>
+				<td><input type="text" placeholder="고객코드" id="txtCustCode">
+				</td>
+				<td colspan="3">
+					<input type="text" placeholder="고객명" id="txtCustName">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="">
+						<select id="selType">
+							<option value="">업종</option>
+							<option value="0"><전체></option>
+							<option value="1">산업체</option>
+							<option value="2">소규모</option>
+							<option value="3">아파트</option>
+							<option value="4">가정집</option>
+						</select>
+					
+					</div>
+				</td>
+				<td colspan="3">
+					<input type="text" placeholder="시설명" id="txtFacilitiesName">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" placeholder="우편번호" id="txtZipCode" readonly>
+				</td>
+				<td colspan="3">
+					<input type="text" placeholder="주소" id="txtAddress">
+				</td>
+			</tr>
+		</table>
+		<table class="tlist00 searchDiv">
+		<colgroup>
+			<col width="15%"></col>
+			<col width="30%"></col>
+			<col width="30%"></col>
+			<col width="*"></col>
+		</colgroup>
+			<tr>
+				<td rowspan="2" style="text-align:center; font-weight:bold;">
+					면적
+				</td>
+				<td>
+					<input type="text" placeholder="평" id="txtFromPyeong">
+				</td>
+				<td>
+					<input type="text" value="0.00" readonly id="txtFromMeterSquare">
+				</td>
+				<td>~</td>
+			</tr>
+			<tr>
+				<td>
+					
+					<input type="text" placeholder="평" id="txtToPyeong">
+					
+				</td>
+				<td>
+					<input type="text" value="0.00" readonly id="txtToMeterSquare">
+				</td>
+				<td>
+					<input type="checkbox" id="chkWholeArea" checked><span>전체면적</span>
+				</td>
+			</tr>
+		</table>
+		<div class="c_btn item2 searchDiv">
+					<button type="button" class="btn01" id="btnClear">Clear</button>
+					<button type="button" class="btn03" id="btnSearch">조회</button>
+		</div>
+		<div class="openBar">
+			<button type="button" class="btn_open" id="btnOpen"></button>
+		</div>
+		
+	</div>
+		<div  style="width: 140%; position: absolute; top: 340px;" id="divDefaultWrap" class="divWrap">		
+		<table class="list03" id="contlist">
+			<colgroup>
+				<col style="width:9%;" />
+				<col style="width:13%;" />
+				<col style="width:20%;" />
+				<col style="width:14%;" />
+				<col style="width:15%;" />
+				<col style="width:13%;" />
+				<col style="width:*;" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th rowspan="2">No.</th>
+					<th>소속본부</th>
+					<th>고객코드</th>
+					<th>고객구분</th>
+					<th>본사구분</th>
+					<th>유형대</th>
+					<th>주소</th>
+				</tr>
+				<tr>
+					<th>소속지사</th>
+					<th>고객명</th>
+					<th>계약면적</th>
+					<th>업종</th>
+					<th>유형중</th>
+					<th>전화번호</th>
+				</tr>
+			</thead>
+		</table>
+		
+		<ul style="padding-bottom:10px;">
+            <li>
+	            <table class="list03">
+		           
+					<tbody id="tbodyListNew"></tbody>
+					<tbody id="tbodyList" style="display: none;">
+						<tr>
+							<td>
+								<table class="tableList">
+									<colgroup>
+										<col style="width:9%;" />
+										<col style="width:13%;" />
+										<col style="width:20%;" />
+										<col style="width:14%;" />
+										<col style="width:15%;" />
+										<col style="width:13%;" />
+										<col style="width:*;" />
+									</colgroup>
+									<tr>
+										<td rowspan="2"><span class="spanNumber"></span></td>
+										<td><span class="spanHeadOffice"></span></td>
+										<td><span class="spanCustCode"></span></td>
+										<td><span class="spanCustType"></span></td>
+										<td><span class="spanOfficeType"></span></td>
+										<td><span class="spanTypeLarge"></span></td>
+										<td><span class="spanAddress"></span></td>										
+									</tr>
+									<tr>
+										<td><span class="spanBranch"></span></td>
+										<td><span class="spanCustName"></span></td>
+										<td style="text-align: right;"><span class="spanContractArea"></span></td>
+										<td><span class="spanType"></span></td>
+										<td><span class="spanTypeMedium"></span></td>
+										<td><span class="spanPhoneNumber"></span></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>				
+			</li>			 
+		</ul>	
+		</div>	
+		
+		<div  style="width: 202%; position: absolute; top: 340px; display: none;" id="divContractWrap" class="divWrap">		
+		<table class="list03" id="contlist">
+			<colgroup>
+				<col style="width:6%;" />
+				<col style="width:8%;" />
+				<col style="width:13%;" />
+				<col style="width:7%;" />
+				<col style="width:7%;" />
+				<col style="width:7%;" />
+				<col style="width:*;" />				
+				<col style="width:11%;"/>
+				<col style="width:7%;" />
+				<col style="width:7%;" />
+				<col style="width:7%;" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th rowspan="2">No.</th>
+					<th>소속본부</th>
+					<th>고객코드</th>
+					<th>고객구분</th>
+					<th>본사구분</th>
+					<th>유형대</th>
+					<th>주소</th>
+					<th class="thContract">계약일자</th>
+					<th class="thContract">계약유형</th>
+					<th class="thContract">초기금액</th>
+					<th class="thContract">계약사원</th>
+				</tr>
+				<tr>
+					<th>소속지사</th>
+					<th>고객명</th>
+					<th>계약면적</th>
+					<th>업종</th>
+					<th>유형중</th>
+					<th>전화번호</th>					
+					<th class="thContract">계약기간</th>
+					<th class="thContract">계약종류</th>
+					<th class="thContract">정기금액</th>
+					<th class="thContract"></th>
+				</tr>
+			</thead>
+		</table>
+		
+		<ul style="padding-bottom:10px;">
+            <li>
+	            <table class="list03">
+		           
+					<tbody id="tbodyContractListNew"></tbody>
+					<tbody id="tbodyContractList" style="display: none;">
+						<tr>
+							<td>
+								<table class="tableList">
+									<colgroup>
+										<col style="width:6%;" />
+										<col style="width:8%;" />
+										<col style="width:13%;" />
+										<col style="width:7%;" />
+										<col style="width:7%;" />
+										<col style="width:7%;" />
+										<col style="width:*;" />
+										<col style="width:11%;" class="thContract" />
+										<col style="width:7%;" class="thContract" />
+										<col style="width:7%;" class="thContract" />
+										<col style="width:7%;" class="thContract"/>
+									</colgroup>
+									<tr>
+										<td rowspan="2"><span class="spanNumber"></span></td>
+										<td><span class="spanHeadOffice"></span></td>
+										<td><span class="spanCustCode"></span></td>
+										<td><span class="spanCustType"></span></td>
+										<td><span class="spanOfficeType"></span></td>
+										<td><span class="spanTypeLarge"></span></td>
+										<td><span class="spanAddress"></span></td>
+										<td><span class="spanContractDate thContract"></span></td>
+										<td><span class="spanContractType thContract"></span></td>
+										<td><span class="spanEarlyAmount thContract"></span></td>
+										<td><span class="spanContractUserName thContract"></span></td>
+									</tr>
+									<tr>
+										<td><span class="spanBranch"></span></td>
+										<td><span class="spanCustName"></span></td>
+										<td style="text-align: right;"><span class="spanContractArea"></span></td>
+										<td><span class="spanType"></span></td>
+										<td><span class="spanTypeMedium"></span></td>
+										<td><span class="spanPhoneNumber"></span></td>
+										<td><span class="spanContractTerm thContract"></span></td>
+										<td><span class="spanContractKind thContract"></span></td>
+										<td><span class="spanRegularAmount thContract"></span></td>
+										<td><span class="thContract"></span></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>				
+			</li>			 
+		</ul>	
+		</div>	
+		
+		<div  style="width: 220%; position: absolute; top: 340px; display:none;" id="divCancelWrap" class="divWrap">		
+		<table class="list03" id="contlist">
+			<colgroup>
+				<col style="width:6%;" />
+				<col style="width:8%;" />
+				<col style="width:13%;" />
+				<col style="width:7%;" />
+				<col style="width:7%;" />
+				<col style="width:7%;" />
+				<col style="width:*;" />
+				<col style="width:7%;" />
+				<col style="width:11%;"/>
+				<col style="width:7%;" />
+				<col style="width:7%;" />
+				<col style="width:7%;" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th rowspan="2">No.</th>
+					<th>소속본부</th>
+					<th>고객코드</th>
+					<th>고객구분</th>
+					<th>본사구분</th>
+					<th>유형대</th>
+					<th>주소</th>
+					
+					<th class="thCancel">해약일자</th>
+					
+					<th class="thContract">계약일자</th>
+					<th class="thContract">계약유형</th>
+					<th class="thContract">초기금액</th>
+					<th class="thContract">계약사원</th>
+				</tr>
+				<tr>
+					<th>소속지사</th>
+					<th>고객명</th>
+					<th>계약면적</th>
+					<th>업종</th>
+					<th>유형중</th>
+					<th>전화번호</th>
+					
+					<th class="thCancel">해약사유</th>
+					
+					<th class="thContract">계약기간</th>
+					<th class="thContract">계약종류</th>
+					<th class="thContract">정기금액</th>
+					<th class="thContract"></th>
+				</tr>
+			</thead>
+		</table>
+		
+		<ul style="padding-bottom:10px;">
+            <li>
+	            <table class="list03">
+		           
+					<tbody id="tbodyCancelListNew"></tbody>
+					<tbody id="tbodyCancelList" style="display: none;">
+						<tr>
+							<td>
+								<table class="tableList">
+									<colgroup>
+										<col style="width:6%;" />
+										<col style="width:8%;" />
+										<col style="width:13%;" />
+										<col style="width:7%;" />
+										<col style="width:7%;" />
+										<col style="width:7%;" />
+										<col style="width:*;" />
+										<col style="width:7%;" class="thCancel" />
+										<col style="width:11%;" class="thContract" />
+										<col style="width:7%;" class="thContract" />
+										<col style="width:7%;" class="thContract" />
+										<col style="width:7%;" class="thContract"/>
+									</colgroup>
+									<tr>
+										<td rowspan="2"><span class="spanNumber"></span></td>
+										<td><span class="spanHeadOffice"></span></td>
+										<td><span class="spanCustCode"></span></td>
+										<td><span class="spanCustType"></span></td>
+										<td><span class="spanOfficeType"></span></td>
+										<td><span class="spanTypeLarge"></span></td>
+										<td><span class="spanAddress"></span></td>
+										
+										<td><span class="spanCancelDate thCancel"></span></td>
+										
+										<td><span class="spanContractDate thContract"></span></td>
+										<td><span class="spanContractType thContract"></span></td>
+										<td><span class="spanEarlyAmount thContract"></span></td>
+										<td><span class="spanContractUserName thContract"></span></td>
+									</tr>
+									<tr>
+										<td><span class="spanBranch"></span></td>
+										<td><span class="spanCustName"></span></td>
+										<td style="text-align: right;"><span class="spanContractArea"></span></td>
+										<td><span class="spanType"></span></td>
+										<td><span class="spanTypeMedium"></span></td>
+										<td><span class="spanPhoneNumber"></span></td>
+										
+										<td><span class="spanCancelCause thCancel"></span></td>
+										
+										<td><span class="spanContractTerm thContract"></span></td>
+										<td><span class="spanContractKind thContract"></span></td>
+										<td><span class="spanRegularAmount thContract"></span></td>
+										<td><span class="thContract"></span></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>				
+			</li>			 
+		</ul>	
+		</div>	
+	</section>
+</div>
+
+</body>
+</html>

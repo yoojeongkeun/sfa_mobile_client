@@ -1,0 +1,25 @@
+tab03 = 
+{	 
+    init:function(json)
+	{
+    	tab03.initInterface();
+    	tab03.initData(json);
+    	tab03.initLayout();
+	},
+	initInterface:function()
+	{
+		$(".t3_btnGallery").click(function(){
+			 bizMOB.Ui.alert("TAB3에서 갤러리버튼");
+		 });
+	},	 
+	initData:function(json)
+	{
+		
+	},	 
+	initLayout:function()
+	{	
+		
+	}
+};
+
+

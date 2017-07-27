@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />  
+	<meta name="format-detection" content="telephone=no" />
+	<title>CESCO</title>
+	<link type="text/css" rel="stylesheet" href="../../common/css/common_iot.css" />
+	<link type="text/css" rel="stylesheet" href="../css/set.css" />
+	<link type="text/css" rel="stylesheet" href="../../root/css/root.css" />
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+	<script src="../../common/js/cescoUtil.js"></script>
+	<script type="text/javascript" src="../js/SET_0600.js"></script>
+</head>
+<body>
+	<div class="wrap hNo2">
+		<header>
+			<div class="headerWrap">
+				<h1 class="hide">정보 입력</h1>
+			</div>
+		</header>
+		<section>
+			<div class="content">
+				<div class="topNumBox">
+					<ol class="topNumList">
+						<li>
+							<span class="num on">1</span>
+							<span class="title"><em>제품<br />등록</em></span>
+						</li>
+						<li>
+							<span class="num on">2</span>
+							<span class="title"><em>제품<br />연결</em></span>
+						</li>
+						<li>
+							<span class="num on">3</span>
+							<span class="title"><em>Wi-Fi<br />연결</em></span>
+						</li>
+						<li>
+							<span class="num on">4</span>
+							<span class="title"><em>데이터<br />수신확인</em></span>
+						</li>
+						<li>
+							<span class="num off">5</span>
+							<span class="title choice"><em>정보<br />입력</em></span>
+						</li>
+						<li>
+							<span class="num">6</span>
+							<span class="title"><em>인증번호<br />생성</em></span>
+						</li>
+						<li>
+							<span class="num">7</span>
+							<span class="title"><em>설치<br />완료</em></span>
+						</li>
+					</ol>
+				</div>
+				
+				<div class="scroll-area">
+					<div class="conArea" id="contentsWrap">
+						<div class="set06 input_con">
+							
+							<dl class="inputList">
+								<dt>설치 주소</dt>
+								<dd>  <!-- dd태그에 on클래스 추가 :: 입력시 -->
+									<div class="input01"><input type="text" placeholder="주소를 입력해주세요" class="inp" readonly="readonly" id="insAddr1"/><button class="btn_close btnTxtClear" type="button" style="display: none;"><span>close</span></button><!-- <button class="btn_location" type="button" id="btnAddr"><span>위치</span></button> --></div>
+								</dd>
+								<dt>상세 주소</dt>
+								<dd>
+									<div class="input01"><input type="text" placeholder="상세주소를 입력해주세요" class="inp" id="insAddr2"/><button class="btn_close btnTxtClear" type="button" style="display: none;"><span>close</span></button></div>
+								</dd>
+								<dt>설치 장소</dt>
+								<dd><div class="input01"><input type="text" placeholder="장소를 선택하거나 입력해주세요" class="inp" id="insArea"/><button type="button" class="btn_close btnTxtClear" style="display: none;"><span>close</span></button></div></dd>
+								<dd class="btnGrayList">
+									<ul>
+										<li><button type="button" class="btnInsArea">우리집</button></li>
+										<li><button type="button" class="btnInsArea">부모님집</button></li>
+										<li><button type="button" class="btnInsArea">회사</button></li>
+									</ul>
+								</dd>
+								<dt>설치 공간</dt>
+								<dd><div class="input01 type01"><input type="text" placeholder="공간을 선택하세요" readonly="readonly" id="insSpace"/><button class="btn_choice" type="button" id="btnInsSpace"><span>선택</span></button></div></dd>
+							<!-- 	<dd class="text">예 : 거실, 침실, 아이방, 주방</dd> -->
+								<dt>환경 특징</dt>
+								<dd class="checkBtnGrayList">
+									<ul>
+										<li><button  type="button" class="envFeatureCD on" value="1000"><span>일반</span></button></li>
+										<li><button  type="button" class="envFeatureCD" value="1001"><span>어린이</span></button></li>
+										<li><button  type="button" class="envFeatureCD" value="1002"><span>노약자</span></button></li>
+										<li><button type="button" class="envFeatureCD"  value="1003"><span>알레르기</span></button></li>
+									</ul>
+								</dd>
+							</dl>
+							
+							<div class="btnAreaB type01">
+								<button class="btn_blue btnType01" type="button" id="btnNext"><em>다 음</em></button>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+	</div>
+<div class="topfix_area">
+   <div id="bottomCommonMenu"></div>
+</div>	
+	
+</body>
+</html>
+  

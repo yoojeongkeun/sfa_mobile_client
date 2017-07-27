@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- <head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../css/order.css" />
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+	<script src="../js/CM030.js"></script>
+	<script src="../../service/js/CM020.js"></script>
+	<title>CESCO 세스코</title>
+</head> -->
+<body>
+<div class="tab02_">
+	<header class="hide">
+		<h1>환경위생용품 주문서</h1>
+	</header>
+	
+	<section class="contentsWrap">
+		<div class="topfix_area BG_w"  style="position: absolute;">			
+			<button type="button"  class="btn_back btn_bx">주문서마스터로 돌아가기</button>		
+		</div>
+			<ul class="sumWrap">
+				<li><label>(공급단가+세액) X 수량=결제금액</label></li>
+			</ul>
+
+		<div style="padding-top:10px; width:100%; padding-bottom:80px;">	
+		
+			<table class="tlist01" id="detailListNew"></table>
+			<table class="tlist01" id="detailList" style="display:none;">
+			<colgroup id="colGroup">
+				<col width="12%"></col>
+				<col width="9%"></col>
+				<col width="18%"></col>
+				<col width="18%"></col>
+				<col width="*"></col>
+				<col width="15%"></col>
+				<col width="15%"></col>
+			</colgroup>
+              <thead id="thead">
+                <tr>
+                  <th rowspan="2" style="border-bottom: 1px solid #D9DEE5;">No.</th>
+                  <th rowspan="2" style="border-bottom: 1px solid #D9DEE5;"><span>판매<br>구분</span></th>
+                  <th>계약대상</th>
+                  <th>품목</th>
+                  <th>공급단가</th>
+                  <th>수량</th>
+                  <th rowspan="2" style="border-bottom: 1px solid #D9DEE5;">금액</th>
+                </tr>
+                <tr>
+                  <th>표준금액</th>
+                  <th>적용금액</th>
+                  <th>할인율</th>
+                  <th>세액</th>
+                </tr>
+
+              </thead>
+              <tbody class="tbDetail">
+               <tr>
+                  <td rowspan="2" class="seq">1</td>
+                  <td rowspan="2" class="saleType">유상</td>
+                  <td class="CONTTARGNAME">환경위생</td>
+                  <td class="SALEITEMNAME">스크레퍼</td>
+                  <td class="UNITPRICE">3800</td>
+                  <td><input type="number" value="1" class="QUANTITY"></td>
+                  <td rowspan="2" class="TOTAMT">4180</td>
+                </tr>
+                 <tr>
+                  <td class="AMT">3800</td>
+                  <td><input type="text" value="3800" class="APPLAMT" disabled></td>
+                  <td class="DISCRATE">0%</td>
+                  <td class="TAX">380</td>
+                </tr>
+              </tbody>
+            </table>
+           
+		</div>
+		</section>
+
+		<!-- <footer class="bot_btn item2">
+			<button type="button" class="btn_02">저장</button>
+			<button type="button" class="btn01">삭제</button>
+		</footer> -->
+		<!-- //bottom fix area -->
+	
+</div>
+	
+
+</body>
+</html>

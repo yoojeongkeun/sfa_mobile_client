@@ -1,0 +1,19 @@
+{
+  "header" : "@CescoHeader",
+  "body" : {
+    "CUSTCODE" : "",
+    "USERID" : "",
+    "FIC" : "",
+    "REGISTER" : "",
+    "HP" : "",
+    "PHONE" : "",
+    "VISITDATE" : "",
+    "BASIC" : "",
+    "TRACT" : "",
+    "DATE" : "",
+    "VBC" : "",
+    "BEDBUG" : "",
+    "MOTH" : "",
+    "INTERVIEWER" : ""
+  }
+}

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<link type="text/css" rel="stylesheet"
+	href="../../common/css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/collection.css" />
+<link href="../../common/css/jquery-ui-1.10.3.custom.min.css"
+	rel="stylesheet" type="text/css" />
+<link type="text/css" rel="stylesheet" href="../../root/css/root.css" />
+<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+<script src="../js/CM013.js"></script>
+<script src="../../common/js/jquery-ui-1.10.3.custom.js"></script>
+<script src="../../common/js/useBackButton.js"></script>
+<title>CESCO 세스코</title>
+</head>
+<body>
+	<div class="subWrap01 top_fix01 bot_fix01">
+		<!-- fix: search -->
+		<header class="hide">
+			<h1>수금등록</h1>
+		</header>
+
+		<section class="contentsWrap">
+			<div class="topfix_area">
+				<!-- search -->
+				<div class="searchWrap">
+					<div class="inp_srch">
+						<input type="text" id="CustNm1" placeholder="고객코드/고객명/전화번호를 입력하세요" />
+						<button type="button" class="btn_search" id="SearchBtn">검색</button>
+					</div>
+				</div>
+				<!-- //search -->
+			</div>
+
+			<table class="tlist01">
+				<colgroup>
+					<col style="width: 25%;" />
+					<col />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">수금일자</th>
+						<td><p class="inp_cal">
+								<input type="text" id="CollectDate" readonly /><input id="datepicker"
+									style="display: none;" />
+								<button type="button" id="" class="btn_cal">달력</button>
+							</p></td>
+
+					</tr>
+					<tr>
+						<th scope="row">통장계좌</th>
+						<td><span>12345-67890</span></td>
+					</tr>
+					<tr>
+						<th scope="row">수금순번</th>
+						<td>
+							<div class="rbtnWrap">
+								<div>
+									<select id='CollectSeq'>
+
+									</select>
+								</div>
+								<button type="button" id="Refresh" class="btn_refresh rcen_btn"
+									style="top: 25px;">새로고침</button>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">매출부서</th>
+						<td><span class="DeptNm" DeptCode=""></span></td>
+					</tr>
+					<tr>
+						<th scope="row">수금사원</th>
+						<td><span class="UserNm" UserID=""></span></td>
+					</tr>
+					<tr>
+						<th scope="row">고객명</th>
+						<td><span class="CustNm"></span></td>
+					</tr>
+				</tbody>
+				<tbody class="bg01">
+					<tr>
+						<th scope="row">매출년월</th>
+						<td>
+							<!--  <input type="number" id="SaleYYYY" class="year" /> 년 
+					<input type="number" id="SaleMM" class="month" />  월  --> <select
+							name="" class="select_box011 saleDate" id="SaleYYYY" style="width: 80px">
+								<option>2009</option>
+								<option>2010</option>
+								<option>2011</option>
+								<option>2012</option>
+								<option>2013</option>
+								<option>2014</option>
+								<option>2015</option>
+								<option>2016</option>
+								<option>2017</option>
+								<option>2018</option>
+								<option>2019</option>
+						</select> 년 <select name="" class="select_box011 saleDate" id="SaleMM"
+							style="width: 80px">
+								<option>01</option>
+								<option>02</option>
+								<option>03</option>
+								<option>04</option>
+								<option>05</option>
+								<option>06</option>
+								<option>07</option>
+								<option>08</option>
+								<option>09</option>
+								<option>10</option>
+								<option>11</option>
+								<option>12</option>
+						</select> 월
+
+
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">수금금액</th>
+						<td><input type="tel" id="CollectAmt" disabled=false /></td>
+					</tr>
+					<tr>
+						<th scope="row">입금표년월</th>
+						<td>
+							<!-- <input type="number" id="DepositYYYY" class="year" /> 년 
+					<input type="number" id="DepositMM" class="month" /> 월--> <select
+							name="" class="select_box011" id="DepositYYYY"
+							style="width: 80px">
+								<option>2009</option>
+								<option>2010</option>
+								<option>2011</option>
+								<option>2012</option>
+								<option>2013</option>
+								<option>2014</option>
+								<option>2015</option>
+								<option>2016</option>
+								<option>2017</option>
+								<option>2018</option>
+								<option>2019</option>
+						</select> 년 <select name="" class="select_box011" id="DepositMM"
+							style="width: 80px">
+								<option>01</option>
+								<option>02</option>
+								<option>03</option>
+								<option>04</option>
+								<option>05</option>
+								<option>06</option>
+								<option>07</option>
+								<option>08</option>
+								<option>09</option>
+								<option>10</option>
+								<option>11</option>
+								<option>12</option>
+						</select> 월
+
+
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">입금표번호</th>
+						<td><input type="number" id="DepositNumber" /></td>
+					</tr>
+					<tr>
+						<th scope="row">비고</th>
+						<td><textarea rows="2" cols="50" id="Remark"></textarea></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="tlist01" id="List01New"></table>
+			<table class="tlist01" id="List01" style="display: none;">
+				<colgroup>
+					<col style="width: 25%;" />
+					<col style="width: 30%;" />
+					<col style="width: 30%;" />
+					<col style="width: 15%;" />
+				</colgroup>
+				<tbody id="list02">
+					<tr id="Detaile" class="">
+						<th scope="row" id="ContracNm" ContractCode=""></th>
+						<td class="subj"><span></span></td>
+						<td class="num" id="Amt"><span></span> 원</td>
+						<td><button type="button" class="btn02" id="Delete1">삭제</button></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="botfix_area">
+				<table class="tlist01">
+					<colgroup>
+						<col style="width: 25%;" />
+						<col />
+					</colgroup>
+					<tbody class="bg02">
+						<tr>
+							<th scope="row">월매출액</th>
+							<td><input type="tel" id="SaleMonthAmt" class="num txtc_r01"
+								disabled=false /></td>
+						</tr>
+					</tbody>
+				</table>
+			</div> 
+		</section>
+
+		<footer class="bot_btn item3">
+			<button type="button" class="btn01" id="btnDel">삭제</button>
+			<button type="button" class="btn01" id="btnAdd">계약대상추가</button>
+			<button type="button" class="btn01" id="btnInsert">등록</button>
+		</footer>
+
+	</div>
+
+	<div id="bottomCommonMenu"></div>
+</body>
+</html>

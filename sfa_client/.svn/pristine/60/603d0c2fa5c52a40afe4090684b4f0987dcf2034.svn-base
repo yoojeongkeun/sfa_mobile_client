@@ -1,0 +1,346 @@
+page  =
+{	
+	mode: "",
+	popupJson: "",
+	custCode: "",
+	custName: "",
+	reasonCode: "",
+	salesPlanID: "",
+	init : function(json)
+	{
+		page.initInterface();
+		page.initData(json);
+		page.initLayout();
+	},
+	initInterface:function()
+	{			
+		page.setDateTime("#calFrom", "#btnCalFrom");
+		
+		$(".btn_search").click(function(){
+			page.custSearch();
+		});
+		
+		$(".btnRegist").click(function(){
+			var btnOK = bizMOB.Ui.createTextButton("네", function(){
+				if(page.mode == ""){
+					bizMOB.Ui.alert("안내", "고객 검색 후 진행해주세요.");
+					return;
+				}
+				page.timeCheck();
+			});
+			var btnCancel = bizMOB.Ui.createTextButton("아니오", function(){
+				return;
+			});
+			bizMOB.Ui.confirm("알림", "일정을 " + $(".btnRegist").text() + "하시겠습니까?", btnOK, btnCancel);	
+			
+		});
+		
+		$(".btn_close").click(function(){
+			bizMOB.Ui.closeDialog();
+		});
+		
+		$(".btnCancel").click(function(){
+			if(page.mode == "M"){
+				var btnOK = bizMOB.Ui.createTextButton("네", function(){
+					page.deletePlan();
+				});
+				var btnCancel = bizMOB.Ui.createTextButton("아니오", function(){
+					return;
+				});
+				bizMOB.Ui.confirm("알림", "일정을 삭제하시겠습니까?", btnOK, btnCancel);	
+				
+				
+			}else{
+				bizMOB.Ui.closeDialog({
+					
+				});
+			}
+		});	
+	},
+	initData:function(json)
+	{		
+		$("#calFrom").val(json.fromDate);
+		$("#calTo").val(json.toDate);
+		
+		if(json.fromTime != undefined){
+			$("#dteFromTime").val(json.fromTime);
+		}
+		if(json.toTime != undefined){
+			$("#dteToTime").val(json.toTime);
+		}
+		/*
+		
+		address: $that.find(".address").val(),
+		contents: $that.find(".contents").val(),
+		custType: $that.attr("custtype")*/
+		if(json.jsonData != undefined){
+			page.salesPlanID = json.jsonData.salesPlanID;
+			$("#txtCustCode").attr("disabled", "");
+			$("#txtCustName").attr("disabled", "");
+			$("#txtCustCode").val(json.jsonData.custCode);
+			$("#txtCustName").val(json.jsonData.custName);
+			$("#txtTitle").val(json.jsonData.title);
+			$("#txtDeptName").val(json.jsonData.repDept);
+			$("#txtUserName").val(json.jsonData.repUser);
+			$("#txtCustType").val(json.jsonData.custType);
+			
+			page.reasonCode = json.jsonData.contactReson;
+			
+			$("#txtAddress").val(json.jsonData.address);			
+			$("#txtContents").val(json.jsonData.contents);
+			
+			$(".btn_search").hide();
+			$(".btnRegist").text("수정");
+			$(".btnCancel").text("삭제");
+			page.mode = "M";
+			
+		}
+		page.getComboBoxList("#selReason");
+	},
+	initLayout:function()
+	{
+		
+	},
+	setDateTime: function(txtName, btnName){
+		$(btnName).click(function(){
+			$(txtName).focus();
+		});
+		var option = cescommutil.datePickerOption(function(date){		
+			$("#calTo").val(date);
+			}, "yy-mm-dd"		 			
+		);
+		$(txtName).datepicker(option);
+	},
+	custSearch: function(){
+		if($("#txtCustCode").val().trim() == "" && $("#txtCustName").val().trim() == ""){
+			bizMOB.Ui.alert("안내", "고객코드 또는 고객명을 입력 후 검색해주세요.");
+			return;
+		}
+		var tr = bizMOB.Util.Resource.getTr("Cesco", "SD01318");
+		tr.body.P01 = "N";
+		tr.body.P02 = $("#txtCustCode").val();
+		tr.body.P03 = $("#txtCustName").val();
+		
+		bizMOB.Web.post({
+			message: tr,
+			success: function(json){
+				if(!json.header.result){
+					bizMOB.Ui.alert("안내", "고객 목록을 불러오는데 실패하였습니다.");
+					return;
+				}
+				
+				if(json.body.LIST01.length == 0){
+					bizMOB.Ui.alert("안내", "검색된 고객이 없습니다.");
+					return;
+				}
+				
+				if(json.body.LIST01.length > 1){
+					// 고객 조회가 2 이상일 경우 팝업으로 고객 선택				
+					page.popupJson = json;
+					var paramJson = {body: "", header: ""}; paramJson.body = {LIST01: [{}]}; paramJson.body.LIST01 = [];
+					for(var i=0; i<json.body.LIST01.length; i++){
+						paramJson.body.LIST01[i] = {R01:"", R02:""};
+						paramJson.body.LIST01[i].R01 = json.body.LIST01[i].CustCode;
+						paramJson.body.LIST01[i].R02 = json.body.LIST01[i].CustName;
+					}
+					bizMOB.Ui.openDialog("service/html/SD011_pop2.html", 
+					{ 
+						message : 
+					   	{
+							custCode: $("#txtCustCode").val(),
+							custName: $("#txtCustName").val()
+					   	},
+					   	width:"95%",
+						height:"85%"
+					});
+				}else{
+					page.setCustData(json.body.LIST01[0]);
+				}
+			
+			}
+		});
+	},
+	callbackNotSelected: function(){
+		
+	},
+	callbackSetCustList: function(json){		
+		page.setCustData(page.popupJson.body.LIST01[json.custIndex]);
+	},
+	setCustData: function(list){
+		$("#txtCustCode").val(list.CustCode);
+		$("#txtCustName").val(list.CustName);
+		$("#txtDeptName").val(list.DeptName);
+		$("#txtUserName").val(list.UserName);
+		$("#txtCustType").val(list.CustGubun);
+		$("#txtAddress").val(list.Address1);
+		$("#txtTitle").val("[" + list.CustGubun.replace("고객", "") + "] " + list.CustName);
+		
+		page.mode = "I";		
+	},
+	getComboBoxList: function(selID, type, strValue){
+		var tr = bizMOB.Util.Resource.getTr("Cesco", "SD01303");
+		tr.body.P01 = "X01";
+		tr.body.P02 = "";
+		tr.body.P03 = "";
+		
+		bizMOB.Web.post({
+			message: tr,
+			success: function(json){
+				if(!json.header.result){
+					bizMOB.Ui.alert("안내", "접촉사유 리스트를 불러오는데 실패하였습니다.");
+					return;
+				}
+				page.setComboBox(selID, json.body.LIST01, strValue);
+			}
+		});		
+	},
+	// 부서관련 콤보박스!
+    setComboBox: function(id, list, strValue){
+		var options = "";
+		$.each(list, function(i, listElement){
+			options += "<option value='" + listElement.R01 + "'>" + listElement.R02 + "</option>";
+		});
+		$(id).html(options);
+		if(page.reasonCode != "")
+			$(id).val(page.reasonCode);
+	},
+	timeCheck: function(){
+		var tr = bizMOB.Util.Resource.getTr("Cesco", "SD01321");
+		tr.body.P01 = page.salesPlanID;
+		tr.body.P02 = ""; //session userid
+		tr.body.P03 = $("#calFrom").val().replace(/-/g, "");
+		tr.body.P04 = $("#dteFromTime").val().replace(":", "");
+		tr.body.P05 = $("#dteToTime").val().replace(":", "");
+		
+		bizMOB.Web.post({
+			message: tr,
+			success: function(json){
+				if(!json.header.result){
+					bizMOB.Ui.alert("안내", "시간 체크에 실패하였습니다.");
+					return;
+				}
+				
+				if(json.body.LIST01.length == 0 || json.body.LIST01[0].R01 == "0"){
+					if(page.mode == "I"){
+						page.insert();
+					}else if(page.mode == "M"){
+						page.modify();
+					}
+				}else{
+					bizMOB.Ui.alert("안내", "시간이 겹치는 일정이 존재합니다.");
+					return;
+				}
+			}
+		});
+		
+	},
+	insert: function(){
+		if($("#txtContents").val().trim() == ""){
+			bizMOB.Ui.alert("안내", "내용을 입력해주세요.");
+			return;
+		}
+		if($("#selReason").val() == "N"){
+			bizMOB.Ui.alert("안내", "방문/접촉사유를 선택해주세요.");
+			return;
+		}
+		var tr = bizMOB.Util.Resource.getTr("Cesco", "SD01319");
+		tr.body.P01 = ""; // session userid
+		tr.body.P02 = "150"; // 박혀져있음.
+		tr.body.P03 = $("#txtTitle").val();
+		tr.body.P04 = $("#txtAddress").val();
+		tr.body.P05 = "0"; // 박혀져있음.
+		tr.body.P06 = $("#selReason").val();
+		tr.body.P07 = $("#txtCustCode").val();
+		tr.body.P08 = $("#txtCustName").val();
+		tr.body.P09 = $("#txtContents").val();
+		tr.body.P10 = $("#calFrom").val() + " " + $("#dteFromTime").val();
+		tr.body.P11 = $("#calTo").val() + " " + $("#dteToTime").val();
+		tr.body.P12 = "0";
+		tr.body.P13 = "1";
+		tr.body.P14 = "0";
+		tr.body.P15 = "0 minutes"; // 전부 이 값으로 insert가 되어있음.
+		tr.body.P16 = "";// session userid
+		
+		bizMOB.Web.post({
+			message: tr,
+			success: function(json){
+				if(!json.header.result){
+					bizMOB.Ui.alert("안내", "영업일정 등록에 실패하였습니다.");
+					return;
+				}
+				bizMOB.Ui.toast("영업일정이 등록되었습니다.");
+				bizMOB.Ui.closeDialog({
+					callback: "page.refresh"
+				});
+			}
+		});
+	},
+	modify: function(){
+		if($("#txtContents").val().trim() == ""){
+			bizMOB.Ui.alert("안내", "내용을 입력해주세요.");
+			return;
+		}
+		if($("#selReason").val() == "N"){
+			bizMOB.Ui.alert("안내", "방문/접촉사유를 선택해주세요.");
+			return;
+		}
+		if(!($("#calFrom").val() + " " + $("#dteFromTime").val() < $("#calTo").val() + " " + $("#dteToTime").val())){
+			bizMOB.Ui.alert("안내", "시작 / 종료시간을 확인해주세요.");
+			return;
+		}
+		var tr = bizMOB.Util.Resource.getTr("Cesco", "SD01320");
+		tr.body.P01 = ""; // session userid
+		tr.body.P02 = "150"; // 박혀져있음.
+		tr.body.P03 = $("#txtTitle").val();
+		tr.body.P04 = $("#txtAddress").val();
+		tr.body.P05 = "0"; // 박혀져있음.
+		tr.body.P06 = $("#selReason").val();
+		tr.body.P07 = $("#txtCustCode").val();
+		tr.body.P08 = $("#txtCustName").val();
+		tr.body.P09 = $("#txtContents").val();
+		tr.body.P10 = $("#calFrom").val() + " " + $("#dteFromTime").val();
+		tr.body.P11 = $("#calTo").val() + " " + $("#dteToTime").val();
+		tr.body.P12 = "0";
+		tr.body.P13 = "1";
+		tr.body.P14 = "0";
+		tr.body.P15 = "0 minutes"; // 전부 이 값으로 insert가 되어있음.
+		tr.body.P16 = "";// session userid
+		tr.body.P17 = page.salesPlanID;
+		
+		bizMOB.Web.post({
+			message: tr,
+			success: function(json){
+				if(!json.header.result){
+					bizMOB.Ui.alert("안내", "영업일정 수정에 실패하였습니다.");
+					return;
+				}
+				bizMOB.Ui.toast("영업일정이 수정되었습니다.");
+				bizMOB.Ui.closeDialog({
+					callback: "page.refresh"
+				});
+			}
+		});
+	},
+	deletePlan: function(){
+		if(page.salesPlanID == ""){
+			bizMOB.Ui.alert("안내", "잘못된 접근입니다.");
+			return;
+		}
+		var tr = bizMOB.Util.Resource.getTr("Cesco", "SD01322");
+		tr.body.P01 = page.salesPlanID;
+		bizMOB.Web.post({
+			message: tr,
+			success: function(json){
+				if(!json.header.result){
+					bizMOB.Ui.alert("안내", "영업일정 삭제에 실패하였습니다.");
+					return;
+				}
+				bizMOB.Ui.toast("영업일정이 삭제되었습니다.");
+				bizMOB.Ui.closeDialog({
+					callback: "page.refresh"
+				});
+			}
+		});
+	}
+	
+};

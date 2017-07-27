@@ -1,0 +1,7 @@
+{
+  "header" : "@CescoHeader",
+  "body" : {
+    "CustCode" : "",
+    "SaleYm" : ""
+  }
+}

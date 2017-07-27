@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../css/common02.css" />
+	<link type="text/css" rel="stylesheet" href="../css/style02.css" />
+	<link href="../../common/css/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css" />
+		
+	<link type="text/css" rel="stylesheet" href="../../root/css/root.css" /> 
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+	<script src="../../common/js/jquery-ui.min.js"></script>
+	<script src="../js/IS003.js"></script>
+	<title>구획화</title>
+</head>
+<style>
+.addPanel button {
+		width: 100%;
+}
+.openBar{
+	background:url(../../common/images/tab_open_bg.png) repeat-x;
+	text-align: center;
+	position: fixed;
+ 	top: 162px;
+  	width: 100%;
+  	z-index: 10;
+}
+.btn_open{	
+	width: 82px;
+	height:28px;
+	background:url(../../common/images/tab_open.png) no-repeat 0 0;
+}
+</style>
+
+<body>
+	<!-- 레이어 클릭방지 배경처리
+	<div id="blocker" ></div>
+	-->
+	<div class="topWrap pT155" style="padding-top:258px">
+		<header>
+			
+		</header>
+		<section class="contentsWrap" style="padding-top:11px;">
+			<div class="topfix_area">
+			
+				<div class="commonCustSearch">
+				
+				</div>
+			
+				
+				<!-- <select style="width: 30%;">
+					<option value="CS001">고객명</option>
+					<option value="CS002">고객코드</option>
+					<option value="CS003">전화번호</option>
+				</select> -->
+				<!-- <div class="search_input">
+					<select style="width: 30%;">
+						<option value="CS001">고객명</option>
+						<option value="CS002">고객코드</option>
+						<option value="CS003">전화번호</option>
+					</select>
+					
+					
+					
+					
+					
+					
+					<div class="inp_srch" style="width: 52%; float: right;">				
+						<input type="text" id="getCustList" placeholder="" style="height: 31px;" />
+						<button type="button" id = "btnSearch" class="btn_search">검색</button>
+					</div>
+				
+				
+					<select style="width: 30%;">
+						<option value="CS001">고객명</option>
+						<option value="CS002">고객코드</option>
+						<option value="CS003">전화번호</option>
+					</select>
+					<div class="input_container"  style="width: 62%; float: right;">
+						<input type="text" id="custNm" style="padding: 0 45px 0 44px;"/>disabled
+					</div>					
+					<button type="button" class="remove_btn" style="right: 15px;"></button>
+				</div> -->
+				<div class="tit_tab">
+					<button class="tab_btn " id="btnTabHis">구획 변경이력 조회</button>
+					<button class="tab_btn on has_open">고객 구획 등록</button>
+					<div class="tab_open" id="tapOpen" style="display: none;">
+						<button class="open_btn"></button>
+					</div>
+					<div class="search_box" style="top: 40px; display: none;">
+						<table>
+							<colgroup>
+								<col width="*"></col>
+								<col width="45%"></col>
+							</colgroup>
+							<tbody>
+							<tr>
+								<td><select id="comLaClsDiv"><option value="">대분류 (전체)</option></select></td>
+								<td><select id="comFloor"><option value="">층 (전체)</option></select></td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<input type="text" placeholder="세분류를 입력하세요." value="" id="comDeClsDiv">
+									<button type="button" class="search_icon" id="searchBtn"></button>
+								</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="divSearchWrap" style="padding: 10px; background: #ececec; border-bottom: 1px solid #c3d5df;">
+					<select style="width: 29%;" id="selDivSearchType">
+						<option value="T01">구획명</option>
+						<option value="T02">대분류</option>
+						<option value="T03">중분류</option>
+						<option value="T04">소분류</option>
+					</select>
+					<div class="inp_srch" style="width: 57%; height: 30px; float: right; position: relative; padding-right: 40px; background: #fff; border: 1px solid #a9a9a9;"><input type="text" id="txtDivSearchText" placeholder="검색어를 입력하세요" style="height: 29px; border: none; width: 100%; box-shadow: none;"><button id="btnDivSearch" type="button" style="position: absolute; right: 0; top: 0; height: 100%; width: 40px; text-indent: -999em; background: url(../../common/images/btn_search.png) no-repeat center center; background-size: 16px auto;">검색</button>
+					</div>
+				</div>
+				<div class="openBar">
+					<button type="button" class="btn_open" id="btnOpen"></button>
+				</div>
+				<table class="list01" style="margin-top: 34px;">
+					<colgroup>
+						<col style="width: 25%;" />
+						<col style="width: 30%;" />
+						<col style="width: 20%;" />
+						<col />
+					</colgroup>
+					<thead class="enterd_row">
+						<tr>
+							<th scope="col"><span>구획번호</span></th>
+							<th scope="col"><span>대분류</span></th>
+							<th scope="col"><span>층</span></th>
+							<th scope="col"><span>중분류</span></th>
+						</tr>
+						<tr>
+							<th scope="col"><span>세분류</span></th>
+							<th scope="col"><span>위치설명</span></th>
+							<th scope="col"><span>구획명</span></th>
+							<th scope="col"><span>점검필</span></th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<table class="list01" id="divListNew"></table>
+			<table class="list01" id="divList" style="display:none">
+				<colgroup>
+		            <col style="width: 25%;" />
+					<col style="width: 30%;" />
+					<col style="width: 20%;" />
+					<col />
+	            </colgroup>
+				<tbody class="dList">
+					<tr class="dListTr enterd_row">
+						<td scope="col" class="divSeNum" version=""><span>1000</span></td>
+						<td scope="col" class="laClsNm"><span>외곽</span></td>
+						<td scope="col" class="flooNm"><span>01</span></td>
+						<td scope="col" class="miClsNm"><span>외곽</span></td>
+					</tr>
+					<tr class="dListTr btmbrd">
+						<td scope="col" class="deClsNm"><span>외곽</span></td>
+						<td scope="col" class="posiDesp"><span></span></td>
+						<td scope="col" class="divNm"><span>외곽</span></td>
+						<td><img class="img_1em inspDivCh" src="../../common/images/img_check_d.png"/></td>
+					</tr>
+					
+					<!-- -->
+				</tbody>
+			</table>
+			<div style="height:55px;">
+			</div>
+			<div class="btmBtn">
+				<button class="newBtn" id="btnNewDiv">신규추가</button>
+			</div>
+           		
+		</section>
+	</div>
+	
+	<div class="addPanel modal" id="slider" style="display:none; overflow: Auto;"> 
+	  <!--<div class="editPanel modal">    <col width="65%">   -->
+	 
+	  <!-- <div class="addPanel"> -->
+	   <table class="list04">
+	   
+	    <tr>
+	      <td class="tab" style="height:45px">신규 구획 추가
+	      	<button id="closeBtn" class="closeBtn fr"></button>
+	      </td>
+	    </tr>
+	  </table>
+	    <table class="inner_table01">
+	      <colgroup>
+	      <col width="19%">
+	      <col width="33%">
+	      <col width="15%">
+	      <col width="33%">
+	      </colgroup>
+	      <tbody>
+	        <tr>
+	          <th class="wLine">구획번호</th>
+	          <td colspan="3" class="inpLine"><input type="text" id="input2" class="divSeNum2" code="" disabled style="background-color: whitesmoke;"/></td>
+	        </tr>
+	        <tr>
+	          <th class="wLine">대분류</th>
+	          <td class="inpLine"><input type="text" id="input4" class="LaClsNm2" code="" /></td>
+	          <th class="wLine">층</th>
+	          <td class="inpLine"><input type="text" id="input3" class="FlooNm2" code="" /></td>
+	        </tr>
+	        <tr>
+	          <th class="wLine">중분류</th>
+	          <td class="inpLine"><input type="text" id="input5" class="MiClsNm2" code="" /></td>
+	          <th class="wLine">세분류</th>
+	          <td class="inpLine"><input type="text" id="input6" class="DeClsNm2" code="" /></td>
+	        </tr>
+	        <tr>
+	          <th class="wLine">위치설명</th>
+	          <td colspan="3" class="inpLine"><input type="text" id="input7" class="PosiDesp2" code="" /></td>
+	        </tr>
+	        <tr>
+	          <th class="wLine"> 구획명</th>
+	          <td class="inpLine"><select name="select" class="DivCategory" style="font-size:13px;">
+	          </select></td>
+	          <th class="wLine">점검필</th> 
+	          <td class="inpLine"><input name="Chk" type="checkbox" class="InspDiv2" value=""></td>
+	        </tr>
+	        <tr>
+	          <th class="gLine">적용기간</th>
+	          <td colspan="3" class="inpLine"><input type="text" id="input" class="btnCal FRYMD" value="2013-11-06" style="width:90px" disabled/><button type="button" class="btnCal" style="margin-top: 1px;"></button>
+	            <span class="bTxt">-</span>
+	            <input type="text" id="input"  class="btnCal TOYMD" value="2014-11-05" style="width:90px" disabled/><button type="button" class="btnCal" style="margin-top: 1px;"></button></td>
+	        </tr>
+	        <!-- <tr>
+	        	<td colspan="4"><hr/></td>
+	        </tr> -->
+	        <tr id="btnLtUdt">
+	          <td height="17" colspan="2" style="padding: 3px;">
+	          	<button type="button" class="btn_occur" id="btnCop" style="width: 100%;">복사추가</button>	
+	          </td>
+	          <td height="17" style="padding: 2px;">
+	          	<button type="button" class="btn_cause" id="btnDel">삭제</button>
+	          </td>
+	          <td height="17" style="padding: 3px;">
+	          	<button type="button" class="btn_kill" id="btnUpd">수정</button>
+	          </td>
+	        </tr>
+	        <tr id="btnLtNew">
+	          <td height="17" colspan="4" style="padding: 0px 3px 0px 3px;">
+	          	<button type="button" class="btn_submit" id="btnIns" style="width: 100%; margin-left:0px">등록</button>
+          	  </td>
+	        </tr>
+	      </tbody>
+	    </table>
+	  <!-- </div> -->
+	</div>
+<div class="topfix_area">
+   <div id="bottomCommonMenu"></div>
+</div>
+</body>
+</html>
+
+

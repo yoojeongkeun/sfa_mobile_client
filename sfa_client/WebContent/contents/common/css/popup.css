@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+/*popup*/
+.popupWrap { width:100%; height:100%; position:relative; background:#fff; border-radius:1.334rem;  box-sizing:border-box;}
+.popupWrap .popup_header { position:relative; height:56px; text-align:center;  background:#0284cf; box-sizing:border-box;}
+.popupWrap .popup_header h1 { color:#fff; font-size:1.25rem; padding-top:17px; font-family:'cesco_b','Malgun Gothic', '맑은 고딕', sans-serif;}
+.popupWrap.add .popup_header .btn_close { position:absolute; right:0; top:0px; width:45px; height:56px;}
+.popupWrap.add .popup_header .btn_close em { display:inline-block; text-indent:-9999px; background:url("../../common/images/popup/popup_btn_close.png") no-repeat center; background-size:15px;}
+
+
+/*지역선택_팝업창*/
+.sm_popup.green { position:absolute; left:0; top:0; width:100%; height:100%; background:#fff; z-index:4;}
+.sm_popup.green .sm_popTop { position:relative; padding:13px 40px 13px 15px; color:#fff; text-align:center; background:#00beb4;}
+.sm_popup.green .sm_popTop .btn_close { position:absolute; right:0; top:0; width:45px; height:45px; background:url("../../common/images/popup/popup_btn_close.png") no-repeat center; background-size:15px;}
+.sm_popup.green .sm_popTop .btn_close span { display:inline-block; text-indent:-99999px;}
+.sm_popup.green .sm_popt { font-family:'cesco_b'; font-size:0.938rem;}
+.sm_popup .sm_scroll { overflow:hidden; overflow-y:auto; position:absolute;top:45px;bottom:0;left:0;right:0;}
+.sm_popup .okpop {overflow:hidden; overflow:auto; position:absolute;top:0;bottom:46px;left:0;right:0;}
+.sm_popup.green .snsList { padding:0 13px; }
+.sm_popup.green .snsList li { position:relative; }
+.sm_popup.green .snsList li:last-child button { border-bottom:0px;}
+.sm_popup.green .snsList li button { width:100%; padding:16px 4px 16px 45px; text-align:left; color:#6c6e71; border-bottom:1px solid #ccc;}
+.sm_popup.green .snsList li button.btn_facebook { background:url("../../common/images/icon_facebook.png") no-repeat left center; background-size:30px;}
+.sm_popup.green .snsList li button.btn_kakaotalk { background:url("../../common/images/icon_kakao.png") no-repeat left center; background-size:30px;}
+.sm_popup.green .snsList li button.btn_kakaostory { background:url("../../common/images/icon_kakaostory.png") no-repeat left center; background-size:30px;}
+.sm_popup.green .snsList li button.btn_sms { background:url("../../common/images/icon_sms.png") no-repeat left center; background-size:30px;}
+
+.sm_popup.green .sm_popList { padding:0 13px; overflow:hidden; box-sizing:border-box;}
+.sm_popup.green .sm_popList li:last-child { border-bottom:0px;}
+.sm_popup.green .sm_popList li { position:relative; padding:16px 4px; text-align:left; color:#6c6e71; border-bottom:1px solid #ccc;}
+.sm_popup.green .sm_popList li .sm_name { display:inline-block; padding-right:20px; }
+.sm_popup.green .sm_popList li input { position:absolute; right:0; top:35%;}
+.sm_popup.green .sm_popList li.on { color:#0284cf;}
+
+.sm_popup { position:absolute; left:0; top:0; width:100%; height:100%; background:#fff; z-index:4;}
+.sm_popup .sm_con { padding-bottom:46px;}
+.sm_popup .popText { padding:25px 10px 0 10px; text-align:center; box-sizing:border-box;}
+.sm_popup .btnList { position:fixed; left:0; bottom:0; right:0; display:-moz-box; /* Firefox */display:-webkit-box; /* Safari and Chrome */ display:box; border-top:1px solid #ccc; padding:12px; background:#fff;}
+.sm_popup .btnList li { width:50%; box-flex:1; -moz-box-flex:1; -webkit-box-flex:1;  box-sizing:border-box;}
+.sm_popup .btnList li.last { padding-left:12px;}
+.sm_popup .btnList li button { position:relative; width:100%; padding:13px 0; border-radius:30px; color:#fff;}
+.sm_popup .btnList li button.gray { background:#c2c3c6;}
+.sm_popup .btnList li button.blue{ background:#0284cf;}
+
+.sm_popup .inputList { padding:12px 12px 0 12px;}
+.sm_popup .inputList dt { padding:9px 0 6px; color:#a7a9ac; font-size:0.938rem;  font-family:'cesco_b';}
+.sm_popup .inputList dd.on .input01{ border:1px solid #00b3f3;}
+.sm_popup .inputList dd .input01 { position:relative; border:1px solid #d1d2d4; border-radius:20px; padding:0 38px 0 10px;}
+.sm_popup .inputList dd .input01.type01 { padding:0 51px 0 10px;}
+.sm_popup .inputList dd .input01.on, .inputList dd .input01.on input { background:#d1d2d4;}
+.sm_popup .inputList dd .input01.red { border:1px solid #ee2d2f; color:#ee2d2f}
+.sm_popup .inputList dd .input01.red input { color:#ee2d2f;}
+.sm_popup .inputList dd .input01 input { width:100%;}
+.sm_popup .inputList dd .input01 .btn_close { position:absolute; right:0; top:0; width:38px; height:38px; background:url("../../common/images/btn_input_close.png") no-repeat center; background-size:14px;}
+.sm_popup .inputList dd .input01 .btn_close span { display:inline-block; text-indent:-99999px;}

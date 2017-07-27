@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../sales/css/sales.css" />
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+    <script src="../js/ZipCodeSearchPop.js"></script>	
+    <script src="../../common/js/useBackButton.js"></script>
+    <style>
+		.on {
+			background: rgb(255, 240, 207);
+		}
+	</style>
+	<title>CESCO 세스코</title>
+</head>
+<body>
+<div class="popWrap01 P5">
+	<header>
+		<h1>주소검색</h1>
+		<input type="button" class="btn_close">
+	</header>
+
+	
+	<section class="contentsWrap">
+		<table class="tlist00">			
+			<tbody>
+
+				<tr>
+					<td style="padding: 2px 0px;">
+						<input type="text" placeholder="동 이름" style="width:232px;" id="txtSearchText"  class="t02_clearInput">
+						<button class="btn_search" id="btnSearch"></button>
+					</td>	
+				</tr>			
+			</tbody>
+		</table>
+	
+		<table class="poptable">
+			<colgroup>
+				<col style="width:25%;">
+				<col style="width:*;">
+				<col style="width:25%;">
+			</colgroup>
+			<thead>
+				<tr>
+					<th>우편번호</th>
+					<th>주소</th>
+					<th>담당부서</th>
+				</tr>
+			</thead>
+			<tbody id="tbodyZipInfoNew"></tbody>
+			<tbody id="tbodyZipInfo">
+				<tr class="trZipInfo">
+					<td style="text-align: center;"><span class="txtZipCode"></span></td>
+					<td><span class="txtAddress"></span></td>
+					<td style="text-align: center;"><span class="txtDeptName"></span></td>
+				</tr>				
+			</tbody>
+		</table>
+	</section>
+	
+	<footer class="popbot_btn">
+		<button type="button" class="btn_02 btnSelect">선택</button>
+		<button type="button" class="btn01 btnCancel">취소</button>
+	</footer>
+
+</div>
+</body>
+</html>

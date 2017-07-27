@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../css/sales.css" />
+	<link href="../../common/css/jquery.bxslider.css" rel="stylesheet" />
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+	<script src="../../common/js/jquery.bxslider.min.js"></script>
+	<script src="../js/SD013_tab01.js"></script>
+	<script src="../js/SD013_tab02.js"></script>
+	<script src="../js/SD013_tab03.js"></script>
+	<script src="../js/SD013_tab04.js"></script>
+	<script src="../js/SD013.js"></script>
+	<title>CESCO 세스코</title>
+</head>
+<body>
+<div class="">
+	<header class="hide">
+		<h1>업무일지 열람</h1>
+	</header>
+	
+	<section class="contentsWrap">
+		<div class="topfix_area">
+			<div class="tab02 item4">
+				<ul>
+					<li class="on liTopMenu"><button type="button" page="1" class="topButtons">업무일지열람</button></li>
+					<li class="liTopMenu"><button type="button" page="2" class="topButtons">고객정보</button></li>
+					<li class="liTopMenu"><button type="button" page="3" class="topButtons">업무내역</button></li>
+					<li class="liTopMenu"><button type="button" page="4" class="topButtons">세부업무내역</button></li>
+				</ul>
+			</div>
+		</div>
+	<div class="bxslider">
+
+  </div>
+
+	</section>
+</div>
+	
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+.map {position:relative; height:225px;}
+.map .work_stat {position:absolute; left:12px; top:12px; overflow:hidden;}
+.map .work_stat li {position:relative; float:left; width:45px; height:42px; margin-right:10px; padding-top:2px; color:#fff; text-align:center;
+	background:url("../../common/images/bg_count01.png") no-repeat center top; background-size:100% auto;
+}
+.map .work_stat dl {height:100%;}
+.map .work_stat dt {position:absolute; left:0; bottom:10px; width:100%; font-size:0.7em;}
+.map .work_stat dd {font-size:1.2em;}
+.map .work_stat li.end {background-image:url("../../common/images/bg_count02.png");}
+
+.service_list {position:relative; background:url("../images/bg_servicelist_line.png") repeat-y 15px 0; background-size:2px auto;}
+.service_list .acc_head {background:#fff;}
+.service_list:before {content:""; position:absolute; left:14px; top:45px; bottom:45px; width:2px; background:#a9a9a9; z-index:10;}
+.service_list > li {position:relative; padding-left:30px;}
+.service_list > li:nth-child(even), .service_list > li:nth-child(even) .acc_head {background:#eef2f4;}
+.service_list .num {position:absolute; left:-25px; top:50%; width:20px; margin-top:-18px; padding:4px 0; text-align:center;
+	font-size:0.7em; color:#fff; line-height:20px; background:url("../images/bg_num.png") no-repeat center 4px; background-size:100% auto; background-color:#fff; z-index:20;
+}
+.service_list > li:nth-child(even) .num {background-color:#eef2f4;}
+.service_list > li.on:nth-child(even) .num {background-color:#fff;}
+.service_list li:last-child .num {bottom:0;}
+.service_list li:last-child:after {content:""; position:absolute; left:0; top:62px; width:20px; bottom:0; background:#fff; z-index:100;}
+.service_list .acc_body {border-top:none;}
+.service_list .on .acc_body {padding-bottom:10px;}
+
+.top_fix01.cm022 {padding-top:105px;}
+
+/*** research ***/
+.research {background:#eef2f4;}
+.research li {padding:8px 8px 0; border-bottom:1px solid #d1d1d1;}
+.research .tit {margin-bottom:10px; color:#76b4d3;}
+.research dl, .research .cont {padding:0 0 8px 18px;}
+.research dt {margin-bottom:7px;}
+.research .formWrap {min-width:30%;}
+.sub_research {margin:0 -8px; background:#fff; border-top:1px solid #d1d1d1;}
+.sub_research dl .subcont {margin:0 -8px -8px -26px;}
+.research .btn {display:inline-block; width:100%; height:40px; padding:0 5px; color:#ababab;
+	background:#efefef;
+}
+.research .btn > span {display:inline-block; padding:3px 0 3px 25px; background:url("../../common/images/ico_plus.png") no-repeat 0 center; background-size:16px auto;}
+.sub_research .subcont .tit {margin:0; padding:0 10px; font-weight:bold; line-height:35px; color:#737373; background:#fff3dd; border:0 solid #d1d1d1; border-width:1px 0;}
+.sub_research .subcont .tit + .list01 {margin-top:-1px;}
+.research .nodata {padding:10px 10px 10px 26px; color:#ec003d;}
+.sub_research .list01 li {padding:17px 10px;}
+.research .acclist > .tit {position:relative; padding-right:30px;}
+.research .acclist > .tit:after {content:""; position:absolute; right:5px; top:0; width:20px; height:100%; background:url("../images/arrow_down.png") no-repeat 98% center; background-size:16px auto;}
+.research .acclist.on > .tit:after {background-image:url("../images/arrow_up.png");}
+.research .acclist .sub_research {display:none;}
+.research .acclist.on .sub_research {display:block;}
+
+/*** CM069 ***/
+.list03.del_mode .dlist02 {border-top:none;}
+.list03.del_mode .dlist02 dd {padding-right:5em;}
+.list03.del_mode .rtop_btn {position:absolute; top:5px; right:10px;}
+
+/*** CM058 ***/
+.txtwrite {height:100%;}
+.txtwrite .inp_textarea {position:absolute; left:0; top:100px; bottom:56px; width:100%; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
+.txtwrite .inp_textarea textarea {height:100%;}
+
+/*** CM061 ***/
+.sign {position:absolute; left:10px; top:10px; right:10px; bottom:66px; border:1px solid #d1d1d1; border-radius:4px;}
+
+/*** CM059 ***/
+.list01.infolist li {line-height:130%; background:#fff;}
+.infolist dt, .infolist dd {padding-left:2em;}
+.infolist dt {margin-bottom:5px;}
+.infolist dt .no {display:inline-block; width:2em; margin-left:-2em;}
+.infolist dd {color:#76b4d3;}
+
+/*** CM73 ***/
+.btnDay {width: 45px; color: #fff; background: #d4e3ea; vertical-align: middle; display: inline-block; height: 32px; text-align: center; padding-top: 9px; margin-top: 1px; margin-left: 3px; border-top-left-radius: 4px; border-bottom-left-radius: 4px; position: absolute;}
+.btnWeek {width: 45px; color: #fff; background: #d4e3ea; vertical-align: middle; display: inline-block; height: 32px; text-align: center; padding-top: 9px; margin-top: 1px; margin-left: 47px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; position: absolute;}
+.btnOn { background: #76b4d3; }
+.conBody:nth-child(even){background: #fdfaff}
+
+
+.calendar_box th {background:#fff; height:42px; color:#011f47; border-bottom:2px solid #b1c3d2; border-top:1px solid #c5cdd6; font-size:13px;}
+.calendar_box td {background:#f0f0f0; border-left:1px solid #c7d2db; border-bottom:1px solid #c7d2db; height:60px;}
+.calendar_box .txt_date {color:#272727; font-size:11px; padding:7px 0 8px 8px; font-weight:bold; text-align:left;}
+.calendar_box .txt_serv1 {color:#db3900; font-size:11px; padding:0 6px 5px 8px; font-weight:bold; text-align:right;}
+.calendar_box .txt_serv2 {color:#534949; font-size:11px; padding:0 6px 5px 8px; font-weight:bold; text-align:right;}
+.calendar_box .sunday {color:#db3900}
+.calendar_box .saturday {color:#4BADFF}
+.calendar_box td.today {background:#c8dced;}
+.calendar_box .no_date .txt_date, .txt_serv1, .txt_serv2, .sunday, .saturday {color:#ababab;}

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- <head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../css/order.css" />
+	<link href="../../common/css/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css">
+	<link href="../../common/css/jquery.bxslider.css" rel="stylesheet" />
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+	<script src="../../common/js/jquery.bxslider.min.js"></script>
+	<script src="../../common/js/cescommutil.js"></script>
+	<script src="../../common/js/jquery-ui-1.10.3.custom.js"></script>
+	<script src="../js/SD016.js"></script>
+	<title>CESCO 세스코</title>
+</head>
+<style type="text/css">
+	body{background: #bcc4d0}
+</style> -->
+<body>
+<div class="tab01_">
+	<header class="hide">
+		<h1>업무일지 열람</h1>
+	</header>
+	
+	<section class="contentsWrap">
+		<div class="topfix_area" style="position: relative;">
+			
+			<div class="nvi_title">
+				<dl>
+					<dd>주문서 마스터</dd>
+					<dd><button type="button" class="btn_detail btn_bx">주문세부내역</button></dd>
+				</dl>
+			</div>
+			<table class="tlist00 searchDiv">
+			<colgroup>
+				<col style="width:19%;">
+				<col style="width:35%;">
+				<col style="width:20%;">
+				<col style="width:*;">
+			</colgroup>
+			<tbody>
+
+			<tr>
+				<th>
+					주문번호
+				</th>
+				<td colspan="3">
+					<input type="text" disabled style="background-color:whitesmoke;" id="orderNo">
+				</td>
+			</tr>
+			<tr>
+				<th>
+					고객검색
+				</th>
+				<td colspan="3"><div class="commonCustSearch"></div></td>
+			</tr>
+			<tr>
+				<td style="display:none">
+					<input type="text" id="custCode" placeholder="고객코드" style="background-color:whitesmoke;" disabled>
+				</td>
+				<td style="display:none">
+					<input type="text" id="custNm" placeholder="고객명">
+				</td>
+				<th>
+				     고객정보
+				</th>
+				<td  colspan="3">
+					<input type="text" id="custInfo" placeholder="고객정보" disabled style="background-color:whitesmoke;">
+				</td>
+			</tr>
+			<tr>
+				<th>
+					주문일자
+				</th>
+				<td>
+					<dl class="dlist02">
+						<dd>
+							<p class="inp_cal"><input type="text"  id="orderYMD" readonly/><button type="button" id="cal" class="btn_cal" >달력</button></p>
+						</dd>
+					</dl>
+				</td>
+
+				<th>
+					판매구분
+				</th>
+				<td>
+					<select id="selOrderType">
+						<option value="2010">상품판매</option>
+						<option value="2020">서비스판매</option>
+					</select>
+				</td>
+			</tr>
+			
+			<tr>
+				<th>
+					원천구분
+				</th>
+				<td>
+					<select id="selOriginType" disabled style="background-color:whitesmoke;">
+						<option value="AE30">환경위생</option>
+						<option value="AE10">일반</option>
+						<option value="AE20">홈페이지(FS)</option>
+					</select>
+				</td>
+
+				<td>
+					<input type="text" disabled style="background-color:whitesmoke;">
+				</td>
+				<td>
+					<input type="checkbox" disabled id="chkBox">수금진행여부
+				</td>
+			</tr>
+		</tbody>
+		</table>
+		<table class="tlist00 searchDiv">
+		<colgroup>
+			<col width="19%"></col>
+			<col width="35%"></col>
+			<col width="20%"></col>
+			<col width="*"></col>
+		</colgroup>
+		<tbody>
+			<tr>
+				<th>
+					매출부서					
+				</th>
+				<td>
+					<select class="selDept" id="saleDept">
+						<option>
+							정보전략실
+						</option>
+					</select>
+				</td>
+				<th>
+					매출사원				
+				</th>
+				<td>
+					<select class="selUser" id="saleUser">
+						<option>
+							장우제
+						</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					계약부서					
+				</th>
+				<td>
+					<select class="selDept" id="contDept">
+						<option>
+							정보전략실
+						</option>
+					</select>
+				</td>
+				<th>
+					계약사원				
+				</th>
+				<td>
+					<select class="selUser" id="contUser">
+						<option>
+							장우제
+						</option>
+					</select>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+		<!-- 유망코드발번 오픈전 -->
+		<button type="button" class="btn_02" style="width:97%; margin-left:6px; " id="bCustBtn">유망고객등록</button>
+		
+		<div class="openBar">
+			<button type="button" class="btn_close" id="btnOpen"></button>
+		</div>
+		
+		<div style=" top: 280px; width:100%;" id="belowArea">	
+		<ul class="subWrap01" style="margin-top:0px;">
+			<li>
+				<div id="navcontainer">
+                        <ul id="navlist">
+                                <!-- CSS Tabs -->
+							<li class="liTab" tabindex="1"><button id="current">주문자</button></li>
+							<li class="liTab" tabindex="2"><button>배송</button></li>
+							<li class="liTab" tabindex="3"><button>결제</button></li>
+                        </ul>
+                        <!-- 주문자 첫번째 tab-->
+                        <div class="tab1_content" id="tab1">
+                        <table class="tlist00">
+                        	<colgroup>
+                        		<col width="*"></col>
+                        		<col width="80%"></col>
+                        	</colgroup>
+                        	<tr>
+                        		<td>성명</td>
+                        		<td><input type="text" disabled style="background-color:whitesmoke;" id="custName"></td>
+                        	</tr>
+                        	<tr>
+	                        	<td>연락처</td>
+	                        	<td><input type="text" disabled style="background-color:whitesmoke;" id="phoneNum"></td>
+	                        </tr>
+	                        <tr>
+	                        	<td>비고</td>
+	                        	<td><textarea disabled style="background-color:whitesmoke;" id="custEtc"></textarea></td>
+	                        </tr>
+                        </table>
+                        </div>
+                        <!--//주문자 첫번째 Tab-->
+
+                		<!-- 배송 두번째 tab-->
+                      	<div class="tab1_content" id="tab2" style="display: none;">
+                        <table class="tlist00">
+                        	<colgroup>
+                        		<col width="*%"></col>
+                        		<col width="30%"></col>
+                        		<col width="30%"></col>
+                        		<col width="20%"></col>
+                        	</colgroup>
+                        	<tr>
+                        		<td>배송구분</td>
+                        		<td>
+                        		<select id="selDeliType">
+                        			<option value="AJ10">택배</option>
+                        			<option value="AJ20">서비스시</option>
+                        		</select>
+                        		</td>
+                        		<td>받으시는분</td>
+                        		<td><input type="text" id="deliName"></td>
+                        	</tr>
+                        	<tr>
+                        		<td>배송지 주소</td>
+                        		<td><input type="text" disabled style="background-color:whitesmoke;" id="deliAddr1"></td>
+                        		<td colspan="2"><input type="text" disabled style="background-color:whitesmoke;" id="deliAddr2"></td>
+                        	</tr>
+                        	<tr>
+                        		<td style="text-align:right"><button type="button" class="btn_search" id="btnSearchDeli"></button></td>
+                        		<td colspan="3"><input type="text" disabled style="background-color:whitesmoke;" id="deliAddr3"></td>
+                        	</tr>
+                        	<tr>
+                        		<td>발송여부<br>(일자)</td>
+                        		<td>
+                        		<select id="selDeliProc">
+                        		<option value="AK10">미발송</option>
+                        		<option value="AK20">발송</option>
+                        		<option value="AK30">배송중</option>
+                        		<option value="AK40">배송 준비중</option>
+                        		</select>
+                        		</td>
+                        		<td colspan="2"><p class="inp_cal"><input type="text" id="deliYMD" readonly/><button type="button" id="deliCal" class="btn_cal" >달력</button></p></td>
+                        		
+                        	</tr>
+                        	<tr>
+	                        	<td>연락처</td>
+	                        	<td colspan="3"><input type="text" id="deliPhoneNum" style="background-color:whitesmoke;"></td>
+	                        </tr>
+	                        <tr>
+	                        	<td>배송상<br>특이사항</td>
+	                        	<td colspan="3"><textarea id="deliEtc"></textarea></td>
+	                        </tr>
+                        </table>
+                       
+                        </div> 
+                         <!-- //배송 두번째 tab-->
+
+                         <!-- 결제 세번째 tab-->
+                         <div class="tab1_content" id="tab3" style="display: none;">
+                          <table class="tlist00">
+                        	<colgroup>
+                        		<col width="*"></col>
+                        		<col width="70%"></col>
+                        	</colgroup>
+                        	<tr>
+                        		<td>결제구분</td>
+                        		<td>
+                        		<select id="selPaidType1" disabled>
+                        			<option value="AH10">선청구</option>
+                        			<option value="AH20">후청구</option>
+                        		</select>
+                        		</td>
+                        	</tr>
+                        	<tr>
+	                        	<td>결제/수금방법</td>
+	                        	<td>
+	                        	<select id="selPaidType2">
+	                        		<option value="3205">카드결제</option>
+	                        		<option value="3220">전용계좌</option>
+	                        	</select>
+	                        	</td>
+	                        </tr>
+	                        <tr>
+	                        	<td class="imgAcct">가상계좌</td>
+	                        	<td><input type="text" class="imgAcct" id="accountNo" disabled></td>
+	                        </tr>
+	                        <tr>
+	                        	<td></td>
+	                        	<td style="text-align:right">
+	                        		<button class="btn02" id="btnCard" style="display:none;">카드결제</button>
+	                        		<button class="btn02" id="btnAdd">추가</button>
+	                        		<button class="btn02" id="btnDel">삭제</button>
+	                        	</td>
+	                        </tr>
+                        </table>
+                        </div>
+                         <!-- //결제 세번째 tab-->
+                 </div>
+            </li>
+		</ul>
+		</div>
+		</div>
+
+		<!-- <footer class="bot_btn item4">
+			<button type="button" class="btn01">취소</button>
+			<button type="button" class="btn_02">저장</button>
+			<button type="button" class="btn01">Clear</button>
+			<button type="button" class="btn_02">조회</button>
+		</footer>//bottom fix area -->
+
+
+	</section>
+</div>
+	
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "header" : "@CescoHeader",
+  "body" : {
+    "LIST01" : [ {
+      "IMAGINFO" : "",
+      "vcWORKNO" : "",
+      "cUSID" : "",
+      "vcSMPLNO" : "",
+      "cSRNO" : "",
+      "vcGATHYN" : 0,
+      "vcGATHMEMO" : "",
+      "vcFOODSEQ" : "",
+      "cSMPLTYPE" : "",
+      "vcTESTSEQ" : ""
+    } ]
+  }
+}

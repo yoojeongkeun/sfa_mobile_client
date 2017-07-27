@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../css/root.css" />
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+	<script src="../js/CM003.js"></script>
+	
+	<title>CESCO 세스코</title>
+</head>
+<body>
+<div class="subWrap01 km">
+	<header class="hide">
+		<h1>시작Km 등록</h1>
+	</header>
+	
+	<section class="contentsWrap">
+		<table class="tlist01">
+			<colgroup>
+				<col style="width:25%" />
+				<col />
+				<col style="width:22%" />
+			</colgroup>
+			<tbody>
+			<tr>
+				<th scope="row">차량코드</th>
+				<td><input type="text" id="carcode"/></td>
+				<td><button type="button" class="btn02">검색</button></td>
+			</tr>
+			<tr>
+				<th scope="row">차량번호</th>
+				<td><input type="text" id="carnum" readonly="true"/></td>
+				<td><label><input type="checkbox" id="chk" name="" /> 없음</label></td>
+			</tr>
+			<tr>
+				<th scope="row">작업일자</th>
+				<td colspan="2"><input type="text" id="workdate" readonly="true"/></td>
+			</tr>
+			<tr>
+				<th scope="row">시작km</th>
+				<td><input type="tel" id="km" class="num txtc_r01" /></td>
+				<td class="subj">Km</td>
+			</tr>
+			<tr>
+				<th scope="row">최종km</th>
+				<td><input type="tel" id="lastkm" class="num txtc_r01" /></td>
+				<td class="subj">Km</td>
+			</tr>
+			</tbody>
+		</table>
+		
+		<!-- table head fix -->
+		<div class="table_fix" style="top: 255px;">
+			<!-- head -->
+			<div class="table_head">
+				<table class="tlist01 head_fix">
+					<colgroup>
+						<col style="width:30%" />
+						<col />
+						<col style="width:30%" />
+					</colgroup>
+					<thead>
+					<tr>
+						<th scope="col">차량코드</th>
+						<th scope="col">차량번호</th>
+						<th scope="col">관리사원</th>
+					</tr>
+					</thead>
+				</table>
+			</div>
+			<!-- head -->
+			
+			<!-- scroll -->
+			<div class="table_body">
+			    <table class="tlist01 head_fix" id="t01New">
+			    </table>
+				<table class="tlist01 head_fix" id="t01" style="display:none;">
+					<colgroup>
+						<col style="width:30%" />
+						<col />
+						<col style="width:30%" />
+					</colgroup>
+					
+					
+					<tbody class="seachb">
+					<tr class="seachdetail">
+						<td><span id="scode">717154</span></td>
+						<td><span id="snum">71허7154</span></td>
+						<td><span id="sname">변영석</span></td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- //scroll -->
+		</div>
+		<!-- //table head fix -->
+	</section>
+	
+	<footer class="bot_btn">
+		<button type="button" class="btn01" id="btndelete">삭제</button>
+		<button type="button" class="btn01" id="btnsave">등록</button>
+	</footer>
+
+</div>
+
+<div id="bottomCommonMenu"></div>
+
+</body>
+</html>

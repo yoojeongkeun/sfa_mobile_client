@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />  
+	<meta name="format-detection" content="telephone=no" />
+	<title>CESCO</title>
+	<link type="text/css" rel="stylesheet" href="../../common/css/common_iot.css" />
+	<link type="text/css" rel="stylesheet" href="../css/set.css" />
+	<link type="text/css" rel="stylesheet" href="../../root/css/root.css" />
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+	<script src="../../common/js/cescoUtil.js"></script>
+	<script type="text/javascript" src="../js/SET_0401.js"></script>
+</head>
+<body>
+	<div class="wrap hNo2">
+		<header>
+			<div class="headerWrap">
+				<h1 class="hide">Wi-Fi연결 직접입력</h1>
+			</div>
+		</header>
+		<section>
+			<div class="content">
+				<div class="topNumBox">
+					<ol class="topNumList">
+						<li>
+							<span class="num on">1</span>
+							<span class="title"><em>제품<br />등록</em></span>
+						</li>
+						<li>
+							<span class="num on">2</span>
+							<span class="title"><em>제품<br />연결</em></span>
+						</li>
+						<li>
+							<span class="num off">3</span>
+							<span class="title choice"><em>Wi-Fi<br />연결</em></span>
+						</li>
+						<li>
+							<span class="num">4</span>
+							<span class="title"><em>데이터<br />수신확인</em></span>
+						</li>
+						<li>
+							<span class="num">5</span>
+							<span class="title"><em>정보<br />입력</em></span>
+						</li>
+						<li>
+							<span class="num">6</span>
+							<span class="title"><em>인증번호<br />생성</em></span>
+						</li>
+						<li>
+							<span class="num">7</span>
+							<span class="title"><em>설치<br />완료</em></span>
+						</li>
+					</ol>
+				</div>
+				
+				<div class="scroll-area">
+					<div class="conArea">
+						<div class="set04">
+							<div class="setCon">
+								<div class="setTopText"><span class="point">Wi-Fi를 선택</span>하거나, 직접 입력해주세요.</div>
+							</div>
+							
+							<div class="inputListBox">								
+								<div class="selListBox">
+									<ul class="conInput"> <!-- 입력중 : on클래스 추가,  에러일경우 errorInput 클래스 추가 -->
+										<li><input type="text" class="inp"  placeholder="네트워크이름" id="networkName"/></li>
+										<li><button type="button" class="btn_clear btnTxtClear" style="display: none;"><em>clear</em></button></li>
+									</ul>
+								</div>
+								<div class="selListBox">
+									<ul class="conInput"> <!-- 입력중 : on클래스 추가,  에러일경우 errorInput 클래스 추가 -->
+										<li><input type="password" class="inp" placeholder="비밀번호" id="networkPswd"/></li>
+										<li><button type="button" class="btn_clear btnTxtClear" style="display: none;"><em>clear</em></button></li>
+									</ul>
+								</div>
+								<div class="checkBox"><input type="checkbox" id="visiblePw" /><label for="visiblePw">비밀번호 표시</label></div>
+							</div>
+							
+							<div class="btnAreaB">							
+								<button class="btn_blue btnType01" type="button" id="btnNext"><em>다 음</em></button>
+								<button class="btn_gray btnType01" type="button" id="btnChangeInput"><em>Wi-Fi 선택 입력</em></button>
+							</div>
+							
+							<div class="btnAreaB ptm">
+								<button class="btn_blue2 btnType01" type="button" id="btnWPS"><em>WPS 모드 활성화</em></button>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</section>
+		
+	</div>
+<div class="topfix_area">
+   <div id="bottomCommonMenu"></div>
+</div>	
+</body>
+</html>
+  

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../css/sales.css" />
+		<link href="../../common/css/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css">
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script> 
+	<script src="../../sales/js/SD014_pop.js"></script>
+	<script src="../../common/js/cescommutil.js"></script>
+	<script src="../../common/js/jquery.bxslider.min.js"></script>
+	<script src="../../common/js/jquery-ui-1.10.3.custom.js"></script>
+
+	<title>CESCO 세스코</title>
+</head>
+
+<body>
+<div class="popWrap01 resultWrap" style="border:none;">
+	<header>
+		<h1>장비설치</h1>
+		<input type="button" class="btn_close">
+	</header>
+	<div class="pt45 pb43">
+		<div class="tb_area">
+			<div class="box2">
+				<table class="tb02">
+					<colgroup><col width="70px"><col width="130px"><col width="auto"></colgroup>
+					<tbody>
+						<tr>
+							<th>고객코드</th>							
+							<td colspan="2" id="_CustCode"><input type="text" disabled/></td>
+						</tr>
+						<tr>
+							<th>고객명</th>
+							<td colspan="2" id="_CustName"><input type="text" disabled /></td>
+						</tr>
+						<tr>
+							<th>진단구분</th>
+							<td colspan="2">
+								<select class="Combo1" id="t01_selDeType">
+									<option></option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th>장비번호</th>
+							<td colspan="2">
+								<select class="Combo2" id="t02_selDeType">
+									<option></option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th>설치구획<br>정보</th>
+							<td colspan="2">
+								<select class="Combo3" id="t03_selDeType">
+									<option></option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th>설치형태</th>
+							<td colspan="2">
+								<select class="Combo4" id="t04_selDeType">
+									<option></option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th>시작시간</th>
+							<!--<td><div class="dateWrap" id="t03_calDay"><input type="text" /><button class="not_vsb date">날짜</button></div></td>-->
+							<!--<td><div class="dateWrap" id="t03_calDay"><input type="text" /><button type="button" id="t03_btnCal" class="btn_cal" >달력</button></div></td>-->
+							<!--<td><select><option>20:00</option></select></td>-->
+							
+							<td><div><p class="dateWrap"><input type="text" id="t03_calDay" readonly/><button type="button" id="t03_btnCal" class="not_vsb date" >달력</button></p></div></td>
+							<td><input type="time" style="width:100%;font-size:13px;" id="t03_fromTime" readonly></td>
+						</tr>
+						<tr>
+							<th>종료시간</th>
+							<!--<td><div class="dateWrap"><input type="text" disabled /><button class="not_vsb date">날짜</button></div></td>
+								<td><select><option>20:00</option></select></td>-->
+							
+							<td><div><p class="dateWrap"><input type="text" id="t01_calDay" readonly disabled/><button type="button" id="t01_btnCal" class="not_vsb date"  disabled>달력</button></p></div></td>
+							<td><input type="time" style="width:100%;font-size:13px;" id="t01_fromTime" disabled></td>
+						</tr>
+						
+					</tbody>
+				</table>
+			</div><!-- box2 -->
+		</div><!-- tb_area -->
+		
+		<div class="tb_area">
+			<div class="box4">
+				<ul class="schedule_wrap" id="_Schedule">
+					<li></li>
+			 		 <!--<li>
+						<div class="list_top">
+							<h3><span>IAQ 모니터 설치 안내</span></h3>
+							<button class="sld_btn">열기/닫기</button>
+						</div>
+						<div class="list_bottom">
+							<div class="box">
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+									ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+									parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+									pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec
+									pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus
+									ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis
+									pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
+									Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae,
+									eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+								</p>
+							</div>	
+						</div>
+					</li>
+					<li>
+						<div class="list_top">
+							<h3><span>네트워크 점검안내</span></h3>
+							<button class="sld_btn">열기/닫기</button>
+						</div>
+						<div class="list_bottom">
+							<div class="box">
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+									ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+									parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+									pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec
+									pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus
+									ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis
+									pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
+									Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae,
+									eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+								</p>
+							</div>	
+						</div>
+					</li>
+					<li>
+						<div class="list_top">
+							<h3><span>공기질 체크항목</span></h3>
+							<button class="sld_btn">열기/닫기</button>
+						</div>
+						<div class="list_bottom">
+							<div class="box">
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+									ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+									parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+									pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec
+									pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus
+									ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis
+									pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
+									Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae,
+									eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+								</p>
+							</div>	
+						</div>
+					</li>-->
+				</ul>
+			</div><!-- box4 -->
+		</div><!-- tb_area -->
+		<div class="agree"><div class="box"><input type="checkbox" id="agreeOk" /><label for="agreeOk">상기와 같은 IAQ 설치 정보를 확인하였습니다.</label></div></div>
+	</div>
+	<div class="btn_area fix item01"><button class="p_btn01">다음</button><!-- <button class="p_btn02">공기질 진단</button> --></div>
+</div>

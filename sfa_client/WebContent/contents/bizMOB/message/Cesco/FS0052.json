@@ -1,0 +1,10 @@
+{
+  "header" : "@CescoHeader",
+  "body" : {
+    "cSMPLTYPE" : "",
+    "cCUSTCODE" : "",
+    "cFROMDATE" : "",
+    "cTODATE" : "",
+    "cSRNO" : ""
+  }
+}

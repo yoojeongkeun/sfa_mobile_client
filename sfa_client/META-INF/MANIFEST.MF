@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: sfa_client
+Bundle-SymbolicName: sfa_client
+Bundle-Version: 1.0.0.qualifier
+Export-Package: com.mcnc.bizmob.emulator.web
+Import-Package: javax.servlet;version="2.6.0",
+ javax.servlet.http

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../css/common.css" />
+	<link href="../../common/css/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css" />
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+	<!-- <script src="../../common/js/jquery-ui-1.10.3.custom.js"></script> -->
+	<script src="../../common/js/jquery-ui.min.js"></script>
+	<script src="../js/IS003_1.js"></script>
+	<title>구획 변경사유 등록</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>	
+	<!-- 레이어 팝업 -->
+	<div id="layerPopup" class="detailsPanel"> 
+		<div class="topfix_area">
+			<div class="topBar">구획 변경사유 등록</div>
+			<div>
+				<button class="closeBtn btnCls btn01"></button>
+			</div>
+			<div>
+				<table class="popUp_table" style="margin-bottom: 2px;">
+					<colgroup>
+						<col width="30%"></col>
+						<col width="*"></col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th class="wLine">변경사유</th>
+							<td class="inpLine"><select name="select" id="rsonList"></select></td>
+						</tr>
+						<tr>
+							<th>상세내용</th>
+							<td class="inpLine">
+	                          <textarea style="height:210px;" id="text"></textarea>
+						    </td>
+						</tr> 
+					</tbody>
+				</table>
+				<div class="c_btn item2">
+					<button type="button" class="btn01">취소</button>
+					<button type="button" class="btn03">등록</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+

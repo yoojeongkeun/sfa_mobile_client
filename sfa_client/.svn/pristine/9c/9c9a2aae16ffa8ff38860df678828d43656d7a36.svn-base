@@ -1,0 +1,23 @@
+tab04 = 
+{	 
+    init:function(json)
+	{
+    	tab04.initInterface();
+    	tab04.initData(json);
+    	tab04.initLayout();
+	},
+	initInterface:function()
+	{
+		 
+	},	 
+	initData:function(json)
+	{
+		 
+	},	 
+	initLayout:function()
+	{	
+		
+	}
+};
+
+

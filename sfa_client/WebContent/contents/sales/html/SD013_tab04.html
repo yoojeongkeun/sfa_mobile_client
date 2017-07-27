@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!-- <script src="../js/SD013_tab04.js"></script> -->
+
+</head>
+<body>
+<!--4.세부업무내역-->
+<div style="position: relative; top: 48px; padding-bottom:50px;"  id="tab04">
+	<!-- accordion list -->
+        <ul class="a_list02 acclist">
+        
+			<li class="on">	<!-- 내용 펼치기 : on 클래스 추가 -->
+				<!-- accordion head -->
+				<div class="acc_head N00001" >
+					<span class="result_on"></span>
+					<p class="tit01">사전홍보</p>
+					<div class="rig_btn">
+						<button type="button" class="btn_add_file01">8</button>
+						<button type="button" class="btn_img_help">도움말</button>
+					</div>
+				</div>
+				<!-- //accordion head -->
+				
+				<!-- accordion body -->
+				<div class="acc_body">
+					<div class="dep02">
+						<button type="button" class="btn_result btnOK">확인</button>
+					</div>
+				</div>
+				<!-- //accordion body -->
+			</li>
+			
+			<li class="on">
+				<!-- accordion head -->
+				<div class="acc_head N00005">
+					<span class="result_on"></span>
+					<p class="tit01">제안여부확정</p>
+					<div class="rig_btn">
+						<button type="button" class="btn_add_file">0</button>
+						<button type="button" class="btn_img_help">도움말</button>
+					</div>
+				</div>
+				<!-- //accordion head -->
+				
+				<!-- accordion body -->
+				<div class="acc_body">
+					<div class="dep02">
+						<!-- <ul class="t_dep02 addfile mb10">
+	                    	<li>견적서</li>
+	                    	<li>제안서</li>
+	                    </ul> -->
+						<button type="button" class="btn_result btnOK">확인</button>
+					</div>
+					
+				</div>
+				<!-- //accordion body -->
+			</li>
+			
+			<li class="on" id="newPage">
+				<!-- accordion head -->
+				<div class="acc_head N00007">
+				<span class="result_on"></span>
+					<p class="tit01">진단설계</p>
+					<div class="rig_btn">
+						<button type="button" class="btn_add_file">0</button>
+						<button type="button" class="btn_img_help">도움말</button>
+					</div>
+				</div>
+				<!-- //accordion head -->
+				
+				<!-- accordion body -->
+				<div class="acc_body">
+				
+				<div class="dep02">
+					<button type="button" class="btn_result btnOK" id="diagOn">확인</button>
+				</div>
+				<ul class="subWrap03" id="N00007" style="display: none;"><!-- subWrap03 -->
+					<li>
+					<table class="tlist02" id="diagTbNew">
+					</table>
+					<table class="tlist02" id="diagTb" style="display:none">
+					<colgroup>
+						<col width="12%"></col>
+						<col width="*"></col>
+					</colgroup>
+		              <thead>
+		                <tr>
+		                  <th>선택</th>
+		                  <th>계약대상</th>
+		                </tr>
+		              </thead>
+		              <tbody class="contTarg">
+		                <tr class="contMas">
+		                  <td colspan="2">
+		                      <input type="checkbox" class="chkBox"> <label class="target">블루스톰(흡입식)</label>
+		                  </td>
+		                </tr>
+		                
+		                <tr class="contDtl" style="display:none;">
+		                  <td></td>
+		                  <td>
+		                    <table class="t_dep03">
+		                  	<colgroup>
+		                  		<col width="20%"></col>
+		                  		<col width="30%"></col>
+		                  		<col width="*"></col>
+		                  	</colgroup>
+		                  	<thead>
+		                      <tr>
+		                        <th>구분</th>
+		                        <th>금액 / 대수</th>
+		                        <th>비고</th>
+		                      </tr>
+		                    </thead>
+		                    <tbody class="contDet">
+		                     </tbody>
+		                    </table>
+		                   
+		                    <div class="tit_textbox">협의내용</div>
+		                    <textarea class="textCont"></textarea>
+		                  </td>
+		                </tr>
+		              </tbody>
+		            </table></li>
+				</ul>
+				</div>
+				<!-- //accordion body -->
+			</li>
+			
+			<li class="on" id="oldPage">
+				<!-- accordion head -->
+				<div class="acc_head">
+				<span class="result_on"></span>
+					<p class="tit01">진단설계</p>
+					<div class="rig_btn">
+						<button type="button" class="btn_add_file">0</button>
+						<button type="button" class="btn_img_help">도움말</button>
+					</div>
+				</div>
+				<!-- //accordion head -->
+				
+				<!-- accordion body -->
+				<div class="acc_body">
+				<div class="dep02" id="N00002">
+					<table class="tlist01 g000004" id="N2G04New"></table>
+					<table class="tlist01 g000004" id="N2G04" style="display: none;">
+						<colgroup>
+							<col style="width:10px;" />
+							<col style="width:70px;" />
+							<col style="width:20%;" />
+							<col style="width:20%;" />
+							<col style="width:20%;" />
+						</colgroup>
+						<thead>
+						<tr>
+							<th></th>
+							<th>계약대상</th>
+							<th>초기</th>
+							<th>정기</th>
+							<th>인상</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr class="trList1">
+							<td><input type="checkbox"></td>
+							<td style="text-align: left;padding-left: 10px;"><span class="spanContObj"></span></td>
+							<td style="text-align: right;padding-right: 10px;"><input type="text" style="width: 100%; text-align: right;" value="0" class="t04_txtVal1"></td>
+							<td style="text-align: right;padding-right: 10px;"><input type="text" style="width: 100%; text-align: right;" value="0" class="t04_txtVal2"></td>
+							<td style="text-align: right;padding-right: 10px;"><input type="text" style="width: 100%; text-align: right;" value="0" class="t04_txtVal3"></td>
+						</tr>
+						</tbody>
+					</table>
+					<table class="tlist01 g000007" id="N2G07New"></table>
+					<table class="tlist01 g000007" id="N2G07" style="display: none;">
+						<colgroup>
+							<col style="width:10px;" />
+							<col style="width:70px;" />
+							<col style="width:30%;" />
+							<col style="width:30%;" />
+						</colgroup>
+						<thead>
+						<tr>
+							<th></th>
+							<th>계약대상</th>
+							<th>대수</th>
+							<th>총액</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr class="trList2">
+							<td><input type="checkbox"></td>
+							<td style="text-align: left;padding-left: 10px;"><span class="spanContObj"></span></td>
+							<td style="text-align: right;padding-right: 10px;"><input type="text" style="width: 100%; text-align: right;" value="0" class="t04_txtVal1"></td>
+							<td style="text-align: right;padding-right: 10px;"><input type="text" style="width: 100%; text-align: right;" value="0" class="t04_txtVal2"></td>
+						</tr>
+						</tbody>
+					</table>
+					<table class="tlist01 g000008" id="N2G08New"></table>
+					<table class="tlist01 g000008" id="N2G08" style="display: none;">
+						<colgroup>
+							<col style="width:10px;" />
+							<col style="width:70px;">
+							<col style="width:60%;">
+						</colgroup>
+						<thead>
+						<tr>
+							<th>&nbsp</th>
+							<th>계약대상</th>
+							<th>총액</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr class="trList3">
+							<td><input type="checkbox"></td>
+							<td style="text-align: left;padding-left: 10px;"><span class="spanContObj"></span></td>
+							<td style="text-align: right;padding-right: 10px;"><input type="text" style="width: 100%; text-align: right;" value="0" class="t04_txtVal1"></td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+				</div>
+				<!-- //accordion body -->
+			</li>
+			
+			<li class="on" style="display: none;">
+				<!-- accordion head -->
+				<div class="acc_head N00002_1">
+					<span class="result_on"></span>
+					<p class="tit01">진단설계</p>
+					<div class="rig_btn">
+						<button type="button" class="btn_add_file">0</button>
+						<button type="button" class="btn_img_help">도움말</button>
+					</div>
+				</div>
+				<!-- //accordion head -->
+				
+				<!-- accordion body -->
+				<div class="acc_body">
+					<div class="dep02">
+						<!-- <ul class="t_dep02 addfile mb10">
+	                    	<li>견적서 20150601</li>
+	                    	<li>견적서 20150601</li>
+	                    </ul> -->
+						<button type="button" class="btn_result btnOK">확인</button>
+					</div>
+					
+				</div>
+				<!-- //accordion body -->
+			</li>
+			
+			<li class="on">
+				<!-- accordion head -->
+				<div class="acc_head N00003">
+					<span class="result_on"></span>
+					<p class="tit01">제안/견적제출</p>
+					<div class="rig_btn">
+						<button type="button" class="btn_add_file">0</button>
+						<button type="button" class="btn_img_help">도움말</button>
+					</div>
+				</div>
+				<!-- //accordion head -->
+				
+				<!-- accordion body -->
+				<div class="acc_body">
+					<div class="dep02">
+						<!-- <ul class="t_dep02 addfile mb10">
+	                    	<li>견적서 20150601</li>
+	                    	<li>견적서 20150601</li>
+	                    </ul> -->
+						<button type="button" class="btn_result btnOK">확인</button>
+					</div>
+					
+				</div>
+				<!-- //accordion body -->
+			</li>
+			
+			<li class="on">
+				<!-- accordion head -->
+				<div class="acc_head">
+				<span class="result"></span>
+					<p class="tit01">사전계약</p>
+					<div class="rig_btn">
+						<button type="button" class="btn_add_file">0</button>
+						<button type="button" class="btn_img_help">도움말</button>
+					</div>
+				</div>
+				<!-- //accordion head -->
+				
+				<!-- accordion body -->
+				<!-- <div class="acc_body">
+				<div class="dep02" id="N00006">
+					<table class="tlist01 g000007">
+						<colgroup>
+							<col style="width:10%;" />
+							<col style="width:40%;" />
+							<col style="width:20%;" />
+							<col style="width:30%;" />
+						</colgroup>
+						<thead>
+						<tr>
+							<th></th>
+							<th>계약대상</th>
+							<th>대수</th>
+							<th>총액</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td style="text-align: left;padding-left: 10px;">인셉터</td>
+							<td style="text-align: right;padding-right: 10px;">1</td>
+							<td style="text-align: right;padding-right: 10px;">1,000</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td style="text-align: left;padding-left: 10px;">블루스톰</td>
+							<td style="text-align: right;padding-right: 10px;">8</td>
+							<td style="text-align: right;padding-right: 10px;">30,000</td>
+						</tr>
+						</tbody>
+					</table>
+				</div> -->
+				<!-- //accordion body -->
+			</li>
+			
+			<li class="on">	<!-- 내용 펼치기 : on 클래스 추가 -->
+				<!-- accordion head -->
+				<div class="acc_head N00004">
+					<span class="result_on"></span>
+					<p class="tit01">계약</p>
+					<div class="rig_btn">
+						<button type="button" class="btn_add_file01">8</button>
+						<button type="button" class="btn_img_help">도움말</button>
+					</div>
+				</div>
+				<!-- //accordion head -->
+				
+				<!-- accordion body -->
+				<div class="acc_body">
+					<div class="dep02">
+						<button type="button" class="btn_result btnOK" style="width: 100px; padding-left: 30px;">계약진행</button>
+						<button type="button" class="btn_result btnOK2" style="width: 100px; padding-left: 30px;">계약완료</button>
+					</div>
+				</div>
+				<!-- //accordion body -->
+			</li>
+			
+		</ul>
+		<!-- //accordion list -->
+	</div><!--//4.세부업무내역-->
+
+</body>
+</html>

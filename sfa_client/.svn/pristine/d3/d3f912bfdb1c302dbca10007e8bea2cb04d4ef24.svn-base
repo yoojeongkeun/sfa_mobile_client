@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../css/sales.css" />
+	<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+    <script src="../js/SD011_pop.js"></script>	
+    <script src="../../common/js/useBackButton.js"></script>
+	<title>CESCO 세스코</title>
+</head>
+<body>
+<div class="popWrap01 P5">
+	<header>
+		<h1>영업계획 등록</h1>
+		<input type="button" class="btn_close">
+	</header>
+	
+	<section class="contentsWrap">
+		<table class="tlist00">
+			<colgroup>
+				<col style="width:30%;">
+				<col style="width:*;">
+				<col style="width:30%;">
+			</colgroup>
+			<tbody>
+
+			<tr>
+				<td>
+					<input type="text" placeholder="고객코드">
+				</td>
+				<td colspan="2">
+					<input type="text" placeholder="고객명" style="width:75%;">
+					<button class="btn_search"></button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" placeholder="영업담당부서">
+				</td>
+				<td>
+				<input type="text" placeholder="영업담당자">
+				</td>
+				<td>
+				<input type="text" placeholder="고객구분">
+				</td>
+			</tr>
+			<tr>
+				<th style="padding-left:10px;">
+					방문/접촉사유
+				</th>
+				<td colspan="2">
+					<select>
+						<option value="0">기존고객정기방문</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<select>
+						<option value="0">관리부서</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option value="0">관리사원</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					시작시간
+				</th>
+				<td>
+					<div class="rbtnWrap" style="padding-right: 0px;">
+						<div>
+							<p class="inp_cal"><input type="text" id="calFrom" readonly/><button type="button" id="btnCalFrom" class="btn_cal" >달력</button>	</p>
+						</div>
+					</div>
+				</td>
+				<td>
+					<input type="time" style="width: 140px;">
+				</td>
+			</tr>
+			<tr>
+				<th>
+					종료시간
+				</th>
+				<td>
+					<div class="rbtnWrap" style="padding-right: 0px;">
+						<div>
+							<p class="inp_cal"><input type="text" id="calFrom" readonly/><button type="button" id="btnCalFrom" class="btn_cal" >달력</button>	</p>
+						</div>
+					</div>
+				</td>
+				<td>
+					<input type="time" style="width: 140px;">
+				</td>
+			</tr>
+		</tbody>
+		</table>
+	</section>
+	
+	<footer class="popbot_btn">
+		<button type="button" class="btn_02 btnRegist">등록</button>
+		<button type="button" class="btn01 btnCancel">취소</button>
+	</footer>
+
+</div>
+</body>
+</html>

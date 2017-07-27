@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.cust_list li {padding:10px 140px 10px 40px;}
+.cust_list .cust_stat {position:absolute; left:10px; top:50%; width:1.2em; margin-top:-1.2em; padding:3px 2px;}
+.cust_list .addr {font-size:0.9em;}
+.cust_list .btn_group {position:absolute; right:10px; top:29%; margin-top: -20px; border: 1px solid #d9d9d9; background: none;}
+
+
+
+.tlist01.group th:last-child, .tlist01.group td:last-child{text-align:center;}
+
+#contlist > tbody > tr:nth-child(2) > td:nth-child(1) > span > span{text-align:right !important;}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no"/>
+<title>::시료채취 및 수거::</title>
+<link href="../css/common.css" rel="stylesheet" type="text/css" />
+<link href="../css/sub.css" rel="stylesheet" type="text/css" />
+<link href="../css/FSM0022.css" rel="stylesheet" type="text/css" />
+<!-- <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/jquery.accordion.js"></script> -->
+<script src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/FSM0027.js"></script>
+<style>
+	
+	input.chkGatherYN + .lbtoggle {
+		display: inline-block;
+		position: relative;
+		box-shadow: inset 0 0 0px 1px #d5d5d5;
+		text-indent: -5000px;
+		height: 30px;
+		width: 50px;
+		border-radius: 15px;
+	}
+	
+	input.chkGatherYN + .lbtoggle:before {
+		content: "";
+		position: absolute;
+		display: block;
+		height: 30px;
+		width: 30px;
+		top: 0;
+		left: 0;
+		border-radius: 15px;
+		background: rgba(19,191,17,0);
+		-moz-transition: .25s ease-in-out;
+		-webkit-transition: .25s ease-in-out;
+		transition: .25s ease-in-out;
+	}
+	
+	input.chkGatherYN + .lbtoggle:after {
+		content: "";
+		position: absolute;
+		display: block;
+		height: 30px;
+		width: 30px;
+		top: 0;
+		left: 0px;
+		border-radius: 15px;
+		background: white;
+		box-shadow: inset 0 0 0 1px rgba(0,0,0,.2), 0 2px 4px rgba(0,0,0,.2);
+		-moz-transition: .25s ease-in-out;
+		-webkit-transition: .25s ease-in-out;
+		transition: .05s ease-in-out;
+	}
+	
+	input.chkGatherYN:checked + .lbtoggle:before {
+		width: 50px;
+		background: rgba(19,191,17,1);
+	}
+	
+	input.chkGatherYN:checked + .lbtoggle:after {
+		left: 20px;
+		box-shadow: inset 0 0 0 1px rgba(19,191,17,1), 0 2px 4px rgba(0,0,0,.2);
+	}
+</style>
+</head>
+<body>
+<div id="ly_mask" style="width: 320px; height: 400px; opacity: 0.5;"></div>
+<!----------header-------------->
+<div id="wrap">
+<!-- <div id="header">
+  <p class="btn_back"><a href="FS0007.html"><img src="../../common/images/btn_back.jpg" width="70" alt="돌아가기" /></a></p>
+  <h2 class="title">위생점검</h2>
+  <p class="btn_next"><a href="#" onclick="void(0);" id="saveBtn"><img id="btn_insert" src="../../common/images/btn_regist_top.png" width="58"></a></p>
+</div> -->
+<!----------//header--------------> 
+<!----------container-------------->
+<div id="container"> 
+   <!-- <div class="tit_page">
+    <div class="page_path">
+      <ul>
+        <li>서비스<br />
+          제공</li>
+        <span><img src="../../common/images/bg_path_r.jpg" height="50"></span>
+        <li id="CustName"></li>
+        <span><img src="../../common/images/bg_path_r.jpg" height="50"></span>
+        <li>환경<br />
+          모니터링</li>
+        <span><img src="../../common/images/bg_path_r.jpg" height="50"></span>
+        <li>시료채취<br />
+          및 수거</li>
+      </ul>
+    </div>
+  </div> -->
+   
+
+
+  <div class="content">
+	
+	<div class="tit_work">자가품질검사</div>
+	<div class="sani_check_list" id="checkListFNew" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" ></div>	                   
+	<div class="sani_check_list" id="checkListF" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); display: none;" >
+			
+			<div class="chec_desc checkDesc divList" >
+				<div class="check_content" id="checkDesc4">
+					<div class="tit_chec_content">
+						<h4>
+							<span style="padding-top: 12px;"><img src="../images/bul_chec_it.png" width="7"></span>
+							<span class="sampleName" style="padding-top: 0px;"></span>
+						</h4>
+						<div class="fr">
+						<p class="btn_photo01">
+							<a href="javascript:void(0);"><img class="img_shoot btnImage"
+								src="../images/btn_view_ph01.png" style="width:39px; height: 35px;"></a>
+						</p>
+						<p class="btn_photo01">							
+							<input type="checkbox" class="chkGatherYN"  ctrltype="1" inputtype="IPT02" keyname="" name="toggle"  style="display:none;">
+					<label class="lbtoggle"></label>
+						</p>
+						</div>
+					</div>
+					<input id="inp_checkContent" name="" type="text" style="width: 100%;" value="" class="input_box txtGatherMemo" placeholder="관리상태 입력">
+					
+					
+					
+					<div style="clear: both;"></div>
+				</div>
+			</div>
+		</div>
+  </div>
+  <div style="height: 100px;">
+  </div>
+  <!-- <div class="tit_work">물검사</div>
+  <div class="sani_check_list" id="checkListHNew" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" ></div>
+  <div class="sani_check_list" id="checkListH" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); display: none;" >
+			
+			<div class="chec_desc checkDesc divList" >
+				<div class="check_content" id="checkDesc4">
+					<div class="tit_chec_content">
+						<h4>
+							<span style="padding-top: 12px;"><img src="../images/bul_chec_it.png" width="7"></span>
+							<span class="sampleName" style="padding-top: 0px;"></span>
+						</h4>
+						<div class="fr">
+						<p class="btn_photo01">
+							<a href="javascript:void(0);"><img class="img_shoot btnImage"
+								src="../images/btn_view_ph01.png" style="width:39px; height: 35px;"></a>
+						</p>
+						<p class="btn_photo01">							
+							<input type="checkbox" class="chkGatherYN"  ctrltype="1" inputtype="IPT02" keyname="" name="toggle"  style="display:none;">
+					<label class="lbtoggle"></label>
+						</p>
+						</div>
+					</div>
+					<input id="inp_checkContent" name="" type="text" style="width: 100%;" value="" class="input_box txtGatherMemo" placeholder="관리상태 입력">
+					
+					
+					
+					<div style="clear: both;"></div>
+				</div>
+			</div>
+		</div>
+  </div> -->
+  <!--------//container--------------> 
+  
+  <!----------footer-------------->
+<div id="footer04">
+<div class="bottom_all02">
+    <ul>
+        <li class="bottom_btn02_01" id="btnClear" ><a>Clear</a></li>
+        <li class="bottom_btn02_02" id="btnDown"><a id="btnRegist">등록</a></li>
+    </ul>
+</div>
+</div>
+<!--------//footer--------------> 
+</div>
+</body>
+</html>
