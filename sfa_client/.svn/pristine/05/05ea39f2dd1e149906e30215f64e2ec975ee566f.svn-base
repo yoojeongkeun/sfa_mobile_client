@@ -1,8 +1,0 @@
-table tr.subj 		{text-align:center;font-weight:bold;background:#E7F5FB;font-size:10pt}
-table tr.selection 	{background:#FFF5FF;}
-.bottom_btn {position:fixed; left:0; bottom:0; width:100%; padding:8px 10px; text-align:center; background:rgba(0,0,0,0.75); overflow:hidden; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; z-index:100;}
-.bottom_btn button {float:left; width:49%;}
-.bottom_btn button:last-child {float:right;}
-.bottom_btn button:only-child {float:none; width:100%;}
-.bottom_btn.item4 button {width:24%;}
-.bottom_btn.item4 button:nth-child(2) {margin:0 1.3%;}
