@@ -65,7 +65,19 @@ page =
 		$("#regOrder").click(function(){
 			if(!($("tbody").hasClass("on")))
 			{
-				var button1 = 
+				bizMOB.Web.open("order/html/SD018.html", {
+    				modal : false,
+    				replace : false,
+    				message : {
+    					orderNo : "",
+    					custCode : "",
+    					orderjson : "",
+    					unitType : ""
+    				}
+    			});
+				
+				//선택 확인창 삭제 20170829 박태환
+				/*var button1 = 
 	            	bizMOB.Ui.createTextButton("예", function()
 			        {
 	            		bizMOB.Web.open("order/html/SD018.html", {
@@ -84,7 +96,7 @@ page =
 			        {
 			           return;
 			        });
-	            bizMOB.Ui.confirm("알림", "신규 주문서를 등록하시겠습니까?", button1, button2);
+	            bizMOB.Ui.confirm("알림", "신규 주문서를 등록하시겠습니까?", button1, button2);*/
 			}
 			else
 			{

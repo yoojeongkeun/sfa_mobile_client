@@ -18,7 +18,7 @@ page =
 	},
 	initInterface:function()
 	{
-		$(".btn_close").click(function(){
+		$(".btn_close01").click(function(){
 			bizMOB.Ui.closeDialog({
 				callback: page.prePath,
 				message: {
