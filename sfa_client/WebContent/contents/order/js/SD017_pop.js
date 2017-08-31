@@ -3,12 +3,14 @@ page =
 	prePath: "",
 	unitType: "",
 	custCode: "",
+	originType: "",
 	
     init:function(json)
 	{
     	page.prePath = json.prePath;
     	page.unitType = json.unitType;
     	page.custCode = json.custCode;
+    	page.originType = json.originType;
     	
 		page.initInterface();
 		page.initData(json);
@@ -57,6 +59,10 @@ page =
 		$("#btnSearchItem").click(function(){
 			page.getItemList();
 		});
+		
+		$(".btn_close01").click(function(){
+			bizMOB.Ui.closeDialog();
+		});
 	},	 
 	initData:function(json)
 	{
@@ -73,7 +79,7 @@ page =
 		tr.body.P01 = $("#sItemCode").val();
 		tr.body.P02 = $("#sItemNm").val();
 		tr.body.P03 = "";
-		tr.body.P04 = "AE30";
+		tr.body.P04 = page.originType;//"AE30";
 		tr.body.P05 = page.unitType;
 		tr.body.P06 = page.custCode;
 		

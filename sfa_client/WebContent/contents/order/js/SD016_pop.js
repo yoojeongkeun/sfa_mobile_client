@@ -33,6 +33,12 @@ page =
 		});
 		
 		$("#addAcct").click(function(){
+			if($("#custCode").val == "")
+			{
+				bizMOB.Ui.alert("안내", "고객을 조회하여 주십시오.");
+				return;
+			}
+			
 			bizMOB.Ui.openDialog("order/html/SD016_pop2.html",
 			{ 
 			   	width:"95%",
@@ -45,7 +51,7 @@ page =
 			});
 		});
 		
-		$(".btn_close").click(function(){
+		$(".btn_close01").click(function(){
 			bizMOB.Ui.closeDialog();
 		});
 		
@@ -57,10 +63,6 @@ page =
 				$("tbody").removeClass("on");
 				$(this).addClass("on");
 			}
-		});
-		
-		$("#addAcct").click(function(){
-			
 		});
 	},	 
 	initData:function(json)

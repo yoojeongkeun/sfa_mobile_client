@@ -203,7 +203,8 @@ page =
 				message: {
 					prePath : "page.addItem",
 				    unitType : page.unitType,
-				    custCode : $("#custCode").val()
+				    custCode : $("#custCode").val(),
+				    originType : $("#selOriginType").val()
 				}
 			});
 		});
@@ -251,6 +252,12 @@ page =
 						}
 					});
 					$(".btn_bx").click(function(){
+						if($("#custCode").val() == "")
+						{
+							bizMOB.Ui.alert("안내", " 고객을 조회하여 주십시오.");
+							return;
+						}
+						
 						page.slider.goToSlide(page.slider.getCurrentSlide() == 0 ? 1 : 0);
 						//$(".bx-viewport").css("height", "650px");
 						if(page.slider.getCurrentSlide() == 0)

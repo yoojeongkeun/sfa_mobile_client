@@ -34,6 +34,21 @@ master = {
 	UNQ_OFFICE : "",
 
 	init : function(json, orderjson) {
+		var deptCode = bizMOB.Storage.get("deptCode");
+		if(deptCode == "12014" || deptCode == "13510" || deptCode == "10225")
+		{
+			$("#selOriginType").removeAttr("disabled").css("background-color", "white");
+		}
+		else
+		{
+			$("#selOriginType").attr("disabled", true).css("background-color", "whitesmoke");
+		}
+		
+		// 20170830 장우제 대리 수정 * 수정모드로 집입시에는 원천구분을 변경 못하도록 막음
+		if(json.orderNo != ""){
+			$("#selOriginType").attr("disabled", true).css("background-color", "whitesmoke");
+		}
+		
 		master.orderNo = json.orderNo;
 		master.custCode = json.custCode;
 		master.orderjson = orderjson;
@@ -314,6 +329,24 @@ master = {
 					master.Save(master.orderjson);
 			} else {
 				master.Save(master.orderjson);
+			}
+		});
+		
+		// 20170830 장우제 대리 수정 * 원천구분 변경 시 주문세부내역 항목 초기화
+		var preVal = "";
+		$("#selOriginType").focus(function(){
+			preVal = $(this).val();
+		}).change(function(){
+			// 주문세부내역에 항목이 존재할 경우 삭제
+			if($("#detailListNew .tbDetail").length != 0){			
+				var $that = $(this);
+				var btnOK = bizMOB.Ui.createTextButton("삭제", function(){
+					$("#detailListNew .tbDetail").remove();
+				})
+				var btnCancel = bizMOB.Ui.createTextButton("취소", function() {				
+					$that.val(preVal);
+				});
+				bizMOB.Ui.confirm("알림", "원천구분 변경 시 상품이 삭제됩니다. 변경하시겠습니까?", btnOK, btnCancel);
 			}
 		});
 	},
@@ -624,11 +657,33 @@ master = {
 
 		if ($("#deliName").val().length == 0) {
 			bizMOB.Ui.alert("안내", "배송 받으시는 분을 확인하여 주십시오.");
+			
+			page.slider.goToSlide(0);
+			
+			$(".liTab button").removeAttr("id");
+			$($(".liTab")[1]).find("button").attr("id", "current");
+			$("#tab1").hide();
+			$("#tab2").show();
+			$("#tab3").hide();
+			$(".bx-viewport").css("height", "700px");
+			
+			$("#deliName").focus();
 			return;
 		}
 		
 		if($("#deliPhoneNum").val().trim() == ""){
 			bizMOB.Ui.alert("안내", "배송 받으시는 분의 연락처를 확인해주세요.");
+			
+			page.slider.goToSlide(0);
+			
+			$(".liTab button").removeAttr("id");
+			$($(".liTab")[1]).find("button").attr("id", "current");
+			$("#tab1").hide();
+			$("#tab2").show();
+			$("#tab3").hide();
+			$(".bx-viewport").css("height", "700px");
+			
+			$("#deliPhoneNum").focus();
 			return;
 		}
 
@@ -641,11 +696,23 @@ master = {
 
 		if (length < 1) {
 			bizMOB.Ui.alert("안내", "판매상품이 1개 이상 등록되어야 합니다.");
+			page.slider.goToSlide(1);
 			return;
 		}
 
 		if ($("#selPaidType2").val() == "3220" && $("#accountNo").val() == "") {
 			bizMOB.Ui.alert("안내", "가상계좌를 입력하여 주십시오.");
+			
+			page.slider.goToSlide(0);
+			
+			$(".liTab button").removeAttr("id");
+			$($(".liTab")[2]).find("button").attr("id", "current");
+			$("#tab1").hide();
+			$("#tab2").hide();
+			$("#tab3").show();
+			$(".bx-viewport").css("height", "650px");
+			
+			$("#accountNo").focus();
 			return;
 		}
 
