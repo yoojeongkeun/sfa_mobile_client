@@ -35,7 +35,7 @@ master = {
 
 	init : function(json, orderjson) {
 		var deptCode = bizMOB.Storage.get("deptCode");
-		if(deptCode == "12014" || deptCode == "13510" || deptCode == "10225")
+		if(deptCode == "12014" || deptCode == "13510" || deptCode == "10225" || deptCode == "10285" || deptCode == "12052" || deptCode == "13511")
 		{
 			$("#selOriginType").removeAttr("disabled").css("background-color", "white");
 		}
