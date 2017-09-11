@@ -185,6 +185,9 @@ page  =
 	
 	initInterface:function()
 	{
+		
+		$("#appversion").text(bizMOB.Device.Info.app_version);
+		
 		$("#user_id").click(function(){
 			$("#user_id").select();
 		});
